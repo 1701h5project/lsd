@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html, body {
+  font-size: 64px;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  height: 1.375rem;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  border-bottom: 0;
+}
+
+.header .header-top {
+  height: 0.828125rem;
+  display: flex;
+  padding: 0.15625rem;
+  padding-top: 0.234375rem;
+}
+
+.header .header-top .header-top-left {
+  padding-top: 0.078125rem;
+  flex: 30%;
+}
+
+.header .header-top .header-top-left i {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.header .header-top .header-top-mid {
+  flex: 70%;
+  position: relative;
+}
+
+.header .header-top .header-top-mid #search {
+  width: 100%;
+  padding-left: 0.078125rem;
+  border-radius: 0.046875rem;
+  border: 0;
+  background-color: #eee;
+  height: 0.390625rem;
+}
+
+.header .header-top .header-top-mid #search-logo {
+  position: absolute;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  top: 3px;
+  right: 5px;
+  background: url("img/search.png") no-repeat;
+  background-size: auto 0.3125rem;
+}
+
+.header .header-top .header-top-fot {
+  flex: 10%;
+}
+
+.header .header-top .header-top-fot a {
+  margin-left: 0.09375rem;
+  display: block;
+  width: 0.390625rem;
+  height: 0.390625rem;
+  background: url("img/mydope.png") no-repeat;
+  background-size: auto 0.390625rem;
+}
+
+.header .header-bot {
+  height: 0.546875rem;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #000000;
+}
+
+#box {
+  height: 2000px;
+}
