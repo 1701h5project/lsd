@@ -1,0 +1,9 @@
+requirejs(["config"],function(){
+	requirejs(["zhjquery"],function(){
+		$(function(){
+			$('.header').load('header.html');
+			$('.footer').load('footer.html');
+			$.getScript('../js/footer.js');
+		});
+	});
+});
