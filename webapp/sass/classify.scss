@@ -1,0 +1,19 @@
+.clickTitle{border-bottom: 2px solid #f60;color: #f60;}
+.top{
+	text-align: center;
+	span{display: inline-block;line-height: 40px;height: 40px;padding:0px 10px;}
+}
+
+.main{
+	display: flex;
+	ul::-webkit-scrollbar{width: 0;height: 0;}
+	ul{
+		flex:0.25;overflow-x: hidden;overflow-y:auto;
+		li{
+			line-height: 50px;text-align: center;
+			span{display: inline-block;line-height: 50px;height: 50px;}
+		}
+	}
+	.showInfo{flex:0.75;background:purple;}
+}
+ 

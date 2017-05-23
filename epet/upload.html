@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script type="text/javascript" src="../libs/jquery/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../libs/jquery/jquery.form.js"></script>
+	<script type="text/javascript" src="../libs/common/global.js"></script>
+</head>
+<body>
+	<form>
+	  	<input type="text" name="username">
+	  	<input type="password" name="password">
+		<input type="file" name="photos" /><br/>  
+		<input type="file" name="photos" /><br/>  
+		<input type="file" name="photos" /><br/>  
+	  	<input type="button" name="" value="上传">
+	</form>	
+
+	<img src="../upload/07f4b006714e3bc21b34e0e52f2e67b0" alt="">
+
+	<script type="text/javascript">
+		$(function(){
+			$(':button').click(function(){
+				// $.post('DBHelper.php', {name: $('[name=name]').val()}, function(response){
+				// 	console.log(response);
+				// })		
+				$('form').ajaxSubmit({
+					type: 'post',
+					url: erp.baseUrl + 'upload',
+					success:function(data){
+                        console.log(data);
+                    },
+                    error:function(XmlHttpRequest,textStatus,errorThrown){
+                        console.log(XmlHttpRequest);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                    }
+				})		
+			})
+		})
+	</script>
+</body>
+</html>
