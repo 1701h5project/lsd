@@ -88,6 +88,42 @@
     background-color: #f3f4f5;
     width: 100%;
     .box{
+        .main-lbt{
+            width: 100%;
+            height: 2.140625rem;
+            position: relative;
+            overflow: hidden;
+            ul{
+                position: absolute;
+                width: 25rem;
+                li{
+                    float: left;
+                    a{
+                        img{
+                            height: 2.140625rem;
+                            width: 5rem;
+                        }
+                    }
+                }
+            }
+            #dot{
+                position: absolute;
+                height: 0.46875rem;
+                bottom: -0.15625rem;
+                left: 1.8125rem;
+                .swiper-pagination-bullet{
+                    display: inline-block;
+                    margin-right:0.15625rem;
+                    width: 0.15625rem;
+                    height: 0.15625rem;
+                    border-radius: 50%;
+                    background-color: #eee;
+                }
+                .swiper-pagination-bullet-active{
+                    background-color: yellow;
+                }
+            }
+        }
         #banner-top{
             width: 100%;
             ul{
@@ -338,19 +374,19 @@
         }
         #fot-home{
             background: url('img/main_tab_1_sel.png') no-repeat center;
-            background-size: auto 40px;
+            background-size: auto 0.625rem;
         }
         #fot-classify{
             background: url('img/main_tab_2.png') no-repeat center;
-            background-size: auto 40px;
+            background-size: auto 0.625rem;
         }
         #fot-buycar{
             background: url('img/main_tab_3.png') no-repeat center;
-            background-size: auto 40px;
+            background-size: auto 0.625rem;
         }
         #fot-center{
             background: url('img/main_tab_4.png') no-repeat center;
-            background-size: auto 40px;
+            background-size: auto 0.625rem;
         }
         
     }

@@ -26,6 +26,8 @@ html, body {
 
 .container {
   min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -130,6 +132,47 @@ html, body {
   flex-direction: column;
   background-color: #f3f4f5;
   width: 100%;
+}
+
+.main .box .main-lbt {
+  width: 100%;
+  height: 2.140625rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.main .box .main-lbt ul {
+  position: absolute;
+  width: 25rem;
+}
+
+.main .box .main-lbt ul li {
+  float: left;
+}
+
+.main .box .main-lbt ul li a img {
+  height: 2.140625rem;
+  width: 5rem;
+}
+
+.main .box .main-lbt #dot {
+  position: absolute;
+  height: 0.46875rem;
+  bottom: -0.15625rem;
+  left: 1.8125rem;
+}
+
+.main .box .main-lbt #dot .swiper-pagination-bullet {
+  display: inline-block;
+  margin-right: 0.15625rem;
+  width: 0.15625rem;
+  height: 0.15625rem;
+  border-radius: 50%;
+  background-color: #eee;
+}
+
+.main .box .main-lbt #dot .swiper-pagination-bullet-active {
+  background-color: yellow;
 }
 
 .main .box #banner-top {
@@ -400,20 +443,20 @@ html, body {
 
 .footer ul #fot-home {
   background: url("img/main_tab_1_sel.png") no-repeat center;
-  background-size: auto 40px;
+  background-size: auto 0.625rem;
 }
 
 .footer ul #fot-classify {
   background: url("img/main_tab_2.png") no-repeat center;
-  background-size: auto 40px;
+  background-size: auto 0.625rem;
 }
 
 .footer ul #fot-buycar {
   background: url("img/main_tab_3.png") no-repeat center;
-  background-size: auto 40px;
+  background-size: auto 0.625rem;
 }
 
 .footer ul #fot-center {
   background: url("img/main_tab_4.png") no-repeat center;
-  background-size: auto 40px;
+  background-size: auto 0.625rem;
 }

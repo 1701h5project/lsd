@@ -5,6 +5,13 @@ requirejs(["config"],function(){
 		});
 		//轮播图
 		$(function(){
+			var swiper = new Swiper('.swiper-container2', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true,
+		        centeredSlides: true,
+		        autoplay: 3000,
+		        autoplayDisableOnInteraction: false
+		    });
 			var swiper = new Swiper('.swiper-container1', {
 		        pagination: '.swiper-pagination',
 		        paginationClickable: true,
