@@ -4,26 +4,23 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>后台管理系统</title>
-	<style>
-		.datalist{text-align: center;}
-	</style>
 
-	<script type="text/javascript" src="epet/libs/jquery-3.1.1.js"></script>
-	<script type="text/javascript" src="epet/libs/global.js"></script>
-	<script src="epet/js/index.js"></script>
+	<script type="text/javascript" src="libs/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="libs/global.js"></script>
+	<script src="js/index.js"></script>
 
 </head>
 <body>
 
 	<h1>后台管理系统</h1>
 
-	<button class="showShop">商品信息库</button>
-	<button class="showLogo">品牌信息库</button>
+	<a href="html/showShop.html"><button class="showShop">商品信息库</button></a>
+	<a href="html/showLogo.html"><button class="showLogo">品牌信息库</button></a>
 
 	<br><br>
 
 	<div class="shop">
-		<table class="datalist">
+		<table class="datalist" style="text-align: center;">
 			<tr>
 				<td></td>
 				<td>id</td>
@@ -45,14 +42,6 @@
 				<td><button class="btn_del">删除</button></td>
 			</tr>
 		</table>
-	</div>
-
-	<div class="showShop">
-		
-	</div>
-
-	<div class="showLogo">
-		
 	</div>
 
 </body>

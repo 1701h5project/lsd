@@ -60,6 +60,29 @@ var remove = function(_collection, data){
 	})
 }
 
+var getShop = function(_collection,data,callback){
+	db.open(function(error,db){
+		if(error){
+			console.log('connect db:', error);
+		}
+		//Account => 集合名（表名）
+		db.collection(_collection, function(error, collection){
+			if(error){
+				console.log(error)	
+			} else {
+				db.collection('shop',function(error,collection){
+					collection.find().toArray(function(error,shops){
+						// console.log(shops);
+						callback(shops);
+					})
+				})
+			}
+			db.close();
+		})		
+	})
+}
+
 exports.exists = exists;
 exports.save = save;
 exports.remove = remove;
+exports.getShop = getShop;

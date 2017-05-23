@@ -50,6 +50,14 @@ app.get('/index',function(request, response){
     if(result){
       db.remove('shop', request.query);
       response.send('{state: true}');      
+    }else{
+      response.send('{state: false, message: "用户名不存在"}');
     }
   })
+})
+
+app.post('/showShop',urlencodedParser,function(request,response){
+    db.getShop('shop',request.body,function(result){
+      response.send(result);      
+    });
 })
