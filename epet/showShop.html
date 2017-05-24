@@ -3,17 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<script src="../libs/jquery-3.1.1.js"></script>
-	<script src="../libs/global.js"></script>
-	<script src="../js/index.js"></script>
+	<script src="libs/jquery-3.1.1.js"></script>
+	<script src="js/showShop.js"></script>
 	<script>
 		$(function(){
-			$.post('/showShop',function(response){
+			$("input[name='focusIn']").focus();
+			$.post('/showShop',{collection:'shop'},function(response){
 				var arr = response;
 				var str = JSON.stringify(arr)
 				for(i=0;i<arr.length;i++){
 					$('.datalist').append('<tr><td><input type="checkbox"></td><td><input type="text" class="content1" value="'+arr[i].id+'"></td><td><input type="text" class="content2" value="'+arr[i].imgurl+'"></td><td><input type="text" class="content3" value="'+arr[i].name+'"></td><td><input type="text" class="content4" value="'+arr[i].produce+'"></td><td><input type="text" class="content5" value="'+arr[i].price+'"></td><td><input type="text" class="content6" value="'+arr[i].specification+'"></td><td><button class="btn_add">添加</button></td><td><button class="btn_del">删除</button></td></tr>');
 				}
+			})
+
+			$('button').click(function(){
+				window.location.reload();
 			})
 		})
 	</script>
@@ -34,7 +38,7 @@
 		</tr>
 		<tr>
 			<td><input type="checkbox"></td>
-			<td><input type="text" class="content1"></td>
+			<td><input type="text" class="content1" name="focusIn"></td>
 			<td><input type="text" class="content2"></td>
 			<td><input type="text" class="content3"></td>
 			<td><input type="text" class="content4"></td>

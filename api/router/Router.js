@@ -10,10 +10,10 @@ exports.Register = function(express){
 	ProductRouter.Register(app);
 
 	app.get('/', function(request, response){
-		response.send('root');
+		response.send('root hello world');
 	})
 	
 	app.use(express.static(path.join(path.resolve(__dirname, '../../'), '/')));
 
-	app.listen(888);
+	app.listen(3000);
 }

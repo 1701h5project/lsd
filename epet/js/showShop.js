@@ -1,18 +1,13 @@
 $(function(){
 
-	// // 输入框内容重置为空
-	// $('.shop').on('click','button',function(){
-	// 	$('input').val(' ');
-	// })
-
 	// //获取table内数据
 	// console.log($("table tr td").text())
 	// console.log($("table tr td:eq(1)").text())
 	
 	//重置h1
 	$('input').focus(function(){
-		$('h1').text('后台管理系统');
-	})	
+		$('h1').text('商品信息库');
+	})
 	
 	//添加信息
 	$('.btn_add').click(function(){
