@@ -150,13 +150,16 @@
                                 height: 0.5rem;
                                 width: 1.171875rem;
                                 color: #666;
+                                text-decoration: none;
                             }
                             .price{
                                 color: red;
                                 font-size: 14px;
+                                text-decoration: none;
                             }
                             p{
                                 color: #ccc;
+                                text-decoration: line-through;
                             }
                         }
                     }

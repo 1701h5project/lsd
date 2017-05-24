@@ -218,15 +218,18 @@ html, body {
   height: 0.5rem;
   width: 1.171875rem;
   color: #666;
+  text-decoration: none;
 }
 
 .main .box .section3 .section3-bot ul li a .price {
   color: red;
   font-size: 14px;
+  text-decoration: none;
 }
 
 .main .box .section3 .section3-bot ul li a p {
   color: #ccc;
+  text-decoration: line-through;
 }
 
 .main .box .section4 {

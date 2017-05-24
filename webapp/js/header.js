@@ -1,4 +1,11 @@
 requirejs(["config"],function(){
-	requirejs(["zh-jquery","jquerycookie","jqueryUi"],function(){
+	requirejs(["zhjquery"],function(){
+		$(function(){
+			var localtion=window.localStorage.getItem('localtion-sel');
+			console.log(localtion)
+			if(localtion){
+				$('#localtion').text(localtion.substring(0,2));
+			}
+		});
 	});
 });

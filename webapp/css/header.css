@@ -52,6 +52,10 @@ html, body {
   flex: 30%;
 }
 
+.header .header-top .header-top-left a {
+  color: #666;
+}
+
 .header .header-top .header-top-left i {
   position: relative;
   display: inline-block;

@@ -13,6 +13,9 @@
        .header-top-left{
            padding-top: 0.078125rem;
            flex:30%;
+           a{
+               color:#666;
+           }
            i{
                position:relative;
                display: inline-block;
@@ -182,7 +185,7 @@
                 position: relative;
                 ul{
                     position: absolute;
-                    width: 31.25rem;
+                    width: 50rem;
                     li{
                         height: 1.796875rem;
                         width: 1.296875rem;
@@ -197,9 +200,11 @@
                             .price{
                                 color: red;
                                 font-size: 14px;
+                                text-decoration:none;
                             }
                             p{
                                 color: #ccc;
+                                text-decoration: line-through;
                             }
                         }
                     }

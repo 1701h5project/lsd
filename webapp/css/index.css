@@ -52,6 +52,10 @@ html, body {
   flex: 30%;
 }
 
+.header .header-top .header-top-left a {
+  color: #666;
+}
+
 .header .header-top .header-top-left i {
   position: relative;
   display: inline-block;
@@ -243,7 +247,7 @@ html, body {
 
 .main .box .section1 .section1-bot ul {
   position: absolute;
-  width: 31.25rem;
+  width: 50rem;
 }
 
 .main .box .section1 .section1-bot ul li {
@@ -265,10 +269,12 @@ html, body {
 .main .box .section1 .section1-bot ul li a .price {
   color: red;
   font-size: 14px;
+  text-decoration: none;
 }
 
 .main .box .section1 .section1-bot ul li a p {
   color: #ccc;
+  text-decoration: line-through;
 }
 
 .main .box .section2 {

@@ -3,7 +3,7 @@ requirejs(["config"],function(){
 		$(function(){
 			$('.header').load('header.html');
 			$('.footer').load('footer.html');
-			$.getScript('../js/footer.js');
+			$.getScript('../js/header.js');
 		});
 		//轮播图
 		$(function(){
@@ -35,12 +35,27 @@ requirejs(["config"],function(){
 		
 		//滑动图
 		$(function(){
-			var swiper = new Swiper('.swiper-container1', {
-		        slidesPerView: 4,
-		        paginationClickable: true,
-		        freeMode: true
-		    });
-		})
-		
+			$.get('/catcan-getdata',{canDiscount:"yes"},function(data){
+				console.log(data)
+				var res='';
+				for(var i=0;i<data[0].imgURL.length;i++){
+					res+=`<li class="swiper-slide">
+									<a href="">
+										<img src="../img/index/${data[0].imgURL[i]}"/>
+										<p class="name">${data[0].desc[i]}</p>
+										<p class="price">￥${data[0].price[i]}</p>
+										<p>${(Number(data[0].price[i])*1.2).toFixed(2)}</p>
+									</a>
+								</li>`
+				};
+				$('#ul1').append(res);
+			
+				var swiper = new Swiper('.swiper-container1',{
+			        slidesPerView: 4,
+			        paginationClickable: true,
+			        freeMode: true
+			    });
+			});
+		});
 	});
 });
