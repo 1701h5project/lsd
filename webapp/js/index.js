@@ -5,14 +5,14 @@ requirejs(["config"],function(){
 		});
 		//ajax请求
 		$(function(){
-			$.get('/index-getdata',{homeDiscount:"yes"},function(data){
+			$.get('/index-getdata',{Activity:"yes"},function(data){
 				var res='';
-				for(var i=0;i<data[0].imgURL.length;i++){
-					res+=`<li class="swiper-slide">
-								<a href="">
-									<img src="img/index/${data[0].imgURL[i]}"/>
-									<p class="price">￥${data[0].price[i]}</p>
-									<p>￥${(Number(data[0].price[i])*1.2).toFixed(2)}</p>
+				for(var i=0;i<data.length;i++){
+					res+=`<li class="swiper-slide" data-idx="${data[i].id}">
+								<a href="html/details.html">
+									<img src="img/product/${(data[i].imgUrl)[0]}"/>
+									<p class="price">${(data[i].price)[0]}</p>
+									<p>${(data[i].price)[1]}</p>
 								</a>
 							</li>`
 				};
@@ -23,7 +23,36 @@ requirejs(["config"],function(){
 			        paginationClickable: true,
 			        freeMode: true
 		   		 });
-			})
+		   		 
+		   		 $.get('/catfood-getdata',{catfoodDiscount:"yes"},function(data){
+					var res='';
+					for(var i=0;i<data[0].imgURL.length;i++){
+						res+= `<div class="product-sec">
+									<div class="product-sec-t">
+										<span id="product-title">
+											${data[0].name[i]}
+										</span>
+										<span id="product-tip">
+											${data[0].desc[i]}
+										</span>
+									</div>
+									<div class="product-sec-b">
+										<a href=""><img src="img/index/${data[0].imgURL[i]}"/></a>
+									</div>
+								</div>`
+								
+					};
+					$('.section5').append(res);
+				}); 
+			});
+			
+			//商品点击事件生成本地缓存
+			$('#ul1').on("click",'li',function(){
+				console.log($(this).attr('data-idx'));
+				window.localStorage.setItem('id',$(this).attr('data-idx'));
+			});
+			console.log(window.localStorage.getItem('id'))
+			
 		});
 		//轮播图
 		$(function(){
@@ -46,7 +75,7 @@ requirejs(["config"],function(){
 		$(function(){
 			var timer = setInterval(countDown,1000);
 			var times;
-			var end = Date.parse('2017/5/25');
+			var end = Date.parse('2017/5/26');
 			function countDown(){
 				var now = Date.now();
 				times=Math.floor((end - now)/1000);
@@ -72,7 +101,6 @@ requirejs(["config"],function(){
 				$('#localtion').text(localtion.substring(0,2));
 			}
 		});
-		
-		
+			
 	});
 });

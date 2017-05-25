@@ -1,0 +1,228 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html, body {
+  font-size: 64px;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  height: 0.78125rem;
+  display: flex;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.header .tap-pre {
+  flex: 20%;
+  position: relative;
+  top: 0.265625rem;
+  left: 0.296875rem;
+  height: 0.3125rem;
+  width: 0.34375rem;
+  background: url("img/personal-bico1.png") no-repeat;
+  background-size: 0.1875rem 0.265625rem;
+}
+
+.header span {
+  text-align: center;
+  flex: 60%;
+  font-size: 18px;
+  align-self: center;
+}
+
+.header .tap-menu {
+  flex: 20%;
+  position: relative;
+  top: 0.234375rem;
+  left: 0.34375rem;
+  height: 0.3125rem;
+  width: 0.3125rem;
+  background: url("img/imgtk-new.png") no-repeat;
+  background-size: 0.3125rem;
+}
+
+.onsale-menu {
+  height: 1.140625rem;
+  padding-top: 0.15625rem;
+  display: none;
+}
+
+.onsale-menu ul {
+  display: flex;
+}
+
+.onsale-menu ul li {
+  height: 0.8125rem;
+  flex: 1;
+}
+
+.onsale-menu ul li a {
+  text-align: center;
+}
+
+.onsale-menu ul li a span {
+  display: block;
+  height: 0.46875rem;
+}
+
+.onsale-menu ul li a p {
+  font-size: 14px;
+  color: #666;
+}
+
+.onsale-menu ul .onsale-home a span {
+  background: url("img/head_icon1.png") 50% 0 no-repeat;
+  background-size: auto 100%;
+}
+
+.onsale-menu ul .onsale-classify a span {
+  background: url("img/head_icon2.png") 50% 0 no-repeat;
+  background-size: auto 100%;
+}
+
+.onsale-menu ul .onsale-buycar a span {
+  background: url("img/head_icon4.png") 50% 0 no-repeat;
+  background-size: auto 100%;
+}
+
+.onsale-menu ul .onsale-epet a span {
+  background: url("img/head_icon5.png") 50% 0 no-repeat;
+  background-size: auto 100%;
+}
+
+.catList-search {
+  height: 0.9375rem;
+  position: relative;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.catList-search #search {
+  width: 90%;
+  padding-left: 0.078125rem;
+  border-radius: 0.15625rem;
+  border: 0;
+  background-color: #eee;
+  height: 0.625rem;
+  margin-top: 0.15625rem;
+  margin-left: 5%;
+  padding-left: 10%;
+}
+
+.catList-search #search-logo {
+  position: absolute;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  top: 0.3125rem;
+  left: 0.359375rem;
+  background: url("img/search.png") no-repeat;
+  background-size: auto 0.3125rem;
+}
+
+.catList-sel {
+  height: 0.625rem;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.catList-sel ul {
+  display: flex;
+  text-align: center;
+}
+
+.catList-sel ul li {
+  flex: 1;
+  font-size: 14px;
+  color: #666;
+  line-height: 0.625rem;
+}
+
+.catList-sel ul li:nth-of-type(1) {
+  color: red;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #FFFFFF;
+}
+
+.main .box {
+  width: 100%;
+}
+
+.main .box .catList-main {
+  width: 100%;
+}
+
+.main .box .catList-main li {
+  width: 100%;
+  height: 2.03125rem;
+  border-bottom: 1px solid #F1F1F1;
+  padding: 0.15625rem;
+}
+
+.main .box .catList-main li a {
+  display: block;
+  width: 100%;
+  height: 2.03125rem;
+  color: #666;
+}
+
+.main .box .catList-main li a img {
+  float: left;
+  height: 1.5625rem;
+}
+
+.main .box .catList-main li a .pro-detial {
+  float: left;
+  width: 2.890625rem;
+  margin-left: 0.078125rem;
+}
+
+.main .box .catList-main li a .pro-detial h1 {
+  color: #000;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.main .box .catList-main li a .pro-detial p {
+  margin-top: 0.125rem;
+  font-size: 14px;
+  color: #B90000;
+  font-weight: bold;
+}
+
+.main .box .catList-main li a .pro-detial span {
+  margin-top: 0.125rem;
+  display: block;
+  font-size: 12px;
+  color: #ccc;
+}

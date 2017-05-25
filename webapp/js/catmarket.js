@@ -16,6 +16,7 @@ requirejs(["config"],function(){
 		    });
 		});
 		
+		
 		//tab标签切换
 		$(function(){
 			$('.tab').on('click','li',function(idx,ele){
@@ -35,16 +36,15 @@ requirejs(["config"],function(){
 		
 		//滑动图
 		$(function(){
-			$.get('/catcan-getdata',{canDiscount:"yes"},function(data){
-				console.log(data)
+			$.get('/catcan-getdata',{Activity:"yes"},function(data){
 				var res='';
-				for(var i=0;i<data[0].imgURL.length;i++){
-					res+=`<li class="swiper-slide">
-									<a href="">
-										<img src="../img/index/${data[0].imgURL[i]}"/>
-										<p class="name">${data[0].desc[i]}</p>
-										<p class="price">￥${data[0].price[i]}</p>
-										<p>${(Number(data[0].price[i])*1.2).toFixed(2)}</p>
+				for(var i=0;i<data.length;i++){
+					res+=`<li class="swiper-slide" data-idx="${data[i].id}">
+									<a href="details.html">
+										<img src="../img/product/${(data[i].imgUrl)[0]}"/>
+										<p class="name">${data[i].name}</p>
+										<p class="price">${(data[i].price)[0]}</p>
+										<p>${(data[i].price)[1]}</p>
 									</a>
 								</li>`
 				};
@@ -56,6 +56,13 @@ requirejs(["config"],function(){
 			        freeMode: true
 			    });
 			});
+			
+			//商品点击事件生成本地缓存
+			$('#ul1').on("click",'li',function(){
+				console.log($(this).attr('data-idx'));
+				window.localStorage.setItem('id',$(this).attr('data-idx'));
+			});
+			console.log(window.localStorage.getItem('id'))
 		});
 	});
 });

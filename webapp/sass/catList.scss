@@ -1,0 +1,182 @@
+@import 'cssformat';
+
+.header{
+    height: 0.78125rem;
+    display: flex;
+    border-bottom: 1px solid #f1f1f1;
+    .tap-pre{
+        flex: 20%;
+        position: relative;
+        top:0.265625rem;
+        left: 0.296875rem;
+        height: 0.3125rem;
+        width: 0.34375rem;
+        background: url('img/personal-bico1.png') no-repeat;
+        background-size: 0.1875rem 0.265625rem;
+    }
+    span{
+        text-align: center;
+        flex: 60%;
+        font-size: 18px;
+        align-self: center;
+    }
+    .tap-menu{
+        flex: 20%;
+        position: relative;
+        top:0.234375rem;
+        left: 0.34375rem;
+        height: 0.3125rem;
+        width: 0.3125rem;
+        background: url('img/imgtk-new.png') no-repeat;
+        background-size: 0.3125rem;
+    }
+}
+.onsale-menu{
+    height: 1.140625rem;
+    padding-top: 0.15625rem;
+    display: none;
+    ul{
+        display: flex;
+        li{
+            height: 0.8125rem;
+            flex: 1;  
+            a{
+                text-align: center;
+                span{
+                    display:block;
+                    height: 0.46875rem;
+                }
+                p{
+                    font-size: 14px;
+                    color: #666;
+                }
+            }
+        }
+        .onsale-home{
+            a{
+                span{
+                    background: url('img/head_icon1.png') 50% 0 no-repeat;
+                    background-size: auto 100%;
+                }
+            }
+        }
+        .onsale-classify{
+            a{
+                span{
+                    background: url('img/head_icon2.png') 50% 0 no-repeat;
+                    background-size: auto 100%;
+                }
+            }
+        }
+        .onsale-buycar{
+            a{
+                span{
+                    background: url('img/head_icon4.png') 50% 0 no-repeat;
+                    background-size: auto 100%;
+                }
+            }
+        }
+        .onsale-epet{
+            a{
+                span{
+                    background: url('img/head_icon5.png') 50% 0 no-repeat;
+                    background-size: auto 100%;
+                }
+            }
+        }
+    }
+}
+.catList-search{
+    height: 0.9375rem;
+    position: relative;
+    border-bottom: 1px solid #f1f1f1;
+    #search{
+       width: 90%;;
+       padding-left: 0.078125rem;
+       border-radius: 0.15625rem;
+       border: 0;
+       background-color: #eee;
+       height: 0.625rem;
+       margin-top: 0.15625rem;
+       margin-left: 5%;
+       padding-left: 10%;
+   }
+   #search-logo{
+       position: absolute; 
+       width: 0.3125rem;
+       height: 0.3125rem;
+       top: 0.3125rem;
+       left: 0.359375rem;
+       background: url('img/search.png') no-repeat;
+       background-size: auto 0.3125rem;
+   }
+}
+.catList-sel{
+    height: 0.625rem;
+    border-bottom: 1px solid #f1f1f1;
+    ul{
+        display: flex;
+        text-align: center;
+        li{
+            flex: 1;
+            font-size:14px;
+            color: #666;
+            line-height: 0.625rem;
+        }
+        li:nth-of-type(1){
+            color: red;
+        }
+    }
+}
+.main{
+    display: flex;
+    flex:1;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background-color: #FFFFFF; 
+    .box{
+         width: 100%;
+       .catList-main{
+            width: 100%;
+           li{
+               width: 100%;
+               height: 2.03125rem;
+               border-bottom: 1px solid #F1F1F1;
+               padding: 0.15625rem;
+               a{
+                   display: block;
+                   width: 100%;
+                   height: 2.03125rem;
+                   color:#666;
+                   img{
+                       float: left;
+                       height: 1.5625rem;
+                   } 
+                   .pro-detial{
+                       float: left;
+                       width: 2.890625rem;
+                       margin-left:0.078125rem;
+                       h1{
+                            color:#000 ;
+                            font-size: 16px;
+                            font-weight: normal;
+                       }
+                       p{
+                           margin-top:0.125rem ;
+                           font-size: 14px;
+                           color: #B90000;
+                           font-weight: bold;
+                       }
+                       span{
+                           margin-top: 0.125rem;
+                           display: block;
+                           font-size: 12px;
+                           color: #ccc;
+                       }
+                   }  
+               }   
+           }
+       }  
+    }
+}
+

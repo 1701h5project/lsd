@@ -4,14 +4,14 @@ exports.Register = function(app){
 	//获取主页数据
 	app.get('/index-getdata',function(request,respond){
 		console.log(request.query)
-		db.indexGetdata('shop', request.query, 'homeDiscount', function(data){
+		db.indexGetdata('shop', request.query, 'Activity', function(data){
 			 respond.send(data);
 		})
 	});
 	//获取罐头页数据
 	app.get('/catcan-getdata',function(request,respond){
 		console.log(request.query)
-		db.indexGetdata('shop', request.query, 'canDiscount', function(data){
+		db.indexGetdata('shop', request.query, 'Activity', function(data){
 			 respond.send(data);
 		})
 	});
@@ -23,6 +23,12 @@ exports.Register = function(app){
 		})
 	});
 	
+	app.get('/product-data',function(request,respond){
+		console.log(request.query)
+		db.indexGetdata('shop', request.query, 'id', function(data){
+			 respond.send(data);
+		})
+	});
 	
 }
 
