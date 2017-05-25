@@ -1,0 +1,119 @@
+@import 'cssformat';
+
+#homepage{
+    border-bottom:0;
+    a{
+        color: #666;
+    }
+}
+#classroom{
+    border-bottom:2px solid red;
+    a{
+        color:red;
+    } 
+}
+.main{
+    display: flex;
+    flex:1;
+    overflow-x:hidden;
+    overflow-y:auto;
+    flex-direction: column;
+    background-color: #f3f4f5;
+    width: 100%;
+    .box{
+        .section1{
+            width: 100%;
+            background-color: #fff;
+            height: 2.09375rem;
+            position: relative;
+            overflow: hidden;
+            ul{
+                position: absolute;
+                width: 25rem;
+                li{
+                    float: left;
+                    a{
+                        img{
+                            height: 2.09375rem;
+                            width: 5rem;
+                        }
+                    }
+                }
+            }
+            #dot{
+                position: absolute;
+                height: 0.46875rem;
+                bottom: -0.15625rem;
+                left: 1.765625rem;
+                .swiper-pagination-bullet{
+                    display: inline-block;
+                    margin-right:0.15625rem;
+                    width: 0.15625rem;
+                    height: 0.15625rem;
+                    border-radius: 50%;
+                    background-color: #eee;
+                }
+                .swiper-pagination-bullet-active{
+                    background-color: yellow;
+                }
+            }
+        }
+        .section2{
+            height: 1.3125rem;
+            padding:0.15625rem 0;
+            background-color: #FFFFFF;
+            ul{
+                display: flex;
+                li{
+                    flex: 1;
+                    a{
+                        img{
+                           height: 1rem; 
+                        }
+                    }
+                }
+            }
+        }
+        .section3{
+            margin-top: 0.15625rem;
+            background-color: #FFFFFF;
+            .sec3-title{
+                height: 0.78125rem;  
+                padding-top: 0.203125rem;
+                span{
+                    margin: 0 auto;
+                    display: block;
+                    width: 1.40625rem;
+                    font-size: 16px;
+                    img{
+                        float: left;
+                        height: 0.359375rem;
+                    }
+                }
+            }
+            .sec3-m{
+                li{
+                    height: 3.125rem;
+                    margin-bottom: 0.3125rem;
+                    a{
+                        color: #666;
+                        img{
+                            height: 2.46875rem;
+                            margin: 0 auto;
+                        }
+                        span{
+                            margin: 0 auto;
+                            display: block;
+                            width: 4.53125rem;
+                            height: 0.546875rem;  
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;
+                            overflow: hidden;   
+                        }
+                    }  
+                }
+            }
+        }
+    }
+}

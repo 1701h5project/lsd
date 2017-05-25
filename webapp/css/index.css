@@ -1,0 +1,468 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html, body {
+  font-size: 64px;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  height: 1.375rem;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  border-bottom: 0;
+}
+
+.header .header-top {
+  height: 0.828125rem;
+  display: flex;
+  padding: 0.15625rem;
+  padding-top: 0.234375rem;
+}
+
+.header .header-top .header-top-left {
+  padding-top: 0.078125rem;
+  flex: 30%;
+}
+
+.header .header-top .header-top-left a {
+  color: #666;
+}
+
+.header .header-top .header-top-left i {
+  position: relative;
+  display: inline-block;
+  top: 2px;
+}
+
+.header .header-top .header-top-mid {
+  flex: 70%;
+  position: relative;
+}
+
+.header .header-top .header-top-mid #search {
+  width: 100%;
+  padding-left: 0.078125rem;
+  border-radius: 0.046875rem;
+  border: 0;
+  background-color: #eee;
+  height: 0.390625rem;
+}
+
+.header .header-top .header-top-mid #search-logo {
+  position: absolute;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  top: 3px;
+  right: 5px;
+  background: url("img/search.png") no-repeat;
+  background-size: auto 0.3125rem;
+}
+
+.header .header-top .header-top-fot {
+  flex: 10%;
+}
+
+.header .header-top .header-top-fot a {
+  margin-left: 0.09375rem;
+  display: block;
+  width: 0.390625rem;
+  height: 0.390625rem;
+  background: url("img/mydope.png") no-repeat;
+  background-size: auto 0.390625rem;
+}
+
+.header .header-bot {
+  height: 0.546875rem;
+  padding-top: 0.09375rem;
+}
+
+.header .header-bot ul {
+  height: 0.4375rem;
+  display: flex;
+  width: 100%;
+}
+
+.header .header-bot ul li {
+  text-align: center;
+  flex: 1;
+}
+
+.header .header-bot ul li a {
+  font-size: 14px;
+  color: #666;
+}
+
+.header .header-bot ul li:nth-of-type(1) {
+  border-bottom: 2px solid red;
+}
+
+.header .header-bot ul li:nth-of-type(1) a {
+  color: red;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+  background-color: #f3f4f5;
+  width: 100%;
+}
+
+.main .box .main-lbt {
+  width: 100%;
+  height: 2.140625rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.main .box .main-lbt ul {
+  position: absolute;
+  width: 25rem;
+}
+
+.main .box .main-lbt ul li {
+  float: left;
+}
+
+.main .box .main-lbt ul li a img {
+  height: 2.140625rem;
+  width: 5rem;
+}
+
+.main .box .main-lbt #dot {
+  position: absolute;
+  height: 0.46875rem;
+  bottom: -0.15625rem;
+  left: 1.8125rem;
+}
+
+.main .box .main-lbt #dot .swiper-pagination-bullet {
+  display: inline-block;
+  margin-right: 0.15625rem;
+  width: 0.15625rem;
+  height: 0.15625rem;
+  border-radius: 50%;
+  background-color: #eee;
+}
+
+.main .box .main-lbt #dot .swiper-pagination-bullet-active {
+  background-color: yellow;
+}
+
+.main .box #banner-top {
+  width: 100%;
+}
+
+.main .box #banner-top ul {
+  display: flex;
+}
+
+.main .box #banner-top ul li {
+  flex: 1;
+}
+
+.main .box #banner-top ul li a img {
+  height: 1rem;
+}
+
+.main .box .section1 {
+  width: 100%;
+  margin-top: 0.15625rem;
+  height: 2.8125rem;
+  background-color: #FFFFFF;
+}
+
+.main .box .section1 .section1-top {
+  height: 1rem;
+  padding: 0.15625rem;
+  display: flex;
+}
+
+.main .box .section1 .section1-top .section1-top-l {
+  flex: 20%;
+  height: 0.390625rem;
+  padding: 0.078125rem;
+}
+
+.main .box .section1 .section1-top .section1-top-l img {
+  height: 0.234375rem;
+}
+
+.main .box .section1 .section1-top .section1-top-mid {
+  flex: 60%;
+  text-align: center;
+}
+
+.main .box .section1 .section1-top .section1-top-mid span {
+  font-size: 14px;
+}
+
+.main .box .section1 .section1-top .section1-top-r {
+  flex: 20%;
+  position: relative;
+  top: -9px;
+  left: 11px;
+}
+
+.main .box .section1 .section1-top .section1-top-r a img {
+  height: 0.625rem;
+}
+
+.main .box .section1 .section1-bot {
+  width: 100%;
+  height: 1.8125rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.main .box .section1 .section1-bot ul {
+  position: absolute;
+  width: 50rem;
+}
+
+.main .box .section1 .section1-bot ul li {
+  height: 1.796875rem;
+  width: 1.296875rem;
+  float: left;
+}
+
+.main .box .section1 .section1-bot ul li a {
+  text-align: center;
+}
+
+.main .box .section1 .section1-bot ul li a img {
+  margin-left: 0.078125rem;
+  width: 1.046875rem;
+  height: 1.046875rem;
+}
+
+.main .box .section1 .section1-bot ul li a .price {
+  color: red;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.main .box .section1 .section1-bot ul li a p {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.main .box .section2 {
+  width: 100%;
+  margin-top: 0.15625rem;
+  height: 2.96875rem;
+  background-color: #fff;
+}
+
+.main .box .section2 .section2-top a img {
+  margin: 0 auto;
+  width: 5rem;
+  height: 0.46875rem;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.main .box .section2 .section2-mid-l {
+  float: left;
+}
+
+.main .box .section2 .section2-mid-l a img {
+  width: 2.15625rem;
+  height: 2.5rem;
+  border-right: 1px solid #f1f1f1;
+}
+
+.main .box .section2 .section2-mid-r-t {
+  float: right;
+}
+
+.main .box .section2 .section2-mid-r-t a img {
+  width: 2.84375rem;
+  height: 1.25rem;
+}
+
+.main .box .section2 .section2-mid-r-b {
+  float: right;
+}
+
+.main .box .section2 .section2-mid-r-b a img {
+  width: 2.84375rem;
+  height: 1.25rem;
+}
+
+.main .box .section3 {
+  width: 100%;
+  margin-top: 0.15625rem;
+  background-color: #fff;
+}
+
+.main .box .section3 a img {
+  margin: 0 auto;
+  width: 2.5rem;
+  height: 0.703125rem;
+}
+
+.main .box .section4 {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 0.15625rem;
+  height: 2.09375rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.main .box .section4 ul {
+  position: absolute;
+  width: 15rem;
+}
+
+.main .box .section4 ul li {
+  float: left;
+}
+
+.main .box .section4 ul li a img {
+  height: 2.078125rem;
+  width: 5rem;
+}
+
+.main .box .section4 #dot {
+  position: absolute;
+  height: 0.46875rem;
+  bottom: -0.15625rem;
+  left: 2.1875rem;
+}
+
+.main .box .section4 #dot .swiper-pagination-bullet {
+  display: inline-block;
+  margin-right: 0.15625rem;
+  width: 0.15625rem;
+  height: 0.15625rem;
+  border-radius: 50%;
+  background-color: #eee;
+}
+
+.main .box .section4 #dot .swiper-pagination-bullet-active {
+  background-color: yellow;
+}
+
+.main .box .section5 {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 0.15625rem;
+}
+
+.main .box .section5 .sec5-title {
+  border-bottom: 1px solid #ccc;
+}
+
+.main .box .section5 .sec5-title a img {
+  margin: 0 auto;
+  width: 2.5rem;
+  height: 0.703125rem;
+}
+
+.main .box .section5 .product-sec {
+  height: 2.765625rem;
+}
+
+.main .box .section5 .product-sec .product-sec-t {
+  line-height: 0.703125rem;
+  height: 0.703125rem;
+}
+
+.main .box .section5 .product-sec .product-sec-t #product-title {
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 0.15625rem;
+}
+
+.main .box .section5 .product-sec .product-sec-t #product-tip {
+  display: inline-block;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.main .box .section5 .product-sec .product-sec-b a img {
+  height: 2.078125rem;
+}
+
+.main .box .section6 {
+  width: 100%;
+  background-color: #fff;
+}
+
+.main .box .section6 .section6-title a img {
+  margin: 0 auto;
+  height: 0.703125rem;
+  width: 2.5rem;
+}
+
+.footer {
+  height: 0.859375rem;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+}
+
+.footer ul {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.footer ul li {
+  display: flex;
+  flex: 1;
+}
+
+.footer ul li a {
+  flex: 1;
+}
+
+.footer ul #fot-home {
+  background: url("img/main_tab_1_sel.png") no-repeat center;
+  background-size: auto 0.625rem;
+}
+
+.footer ul #fot-classify {
+  background: url("img/main_tab_2.png") no-repeat center;
+  background-size: auto 0.625rem;
+}
+
+.footer ul #fot-buycar {
+  background: url("img/main_tab_3.png") no-repeat center;
+  background-size: auto 0.625rem;
+}
+
+.footer ul #fot-center {
+  background: url("img/main_tab_4.png") no-repeat center;
+  background-size: auto 0.625rem;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品列表</title>
+		<meta name="viewport" id="vp" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link rel="stylesheet" href="../css/catList.css" />
+		<link rel="stylesheet" type="text/css" href="../../libs/font-awesome/css/font-awesome.min.css"/>
+		<script src="../../libs/require.js" data-main="../js/catList.js"></script>
+		<script>
+			var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+			document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<i class="tap-pre"></i>
+				<span>商品列表</span>
+				<i class="tap-menu"></i>
+			</div>
+			<div class="onsale-menu">
+				<ul>
+					<li class="onsale-home">
+						<a href="../index.html">
+							<span></span>
+							<p>首页</p>
+						</a>
+					</li>
+					<li class="onsale-classify">
+						<a href="">
+							<span></span>
+							<p>商品分类</p>
+						</a>
+					</li>
+					<li class="onsale-buycar">
+						<a href="">
+							<span></span>
+							<p>购物车</p>
+						</a>
+					</li>
+					<li class="onsale-epet">
+						<a href="">
+							<span></span>
+							<p>我的e宠</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="catList-search">
+				<span id="search-logo"></span>
+        		<input type="text" id="search" placeholder="输入商品关键字"/>
+			</div>
+			<div class="catList-sel">
+				<ul class="ul-sel">
+					<li>默认</li>
+					<li>销量</li>
+					<li>价格</li>
+					<li>筛选</li>
+				</ul>
+			</div>
+			<div class="main">
+				<div class="box">
+					<ul class="catList-main">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
