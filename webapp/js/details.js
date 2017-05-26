@@ -112,13 +112,12 @@ require(['config'], function() {
 					$('em').text(count)
 					
 					var $currentID = id;
-					var $currentSize=size;
+				
 					
 					//cookie中是否存在当前商品
 					var hasGoods = false;
 					for(var i = 0; i < carlist.length; i++) {
-						if(carlist[i].goodid === $currentID&&
-							carlist[i].gsize === $currentSize) {
+						if(carlist[i].goodid === $currentID) {
 							hasGoods = true;
 							carlist[i].qty+=input;
 							
