@@ -1,0 +1,499 @@
+@import 'reset.scss';
+@import 'base.scss';
+
+//----------头部------------
+header{
+    width:100%;
+    position:fixed;
+    z-index: 3;
+    .header_top{
+        width:100%;
+        padding:0.05rem 0;
+        text-align: center;
+        background:#EEEEEE;
+        border-bottom:0.005rem solid #ccc;
+        .header_left{
+            font-size: 0.3rem;
+            color:#999;
+
+        }
+        .header_id{
+            margin:0 0.75rem;
+            font-size: 0.15rem;
+        }
+        .history{
+            font-size: 0.2rem;
+            color:#999;
+            
+        }
+        .nav_btn{
+            @extend .history;
+            margin-left:0.1rem;
+        }
+    }
+    // 头部隐藏列表-------
+    .herderHide{
+        background:#EEEEEE;
+        padding:0.025rem 0;
+        display: flex;
+        justify-content: space-around;
+        a{
+            display: 1;
+            text-align: center;
+            color:#999;
+            i{
+                font-size: 0.25rem;
+                 em{
+                    font-size: 0.1rem;
+                    color:red;
+                }
+            }
+            p{
+                font-size: 0.12rem
+            }
+
+        }
+    }
+}
+
+//-------------内容详情------
+main{
+    width:100%;
+    padding:0.28rem 0 0.4rem 0;
+
+    // -------------
+    .good_detail{
+        position:relative;
+        background:#fff;
+        .flag{
+            display:block;
+            width:0.25rem;
+            height:0.15rem;
+            position: absolute;
+            margin:0.08rem 0 0 0.05rem ;
+            z-index: 2;
+        }
+        .good_kg{
+            // padding-top:3.5rem;
+            p{
+                font-size:0.12rem;
+                padding:0 0.05rem;
+            }
+        }
+        .good_referral{
+            p{
+                font-size: 0.12rem;
+                color:#E75656;
+                padding:0 0.05rem;
+            }
+        }
+        .good_price{
+            padding:0.025rem 0.05rem;
+            .price_left{
+                float:left;
+                .discount{
+             
+                    font-size:0.14rem;
+                    color:#E75656;
+               
+                }
+                del{
+                 
+                    font-size: 0.12rem;
+                   
+                    margin:0.025rem 0 0 0.05rem;
+                }
+            } 
+            .price_right{
+                float:right;
+                span.fa{
+
+                    font-size: 0.145rem;
+                    vertical-align: middle;
+                    margin:0.025rem 0.025rem 0 0;
+                }
+                a{
+
+                    font-size: 0.12rem;
+                    color:#999999;
+
+                }
+            }    
+        }
+
+    }
+    .combo{
+        width:100%;
+        // height:0.225rem;
+        background:#fff;
+        margin-top:0.1rem;
+        padding:0.1rem 0.05rem;
+        .combo_left{
+            float:left;
+            i.fa{
+                font-size: 0.14rem;
+                margin:0.02rem 0.025rem 0 0;
+            }
+            a{
+                font-size: 0.14rem;
+                color:#333333;
+               
+            }
+        }
+        .combo_right{
+            float:right;
+            a{
+                font-size: 0.14rem;
+                color:#999999;
+
+                i{
+                    font-size: 0.25rem;
+                    color:#999999;
+                    vertical-align: middle;
+                    margin-left:0.1rem;
+                }
+            }
+        }
+        
+    }
+    .kg{
+        width:100%;
+        // height:0.47rem;
+        background:#fff;
+        margin-top:0.1rem;
+        .selected{
+             padding:0.1rem 0.05rem;;
+            border-bottom:0.005rem solid #ccc;
+            
+
+            p{
+                font-size: 0.14rem;
+                margin-left:0.05rem;
+
+                span{
+                    font-size: 0.14rem;
+                    color:#F03E3E;
+                }
+            }
+        }
+        .elect_KG{
+            // height:0.26rem;
+            padding:0.05rem 0;
+            p{
+                color:#999999;
+                font-size: 0.14rem;
+                margin-left:0.05rem;
+                line-height:0.26rem;
+                a{
+                    display: inline-block;
+                    padding:0.05rem 0.1rem;
+                    border:0.005rem solid #ccc;
+                    border-radius: 0.03rem;
+                    text-align: center;
+                    line-height: 0.125rem;
+                    color:#000;
+                    &:hover{
+                        background:#F03E3E;
+                        color:#fff;
+                    }
+                }
+                a:nth-child(1){
+                    margin-left:0.35rem;
+                }
+            }
+        }
+    }
+    .buy_count{
+        width:100%;
+        // height:0.25rem;
+        background:#fff;
+        margin-top:0.1rem;
+         padding:0.1rem 0.05rem;
+        // line-height: 0.25rem;
+        p{
+            float:left;
+            width:0.6rem;
+            font-size: 0.14rem;
+        }
+        .emendation{
+            float:left;
+            margin-left:0.15rem;
+            .add{
+                display: block;
+                float:left;
+                width:0.2rem;
+                height:0.2rem;
+                border:1px solid #ccc;
+                text-align: center;
+            }
+            .minus{
+                @extend .add;
+            }
+            input{
+                float:left;
+                width:0.4rem;
+                height:0.2rem;
+                text-align: center;
+            }
+
+        }
+    }
+    .region{
+        width:100%;
+        // height:0.22rem;
+        margin-top:0.1rem;
+        background:#fff;
+         padding:0.1rem 0.05rem;
+        a{
+            // display: block;
+            font-size: 0.14rem;
+            color:#333333;
+            i{
+                font-size: 0.14rem;
+                margin:0 0.015rem;
+            }
+        }
+    }
+    .comment{
+        width:100%;
+        background:#fff;
+         padding:0.1rem 0 0.1rem 0.05rem;
+        margin-top:0.1rem;
+        .comment_top{
+            
+            .comment_left{
+                float:left;
+                p{
+                    font-size: 0.14rem;
+                    i{
+                        font-size:0.14rem;
+                        margin-right:0.025rem;
+                    }
+                }
+            }
+            .comment_right{
+                float:right;
+                p{
+                    color:#999999;
+                    
+                    font-size: 0.14rem;
+                    i{
+                        font-size:0.25rem;
+                        color:#999999;
+                        margin:0 0.05rem 0 0.15rem;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+    .buy_refer{
+        width:100%;
+        padding:0.1rem 0.05rem;
+        background:#fff;
+        margin-top: 0.1rem;
+        .refer_left{
+            float:left;
+            p{
+                font-size: 0.14rem;
+                i{
+                    font-size: 0.14rem;
+                    margin-right:0.025rem;
+                }
+            }
+        }
+        .refer_right{
+            float:right;
+            a{
+                font-size: 0.25rem;
+                color:#999999;
+            }
+            
+        }
+    }
+    .shops{
+        margin-top:0.1rem;
+        // height:2.12rem;
+        width:100%;
+        .shop_top{
+            background:#fff;
+            padding:0.05rem 0.05rem 0 0.05rem;
+            border-bottom: 0.005rem solid #ccc;
+            .shop_logo{
+                float:left;
+                width:0.785rem;
+                // height:0.4rem;
+                img{
+                    width:0.685rem;
+                    // height:0.4rem;
+                    border:0.005rem solid #ccc;
+                }
+            }
+            .birth{
+                float:left;
+         
+                .shop_name{
+                    font-size: 0.125rem;
+                }
+                .shop_country{
+                    font-size: 0.1rem;
+                    color:#999999;
+                }
+            }
+            .check_goods{
+                float:right;
+                a{
+                    font-size: 0.1rem;
+                    color:#999999;
+
+                    i{
+                        font-size:0.15rem;
+                        color:#999999;
+                        vertical-align: middle;
+                        margin-left:0.1rem;
+                    }
+                    span{
+                        color:#FF001F;
+                    }
+                }
+
+            }
+
+            .shop_msg{
+      
+                margin-top:0.07rem;
+                display: none;
+                p{
+                    font-size: 0.12rem;
+                }
+            }
+            .down{
+                    display: block;
+                    font-size: 0.15rem;
+                    color:#999;
+                    margin:0.1rem auto;
+                    text-align: center;
+                }
+        }
+        .shop_bottom{
+            height:1.215rem;
+            position: relative;
+            overflow: hidden;
+            background:#fff;
+            .swiper-wrapper{
+                .swiper-slide{
+                    max-width:0.81rem;
+                    img{
+                        width:0.81rem;
+                        height:0.81rem;
+                    }
+                    .rest_name{
+                        width:0.71rem;
+                        // height:0.1rem;
+                        font-size: 0.12rem;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        // margin-top: 0.075rem;
+                    }
+                    .rest_price{
+                        font-size: 0.12rem;
+                        color:red;
+                        // margin-top: 0.075rem;
+                    }
+                }
+            }
+        }
+    }
+    .recrod{
+        width:100%;
+        background:#fff;
+        margin-top:0.1rem;
+        .recrod_top{
+            // height:0.22rem;
+            border-bottom: 0.005rem solid #ccc;
+            padding:0.05rem 0.05rem;
+            p{
+                font-size: 0.12rem;
+            }
+        }
+    }
+    .msg_list{
+        // height:0.51rem;
+        width:100%;
+        background:#fff;
+        margin-top: 0.1rem;
+        .list_links{
+            li{
+                float:left;
+                padding:0.025rem 0.12rem;
+                span{
+                    font-size: 0.12rem;
+                    color:#000;
+                }
+                img{
+                    display: inline-block;
+                    width:0.15rem;
+                    // height:0.15rem;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+    .check_data{
+        // width:0.2rem;
+        background: #fff;
+        margin-top: 0.1rem;
+        width:100%;
+        text-align: center;
+        padding:0.05rem 0;
+        a{
+            font-size: 0.12rem;
+            color:#000;
+            i{
+                font-size: 0.25rem;
+                color:#999;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+// -------底部--------
+footer{
+    width:100%;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    .footer_list{
+        // height:0.25rem;
+        background:#eee;
+        .buy_list{
+            display: flex;
+            li{
+                flex:1;
+               text-align: center;
+               cursor:pointer;
+                i{
+                    display: block;
+                    font-size: 0.2rem;
+                    em{
+                        color:red;
+                        font-size: 0.1rem;
+                    }
+                }
+                p{
+                    font-size: 0.12rem;
+                }
+            }
+            .my_buy{
+                background:#F03E3E;
+                line-height: 0.25rem;
+                color:#fff;
+                font-size: 0.15rem;
+            }
+        }
+    }
+}
+
