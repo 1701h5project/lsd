@@ -1,0 +1,113 @@
+@import 'cssformat';
+
+#homepage{
+    border-bottom:0;
+    a{
+        color: #666;
+    }
+}
+#catfoodpage{
+    border-bottom:2px solid red;
+    a{
+        color:red;
+    } 
+}
+.main{
+    display: flex;
+    flex:1;
+    overflow-x:hidden;
+    overflow-y:auto;
+    flex-direction: column;
+    background-color: #f3f4f5;
+    width: 100%;
+    .section1{
+        width: 100%;
+        background-color: #fff;
+        height: 2.09375rem;
+        position: relative;
+        overflow: hidden;
+        ul{
+            position: absolute;
+            width: 10rem;
+            li{
+                float: left;
+                a{
+                    img{
+                        height: 2.078125rem;
+                        width: 5rem;
+                    }
+                }
+            }
+            #dot{
+                position: absolute;
+                height: 0.46875rem;
+                bottom: -0.15625rem;
+                left: 2.1875rem;
+                span{
+                    display: inline-block;
+                    margin-right:0.15625rem;
+                    width: 0.15625rem;
+                    height: 0.15625rem;
+                    border-radius: 50%;
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+    .section2{
+        height: 1.5625rem;
+        width: 100%;
+        ul{
+            li{
+                float: left;
+                a{
+                    img{
+                        height: 1.25rem;
+                        width: 1.25rem;
+                        
+                    }
+                }
+            }
+        }
+    }
+    .section3{
+        width: 100%;
+        background-color: #fff;
+        margin-top: 0.15625rem;
+        .sec3-title{
+            a{
+                img{
+                    margin: 0 auto;
+                    width: 2.5rem;
+                    height: 0.703125rem;
+                }
+            }
+            border-bottom: 1px solid #ccc;
+        }
+        .product-sec{
+            height: 2.765625rem;
+            .product-sec-t{
+                line-height: 0.703125rem;
+                height: 0.703125rem;
+                #product-title{
+                    display: inline-block;
+                    font-size: 16px;
+                    margin:0 0.15625rem;
+                }
+                #product-tip{
+                    display: inline-block;
+                    font-size: 12px;
+                    color: #ccc;
+                }
+            }
+            .product-sec-b{
+                a{
+                    img{
+                        height: 2.078125rem;
+                    }
+                }
+                
+            }
+        }
+    }
+}

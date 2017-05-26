@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>猫站首页</title>
+	<meta name="viewport" id="vp" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="../libs/font-awesome/css/font-awesome.min.css"/>
+	<script src="../libs/require.js" data-main="js/index.js"></script>
+	<script>
+		var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+		document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="header-top">
+				<div class="header-top-left">
+					<span>猫站</span>
+					<span>|</span>
+					<a href="html/area-sel.html" id="localtion">广东</a>
+					<i class="fa fa-sort-asc"></i>
+				</div>
+				<div class="header-top-mid">
+					<input type="text" id="search" placeholder="输入商品和品牌"/>
+					<span id="search-logo"></span>
+				</div>
+				<div class="header-top-fot"><a href=""></a></div>
+			</div>
+			<div class="header-bot">
+				<ul>
+					<li id="homepage"><a href="index.html">首页</a></li>
+					<li id="catfoodpage"><a href="html/catfood.html">猫粮</a></li>
+					<li id="onsalepage"><a href="html/onsale.html">特卖</a></li>
+					<li id="market"><a href="html/catmarket.html">罐头超市</a></li>
+					<li id="classroom"><a href="html/catClass.html">新喵课堂</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div class="box">
+				<div class="main-lbt swiper-container2">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><a href="html/onsale.html"><img src="img/index/index-banner1.jpg" alt="" /></a></li>
+						<li class="swiper-slide"><a href="html/onsale.html"><img src="img/index/index-banner2.jpg" alt="" /></a></li>
+						<li class="swiper-slide"><a href="html/onsale.html"><img src="img/index/index-banner3.jpg" alt="" /></a></li>
+						<li class="swiper-slide"><a href="html/onsale.html"><img src="img/index/index-banner4.jpg" alt="" /></a></li>
+						<li class="swiper-slide"><a href="html/onsale.html"><img src="img/index/index-banner5.jpg" alt="" /></a></li>
+					</ul>
+					<div id="dot" class="swiper-pagination">
+					</div>
+				</div>
+				<div id="banner-top">
+					<ul>
+						<li><a href=""><img src="img/index/classify1.png" alt="" /></a></li>
+						<li><a href="html/onsale.html"><img src="img/index/classify2.png" alt="" /></a></li>
+						<li><a href=""><img src="img/index/classify3.png" alt="" /></a></li>
+						<li><a href=""><img src="img/index/classify4.png" alt="" /></a></li>
+						<li><a href=""><img src="img/index/classify5.png" alt="" /></a></li>
+					</ul>
+
+				</div>
+				<div class="section1">
+					<div class="section1-top">
+						<div class="section1-top-l"><a href=""><img src="img/index/suprice.png" alt="" /></a></div>
+						<div class="section1-top-mid">
+							<span>距活动结束</span>
+							<span id="hours"></span>：
+							<span id="minute"></span>：
+							<span id="second"></span>
+						</div>
+						<div class="section1-top-r">
+							<a href=""><img src="img/index/logo-more.png"/></a>
+						</div>
+					</div>
+					<div class="section1-bot swiper-container">
+						<ul class="swiper-wrapper" id="ul1">
+						</ul>
+					</div>
+				</div>
+				<div class="section2">
+					<div class="section2-top">
+						<a href=""><img src="img/index/hot-product-logo.jpg"/></a>
+					</div>
+					<div class="section2-mid-l">
+						<a href=""><img src="img/index/hot-product1.jpg"/></a>
+					</div>
+					<div class="section2-mid-r-t">
+						<a href=""><img src="img/index/hot-product2.jpg"/></a>
+					</div>
+					<div class="section2-mid-r-b">
+						<a href=""><img src="img/index/hot-product3.jpg"/></a>
+					</div>
+				</div>
+				<div class="section3">
+					<a href=""><img src="img/index/experience.png"/></a>			
+				</div>
+				<div class="section4 swiper-container1">
+					<ul id="lbt" class="swiper-wrapper">
+						<li class="swiper-slide"><a href=""><img src="img/index/banner1.jpg"/></a></li>
+						<li class="swiper-slide"><a href=""><img src="img/index/banner2.jpg"/></a></li>
+					</ul>
+					<div id="dot" class="swiper-pagination">
+					</div>
+				</div>
+				<div class="section5">
+					<div class="sec5-title">
+						<a href=""><img src="img/index/onsale.png"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<ul>
+				<li id="fot-home"><a href="index.html"></a></li>
+				<li id="fot-classify"><a href="html/classify.html"></a></li>
+				<li id="fot-buycar"><a href="html/shopCar.html"></a></li>
+				<li id="fot-center"><a href="../epet/login.html"></a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+@import 'cssformat';
+
+.header{
+    height: 0.78125rem;
+    display: flex;
+    border-bottom: 1px solid #f1f1f1;
+    .tap-pre{
+        flex: 20%;
+        position: relative;
+        top:0.265625rem;
+        left: 0.296875rem;
+        height: 0.3125rem;
+        width: 0.34375rem;
+        background: url('img/personal-bico1.png') no-repeat;
+        background-size: 0.1875rem 0.265625rem;
+    }
+    span{
+        text-align: center;
+        flex: 60%;
+        font-size: 18px;
+        align-self: center;
+    }
+    .tap-menu{
+        flex: 20%;
+        position: relative;
+        top:0.234375rem;
+        left: 0.34375rem;
+        height: 0.3125rem;
+        width: 0.3125rem;
+        background: url('img/imgtk-new.png') no-repeat;
+        background-size: 0.3125rem;
+    }
+}
+.onsale-menu{
+    height: 1.140625rem;
+    padding-top: 0.15625rem;
+    display: none;
+    ul{
+        display: flex;
+        li{
+            height: 0.8125rem;
+            flex: 1;  
+            a{
+                text-align: center;
+                span{
+                    display:block;
+                    height: 0.46875rem;
+                }
+                p{
+                    font-size: 14px;
+                    color: #666;
+                }
+            }
+        }
+        .onsale-home{
+            a{
+                span{
+                    background: url('img/head_icon1.png') 50% 0 no-repeat;
+                    background-size: auto 100%;
+                }
+            }
+        }
+        .onsale-classify{
+            a{
+                span{
+                    background: url('img/head_icon2.png') 50% 0 no-repeat;
+                    background-size: auto 100%;
+                }
+            }
+        }
+        .onsale-buycar{
+            a{
+                span{
+                    background: url('img/head_icon4.png') 50% 0 no-repeat;
+                    background-size: auto 100%;
+                }
+            }
+        }
+        .onsale-epet{
+            a{
+                span{
+                    background: url('img/head_icon5.png') 50% 0 no-repeat;
+                    background-size: auto 100%;
+                }
+            }
+        }
+    }
+}
+.main{
+    display: flex;
+    flex:1;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background-color: #fafafa; 
+    .box{
+        .onsale-banner{
+            a{
+                img{
+                    height: 2.65625rem;
+                }
+            }   
+        }
+        .section1{
+            margin-top: 0.234375rem;
+            a{
+                img{
+                    height: 2.34375rem;
+                }
+            }
+        }
+        .footer{
+            margin-top: 0.234375rem;
+            height: 100px;
+            background-color: #FFFFFF;
+            ul{
+                height: 0.703125rem;
+                display: flex;
+                line-height: 0.703125rem;
+                li{
+                   flex: 1; 
+                   text-align: center;
+                   a{
+                       font-size: 14px;
+                       color: #666;
+                   }
+                }
+                li:nth-of-type(1){
+                    a{
+                        color: red;
+                    }
+                }
+            }
+            p{
+                text-align: center;
+                color: #ccc;
+            }
+        }
+    }
+}
+
