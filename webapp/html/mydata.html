@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" id="vp" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>账户管理</title>
+	<link rel="stylesheet" href="../css/mydata.css">
+	<link rel="stylesheet" href="../../libs/font_spgs725owritqpvi/iconfont.css">
+	<script src="../../libs/jquery/jquery-3.1.1.js"></script>
+		<script>
+		var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+		document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+		$(function(){
+			$.post('/getaccount',{},function(response){
+				console.log(response);
+				// 名字写入getPersonalcenter
+				//alert(response[0]._id)
+				$('.username').empty().text(response[0].name);
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="content">
+		<ul class="manage">
+			<li>
+				<a href="javascript:void(0)">
+					<div>头像</div>
+					<span><img src="" alt="" id="headingshow"><input type="hidden" id="headimg"></span>
+				</a>			   
+			</li>
+			<li><a href="javascript:void(0)"><div>昵称</div><span class="username"></span></a></li>
+			<li><a href="gender.html"><div>姓名</div><span>></span></a></li>
+			<li><a href="gender.html"><div>性别</div><span>></span></a></li>
+			<li><a href="brithday.html"><div>生日</div><span>></span></a></li>
+			<li><a href="adress.html"><div>地址管理</div><span>></span></a></li>
+			<li><a href="account.html"><div>账户安全</div><span>></span></a></li>
+		</ul>
+	</div>
+	
+</body>
+</html>

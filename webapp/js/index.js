@@ -75,7 +75,7 @@ requirejs(["config"],function(){
 		$(function(){
 			var timer = setInterval(countDown,1000);
 			var times;
-			var end = Date.parse('2017/5/26');
+			var end = Date.parse('2017/5/27');
 			function countDown(){
 				var now = Date.now();
 				times=Math.floor((end - now)/1000);

@@ -52,13 +52,18 @@ header .header_top {
   border-bottom: 0.005rem solid #ccc;
 }
 
-header .header_top .header_id {
-  margin: 0 0.75rem;
-  font-size: 14px;
+header .header_top .header_left {
+  font-size: 0.3rem;
+  color: #999;
 }
 
-header .header_top .history, header .header_top .header_left, header .header_top .nav_btn {
-  font-size: 14px;
+header .header_top .header_id {
+  margin: 0 0.75rem;
+  font-size: 0.15rem;
+}
+
+header .header_top .history, header .header_top .nav_btn {
+  font-size: 0.2rem;
   color: #999;
 }
 
@@ -79,8 +84,17 @@ header .herderHide a {
   color: #999;
 }
 
-header .herderHide a em {
+header .herderHide a i {
+  font-size: 0.25rem;
+}
+
+header .herderHide a i em {
+  font-size: 0.1rem;
   color: red;
+}
+
+header .herderHide a p {
+  font-size: 0.12rem;
 }
 
 main {
@@ -93,26 +107,26 @@ main .good_detail {
   background: #fff;
 }
 
-main .good_detail #imgH {
-  height: 320px;
-}
-
 main .good_detail .flag {
   display: block;
   width: 0.25rem;
   height: 0.15rem;
   position: absolute;
-  margin: 0.08rem 0 0 0.05rem;
+  margin: 0.2rem 0 0 0.1rem;
   z-index: 2;
 }
 
+main .good_detail #imgH {
+  height: 3.2rem;
+}
+
 main .good_detail .good_kg p {
-  font-size: 10px;
+  font-size: 0.12rem;
   padding: 0 0.05rem;
 }
 
 main .good_detail .good_referral p {
-  font-size: 10px;
+  font-size: 0.12rem;
   color: #E75656;
   padding: 0 0.05rem;
 }
@@ -126,12 +140,12 @@ main .good_detail .good_price .price_left {
 }
 
 main .good_detail .good_price .price_left .discount {
-  font-size: 14px;
+  font-size: 0.14rem;
   color: #E75656;
 }
 
 main .good_detail .good_price .price_left del {
-  font-size: 10px;
+  font-size: 0.12rem;
   margin: 0.025rem 0 0 0.05rem;
 }
 
@@ -140,21 +154,21 @@ main .good_detail .good_price .price_right {
 }
 
 main .good_detail .good_price .price_right span.fa {
-  font-size: 15px;
+  font-size: 0.145rem;
   vertical-align: middle;
   margin: 0.025rem 0.025rem 0 0;
 }
 
 main .good_detail .good_price .price_right a {
-  font-size: 10px;
+  font-size: 0.12rem;
   color: #999999;
 }
 
 main .combo {
   width: 100%;
   background: #fff;
-  margin-top: 0.05rem;
-  padding: 0.025rem 0.05rem;
+  margin-top: 0.1rem;
+  padding: 0.1rem 0.05rem;
 }
 
 main .combo .combo_left {
@@ -162,12 +176,12 @@ main .combo .combo_left {
 }
 
 main .combo .combo_left i.fa {
-  font-size: 10px;
+  font-size: 0.14rem;
   margin: 0.02rem 0.025rem 0 0;
 }
 
 main .combo .combo_left a {
-  font-size: 10px;
+  font-size: 0.14rem;
   color: #333333;
 }
 
@@ -176,12 +190,12 @@ main .combo .combo_right {
 }
 
 main .combo .combo_right a {
-  font-size: 10px;
+  font-size: 0.14rem;
   color: #999999;
 }
 
 main .combo .combo_right a i {
-  font-size: 10px;
+  font-size: 0.25rem;
   color: #999999;
   vertical-align: middle;
   margin-left: 0.1rem;
@@ -190,21 +204,21 @@ main .combo .combo_right a i {
 main .kg {
   width: 100%;
   background: #fff;
-  margin-top: 0.05rem;
+  margin-top: 0.1rem;
 }
 
 main .kg .selected {
-  padding: 0.05rem 0;
+  padding: 0.1rem 0.05rem;
   border-bottom: 0.005rem solid #ccc;
 }
 
 main .kg .selected p {
-  font-size: 10px;
+  font-size: 0.14rem;
   margin-left: 0.05rem;
 }
 
 main .kg .selected p span {
-  font-size: 10px;
+  font-size: 0.14rem;
   color: #F03E3E;
 }
 
@@ -214,7 +228,7 @@ main .kg .elect_KG {
 
 main .kg .elect_KG p {
   color: #999999;
-  font-size: 10px;
+  font-size: 0.14rem;
   margin-left: 0.05rem;
   line-height: 0.26rem;
 }
@@ -241,18 +255,19 @@ main .kg .elect_KG p a:nth-child(1) {
 main .buy_count {
   width: 100%;
   background: #fff;
-  margin-top: 0.05rem;
-  padding: 0.05rem 0.05rem;
+  margin-top: 0.1rem;
+  padding: 0.1rem 0.05rem;
 }
 
 main .buy_count p {
   float: left;
-  width: 0.55rem;
-  font-size: 10px;
+  width: 0.6rem;
+  font-size: 0.14rem;
 }
 
 main .buy_count .emendation {
   float: left;
+  margin-left: 0.15rem;
 }
 
 main .buy_count .emendation .add, main .buy_count .emendation .minus {
@@ -269,34 +284,31 @@ main .buy_count .emendation input {
   width: 0.4rem;
   height: 0.2rem;
   text-align: center;
+  border: 1px solid #ccc;
 }
 
 main .region {
   width: 100%;
-  margin-top: 0.05rem;
+  margin-top: 0.1rem;
   background: #fff;
-  padding: 0.05rem 0.05rem;
+  padding: 0.1rem 0.05rem;
 }
 
 main .region a {
-  font-size: 10px;
+  font-size: 0.14rem;
   color: #333333;
 }
 
 main .region a i {
-  font-size: 10px;
+  font-size: 0.14rem;
   margin: 0 0.015rem;
 }
 
 main .comment {
   width: 100%;
   background: #fff;
-  padding-left: 0.05rem;
-  margin-top: 0.05rem;
-}
-
-main .comment .comment_top {
-  padding: 0.05rem 0;
+  padding: 0.1rem 0 0.1rem 0.05rem;
+  margin-top: 0.1rem;
 }
 
 main .comment .comment_top .comment_left {
@@ -304,11 +316,11 @@ main .comment .comment_top .comment_left {
 }
 
 main .comment .comment_top .comment_left p {
-  font-size: 10px;
+  font-size: 0.14rem;
 }
 
 main .comment .comment_top .comment_left p i {
-  font-size: 10px;
+  font-size: 0.14rem;
   margin-right: 0.025rem;
 }
 
@@ -318,11 +330,11 @@ main .comment .comment_top .comment_right {
 
 main .comment .comment_top .comment_right p {
   color: #999999;
-  font-size: 10px;
+  font-size: 0.14rem;
 }
 
 main .comment .comment_top .comment_right p i {
-  font-size: 15px;
+  font-size: 0.25rem;
   color: #999999;
   margin: 0 0.05rem 0 0.15rem;
   vertical-align: middle;
@@ -330,9 +342,9 @@ main .comment .comment_top .comment_right p i {
 
 main .buy_refer {
   width: 100%;
-  padding: 0.05rem 0.05rem;
+  padding: 0.1rem 0.05rem;
   background: #fff;
-  margin-top: 0.05rem;
+  margin-top: 0.1rem;
 }
 
 main .buy_refer .refer_left {
@@ -340,11 +352,11 @@ main .buy_refer .refer_left {
 }
 
 main .buy_refer .refer_left p {
-  font-size: 10px;
+  font-size: 0.14rem;
 }
 
 main .buy_refer .refer_left p i {
-  font-size: 10px;
+  font-size: 0.14rem;
   margin-right: 0.025rem;
 }
 
@@ -353,12 +365,12 @@ main .buy_refer .refer_right {
 }
 
 main .buy_refer .refer_right a {
-  font-size: 15px;
+  font-size: 0.25rem;
   color: #999999;
 }
 
 main .shops {
-  margin-top: 0.05rem;
+  margin-top: 0.1rem;
   width: 100%;
 }
 
@@ -374,7 +386,7 @@ main .shops .shop_top .shop_logo {
 }
 
 main .shops .shop_top .shop_logo img {
-  width: 0.785rem;
+  width: 0.685rem;
   border: 0.005rem solid #ccc;
 }
 
@@ -383,11 +395,11 @@ main .shops .shop_top .birth {
 }
 
 main .shops .shop_top .birth .shop_name {
-  font-size: 14px;
+  font-size: 0.125rem;
 }
 
 main .shops .shop_top .birth .shop_country {
-  font-size: 10px;
+  font-size: 0.1rem;
   color: #999999;
 }
 
@@ -396,12 +408,12 @@ main .shops .shop_top .check_goods {
 }
 
 main .shops .shop_top .check_goods a {
-  font-size: 10px;
+  font-size: 0.1rem;
   color: #999999;
 }
 
 main .shops .shop_top .check_goods a i {
-  font-size: 15px;
+  font-size: 0.15rem;
   color: #999999;
   vertical-align: middle;
   margin-left: 0.1rem;
@@ -417,12 +429,12 @@ main .shops .shop_top .shop_msg {
 }
 
 main .shops .shop_top .shop_msg p {
-  font-size: 10px;
+  font-size: 0.12rem;
 }
 
 main .shops .shop_top .down {
   display: block;
-  font-size: 15px;
+  font-size: 0.15rem;
   color: #999;
   margin: 0.1rem auto;
   text-align: center;
@@ -446,21 +458,21 @@ main .shops .shop_bottom .swiper-wrapper .swiper-slide img {
 
 main .shops .shop_bottom .swiper-wrapper .swiper-slide .rest_name {
   width: 0.71rem;
-  font-size: 10px;
+  font-size: 0.12rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 main .shops .shop_bottom .swiper-wrapper .swiper-slide .rest_price {
-  font-size: 10px;
+  font-size: 0.12rem;
   color: red;
 }
 
 main .recrod {
   width: 100%;
   background: #fff;
-  margin-top: 0.05rem;
+  margin-top: 0.1rem;
 }
 
 main .recrod .recrod_top {
@@ -469,13 +481,13 @@ main .recrod .recrod_top {
 }
 
 main .recrod .recrod_top p {
-  font-size: 10px;
+  font-size: 0.12rem;
 }
 
 main .msg_list {
   width: 100%;
   background: #fff;
-  margin-top: 0.05rem;
+  margin-top: 0.1rem;
 }
 
 main .msg_list .list_links li {
@@ -484,7 +496,7 @@ main .msg_list .list_links li {
 }
 
 main .msg_list .list_links li span {
-  font-size: 10px;
+  font-size: 0.12rem;
   color: #000;
 }
 
@@ -496,19 +508,19 @@ main .msg_list .list_links li img {
 
 main .check_data {
   background: #fff;
-  margin-top: 0.05rem;
+  margin-top: 0.1rem;
   width: 100%;
   text-align: center;
   padding: 0.05rem 0;
 }
 
 main .check_data a {
-  font-size: 10px;
+  font-size: 0.12rem;
   color: #000;
 }
 
 main .check_data a i {
-  font-size: 15px;
+  font-size: 0.25rem;
   color: #999;
   vertical-align: middle;
 }
@@ -536,21 +548,22 @@ footer .footer_list .buy_list li {
 
 footer .footer_list .buy_list li i {
   display: block;
-  font-size: 15px;
+  font-size: 0.2rem;
 }
 
 footer .footer_list .buy_list li i em {
   color: red;
-  font-size: 10px;
+  font-size: 0.1rem;
 }
 
 footer .footer_list .buy_list li p {
-  font-size: 10px;
+  font-size: 0.12rem;
+  color: #000;
 }
 
 footer .footer_list .buy_list .my_buy {
   background: #F03E3E;
   line-height: 0.25rem;
   color: #fff;
-  font-size: 10px;
+  font-size: 0.15rem;
 }

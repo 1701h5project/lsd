@@ -1,0 +1,84 @@
+@import 'reset.scss';
+
+
+header{
+	width:100%;
+	background:#fff;
+	.header_top{
+
+		padding:0.05rem 0.2rem;
+		border-bottom: 1px solid #ccc;
+		a{
+			color:#999;
+			font-size: 0.2rem;
+		}
+		span{
+			display: inline-block;
+			padding:0 0.95rem;
+			font-size: 0.15rem;
+		}
+	}
+	.header_bottom{
+		
+	
+		// position:absolute;
+		// top:0;
+		span{
+			font-size: 0.15rem;
+			display: inline-block;
+			padding:0.08rem 0.22rem;
+			&:hover{
+				border-bottom:0.02rem solid red;
+				color:red;
+			}
+		}
+	}
+}
+main{
+	width:100%;
+	margin-top:0.12rem;
+	background:#fff;
+	// 商品介绍-----
+	.goodShow{
+		padding:0.05rem 0.05rem;
+		// display: none;
+		img{
+			width:3.1rem;
+		}
+	}
+	.parameter{
+		padding:0.5rem 0.05rem;
+
+		width:100%;
+		display: none;
+		p{
+			margin-bottom: 0.1rem;
+			font-size: 0.15rem;
+		}
+		table{
+			text-align: center;
+			width:100%;
+			tbody{
+				.headline{
+					background:#ccc;
+
+				}
+				tr{
+					line-height: 0.3rem;
+				}
+			}
+		}
+	}
+	.accredit{
+		width:100%;
+		display: none;
+		p{
+			font-size: 0.1rem;
+		}
+		.file_logo{
+			display: block;
+			width:3.1rem;
+			padding:0.5rem 0;
+		}
+	}
+}

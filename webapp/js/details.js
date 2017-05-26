@@ -3,6 +3,10 @@ require(['config'], function() {
 
 			
 	$(function(){
+
+		
+
+
 		
 		//返回上次浏览网页
 		$('#pre-location').click(function(){
@@ -11,8 +15,10 @@ require(['config'], function() {
 		
 		
 		var proid=window.localStorage.getItem('id');
+
 		var d = window.localStorage.getItem('qty');
-		$('em').html(d)
+		// console.log(d)
+		$('em').text(d)
 
 		//---------------请求后台数据生成DOM节点-----------------
 			$.get('/product-data',{"id":proid},function(response){
@@ -88,25 +94,32 @@ require(['config'], function() {
 
                  
 
-                     var carlist = window.localStorage.getItem('buyMsg');
+                    //--------本地储存-------------
+					 var carlist = window.localStorage.getItem('buyMsg');
 
 					carlist = carlist ? JSON.parse(carlist) : [];
 					console.log(carlist)
                     //--------本地储存-------------
 					$('.btn_buy').click(function(){
 					//	点击添加按钮时，是添加还是修改数量
-					var count =$('em').html();
+					var count =Number($('em').html());
+					
+					var input = Number($('.emendation').find('input').val());
+					console.log(input)
+
+					count +=input
+
+					$('em').text(count)
+					
 					var $currentID = id;
 				
-					var $currentSize=size;
 					
 					//cookie中是否存在当前商品
 					var hasGoods = false;
 					for(var i = 0; i < carlist.length; i++) {
-						if(carlist[i].goodid === $currentID&&
-							carlist[i].gsize === $currentSize) {
+						if(carlist[i].goodid === $currentID) {
 							hasGoods = true;
-							carlist[i].qty+=count;
+							carlist[i].qty+=input;
 							
 								break;
 						}
@@ -147,7 +160,6 @@ require(['config'], function() {
 					
 
 				}
-
 
 				//------- 商品图片点击滚动--------
 				var swiper = new Swiper('.good_pic',{
@@ -195,15 +207,15 @@ require(['config'], function() {
 			        spaceBetween: 10
 			})
 
-			//--------点击购买增加数量-----
-			var goodCount = $('em')
-			var num = 0
-		    $(".btn_buy").click(function(){ 
-		    	var input = Number($('.emendation').find('input').val());
-		   		num += input
+			// //--------点击购买增加数量-----
+			// var goodCount = $('em')
+			// var num = 0
+		 //    $(".btn_buy").click(function(){ 
+		 //    	var input = Number($('.emendation').find('input').val());
+		 //   		num += input
 		    	
-		    	goodCount.text(num)
-		    });
+		 //    	goodCount.text(num)
+		 //    });
 
 
 		    //--------------点击添加数量------------------------

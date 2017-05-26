@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" id="vp" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>账户管理</title>
+	<style type="text/css">
+        .write-name{width:100%;display:block;border:none;}
+        .write-name[type="text"]{border:none;font-family: "Microsoft Yahei",tahoma,arial;padding:0;height: 0.78125rem;font-size: 0.3125rem}
+        .empty{background:#c6c7cb;color:#fff;font-size:24px;border-radius:100%;width:30px;height:30px;display:block;position:absolute;top:20%;right:5%;text-align: center;}
+        .save1{width: 100%;text-align: center;}
+        .btn_save{height: 0.625rem;width: 50%;border-radius:0.46875rem;font-size: 0.28125rem;}
+	</style>
+	<script src="../../libs/jquery/jquery-3.1.1.js"></script>
+	<script>
+		var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+		document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+		$(function(){
+			$(".empty").click(function(){
+	            $(".write-name").val("");
+		    })
+	        function Saveusername(){
+	          	var realname =  $('.write-name').val();
+	            if(realname == ''){
+	                alert('真实姓名不能为空');
+	                return;
+	            }
+	            $.post('/getname',{name:realname},function(response){
+					console.log(response);
+					if(!response.status){
+						//alert('保存成功,1s后跳转...');
+						setTimeout(function(){
+							window.location.href = 'Personalcenter.html';							
+						},500);
+					}
+				});
+	        }
+	        $('.btn_save').click(function(){
+	        	Saveusername();
+	        })
+		})
+	</script>
+</head>
+<body>
+	<div class="content" style="position: relative;">
+		<input type="text" class="write-name" placeholder="请输入您的姓名" value="">
+		<a href="javascript:void(0)" class="empty">×</a>	
+	</div>
+	<div class="save1"><button class="btn_save">保存</button></div>
+</body>
+</html>

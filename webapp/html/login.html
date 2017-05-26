@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" id="vp" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>登陆</title>
+	<link rel="stylesheet" href="../css/login.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+	<link rel="stylesheet" href="../../libs/xcConfirm-150317204828/css/xcConfirm.css">
+	<script src="../../libs/require.js" data-main="../js/login.js"></script>
+	<script>
+	    var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+	    document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+  </script>
+</head>
+<body>
+	<header>
+		<div class="login_bg">
+			<div class="head_top">
+				<a href="javascript:void(0)" class="go-back iconfont icon-jiantou" id="go-back"></a>
+				<a href="register.html" class="reg">注册</a>	
+			</div>
+			<div class="mlog">
+				<img src="" alt="">
+			</div>
+			<div class="es_por4">
+				<a href="javascript:void(0)" class="btn-pt">普通登录</a>
+				<a href="javascript:void(0)" class="btn-ph">手机登录</a>
+			</div>
+		</div>
+	</header>
+	<form class="Content4">
+		<ul class="mform1">
+			<li>
+				<span class="iconfont icon-account"></span>
+				<input type="text" placeholder="用户名/手机号" name="username" class="username">
+			</li>
+			<li>
+				<span class="iconfont icon-password"></span>
+				<input type="password" placeholder="请确认密码" name="password" class="password"/>
+			</li>
+		</ul>
+		<ul class="mform2" style="display: none;">
+			<li>
+				<span class="iconfont icon-shouji"></span>
+				<input type="text" placeholder="手机号" name="username" class="username">
+			</li>
+			<li>
+				<span class="iconfont icon-password"></span>
+				<input type="password" placeholder="输入密码" class="text" name="password" id="password">
+			</li>
+		</ul>		
+	</form>
+	<div class="psw"><a href="javascript:void(0)" class="btn_psw">忘记密码？</a></div>
+	<div class="btn_n"><input type="button" value="登陆" id="btn_reg1"><input type="button" value="登陆" id="btn_reg2" style="display:none;"></div>
+	<footer>
+		<b>合作网站登录</b>
+		<ul class="ulist">
+			<li><img src="../images/login/login_ico1.png" alt=""></li>
+			<li><img src="../images/login/login_ico2.png" alt=""></li>
+			<li><img src="../images/login/login_ico4.png" alt=""></li>
+		</ul>
+	</footer>
+</body>
+</html>
