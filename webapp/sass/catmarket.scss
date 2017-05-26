@@ -1,0 +1,194 @@
+@import 'cssformat';
+
+#homepage{
+    border-bottom:0;
+    a{
+        color: #666;
+    }
+}
+#market{
+    border-bottom:2px solid red;
+    a{
+        color:red;
+    } 
+}
+.main{
+    display: flex;
+    flex:1;
+    overflow-x:hidden;
+    overflow-y:auto;
+    flex-direction: column;
+    background-color: #f3f4f5;
+    width: 100%;
+    .box{
+        .section1{
+            width: 100%;
+            background-color: #fff;
+            height: 2.09375rem;
+            position: relative;
+            overflow: hidden;
+            ul{
+                position: absolute;
+                width: 15rem;
+                li{
+                    float: left;
+                    a{
+                        img{
+                            height: 2.09375rem;
+                            width: 5rem;
+                        }
+                    }
+                }
+            }
+            #dot{
+                position: absolute;
+                height: 0.46875rem;
+                bottom: -0.15625rem;
+                left: 2.1875rem;
+                .swiper-pagination-bullet{
+                    display: inline-block;
+                    margin-right:0.15625rem;
+                    width: 0.15625rem;
+                    height: 0.15625rem;
+                    border-radius: 50%;
+                    background-color: #eee;
+                }
+                .swiper-pagination-bullet-active{
+                    background-color: yellow;
+                }
+            }
+        }
+        .section2{
+            height: 3.46875rem;
+            ul{
+                display: flex;
+                li{
+                    flex: 1;
+                    height: 0.9375rem;
+                    .img1{
+                        height: 0.9375rem;
+                    }
+                    .img2{
+                        height: 0.9375rem;
+                    }
+                }
+            }
+            .sec2-bot1{
+                display: flex;
+                flex-wrap: wrap;
+                background-color: #fff;
+                a{
+                    width: 33%;
+                    img{
+                        height: 1.28125rem;
+                    }
+                }
+            }
+            .sec2-bot2{
+                display: flex;
+                display: none;
+                flex-wrap: wrap;
+                background-color: #fff;
+                a{
+                    width: 33%;
+                    img{
+                        height: 1.28125rem;
+                    }
+                }
+            }
+            .sec2-bot3{
+                display: flex;
+                display: none;
+                flex-wrap: wrap;
+                background-color: #fff;
+                a{
+                    width: 33%;
+                    img{
+                        height: 1.28125rem;
+                    }
+                }
+            }
+        }
+        .section3{
+            margin-top: 0.15625rem;
+            height: 3.125rem;
+            background-color: #fff;
+            .section3-top{
+               height: 0.546875rem;
+               line-height: 0.546875rem;
+               padding-top: 0.15625rem;
+               a{ 
+                   img{
+                       margin:0 auto;
+                       width: 2.5rem;
+                       height: 0.203125rem;
+                   }
+               }
+            }
+            .section3-bot{
+                width: 100%;
+                height: 2.4375rem;
+                overflow: hidden;
+                position: relative;
+                ul{
+                    position: absolute;
+                    width: 31.25rem;
+                    li{
+                        width: 1.328125rem;
+                        float: left;
+                        a{
+                            text-align: center;
+                            img{
+                                margin-left: 0.078125rem;
+                                width: 1.171875rem;
+                                height: 1.171875rem;
+                            }
+                            .name{
+                                display: block;
+                                overflow: hidden;
+                                height: 0.5rem;
+                                width: 1.171875rem;
+                                color: #666;
+                                text-decoration: none;
+                            }
+                            .price{
+                                color: red;
+                                font-size: 14px;
+                                text-decoration: none;
+                            }
+                            p{
+                                color: #ccc;
+                                text-decoration: line-through;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .section4{
+            margin-top: 0.15625rem;
+            background-color: #FFFFFF;
+            .section4-top{
+               height: 0.546875rem;
+               line-height: 0.546875rem;
+               padding-top: 0.15625rem;
+               a{ 
+                   img{
+                       margin:0 auto;
+                       width: 2.5rem;
+                       height: 0.203125rem;
+                   }
+               }
+            } 
+            .section-p1{
+                margin-bottom: 2px;
+                a{
+                    img{
+                        height: 2.203125rem;
+                    }
+                }
+                
+            }  
+        }
+    }
+}

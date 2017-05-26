@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" id="vp" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>地址编辑-E宠商城</title>
+	<link rel="stylesheet" href="css/address.css">
+	<link rel="stylesheet" href="../libs/font_spgs725owritqpvi/iconfont.css">
+	<link rel="stylesheet" href="font/iconfont.css">
+	<script src="libs/jquery/jquery-3.1.1.js"></script>
+	<script>
+		var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+		document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+		$(function(){
+			$.post('/getaddress',{},function(response){
+				//console.log(response);
+				if( response != null){
+					$('.adress').hide();
+					$('.save1').hide();
+					$('.add1').show();
+
+					var res=response.map(function(item,index){
+						var cname = 'adressRecord'+index;
+						return `<div class="adressRecord ${cname}">
+								    <div class="inner">	           
+								        <div class="inner1"><span>${item.name}</span><span class="mobi">${item.phone}</span></div>
+								        <div class="inner2">${item.address}</div>
+								    </div>
+								    <div class="btn">
+								        <div class="remove"><span></span>删除</div>
+								        <div class="edit"><span></span>编辑</div>
+								    </div>
+								</div>`
+					}).join('');
+
+					$('.adress').after(res);
+
+					$('.remove').click(function(){
+						$(this).parents('.adressRecord').remove();
+						// 获取删除的节点对应在response中的下标
+						var idx=$(this).parents('.adressRecord')[0].className.substr(-1,1);
+						//console.log(idx)=0;
+						var shamResponse=response.splice(idx,1)
+							console.log(shamResponse)
+							// 把对应的数据在数据库中删除
+						$.post('/deladdress',[{_id:shamResponse.id}],function(response){					
+								location.reload();							
+						})
+					})
+
+					$('.edit').click(function(){
+
+					})					
+				}else{
+					$('.adress').show();
+					$('.save1').show();
+					$('.add1').hide();
+				}				
+			});
+
+			$('.add1').click(function(){
+				$('.adressRecord').hide();
+				$('.adress').show();
+				$('.add1').hide();
+				$('.save1').show();
+			})
+
+			$('.save1').click(function(){
+				var name = $('.name').val();
+				var phone = $('.phone').val();
+				var addressNew = $('.xiangxi').val();
+				var city = $('#province  option:selected').text();
+				console.log(city);
+				var address_1 = $.trim(city) + $.trim(addressNew);
+				if(name == '' || addressNew == ''){alert('地址姓名不能为空'); return false;}
+				if(!/^1[34578]\d{9}$/.test(phone)){alert('电话号码输入错误'); return false;}
+				$.post('/adress',{name:$.trim(name),phone:$.trim(phone),address:$.trim(address_1)
+					//address:address_1,							
+				},function(response){
+					if(response.status){
+						alert('设置失败')
+					}else{
+						// alert(response.message);
+						location.reload();
+					}
+				})
+			})
+
+			$(".headermenu").click(function(){
+				if($(".herderHide").css("display")=="none"){
+					$(".herderHide").show();
+				}else{
+					$(".herderHide").hide();
+				}
+			});
+
+		})
+	</script>
+</head>
+<body>
+	<header>
+		<a href="#" class="iconfont icon-jiantou"></a>
+		<b>地址编辑</b>
+		<span class="add1">添加</span><span class="save1">保存</span>
+		<i class="iconfont icon-fenlei headermenu"></i>
+	</header>
+	<div class="herderHide">
+			<a href="#">
+				<i class="iconfont icon-shouyeshouye"></i>
+				<p>首页</p>
+			</a>
+			<a href="#">
+				<i class="iconfont icon-fenlei1"></i>
+				<p>商品分类</p>
+			</a>
+			<a href="http://localhost:3000/webapp/html/shopCar.html">
+				<i class="iconfont icon-gouwuche" style="margin-left: 19px;">
+					<!-- <em>0</em> -->
+				</i>
+				<p>购物车</p>
+			</a>
+			<a href="#">
+				<i class="iconfont icon-unie641"></i>
+				<p>我的e宠</p>
+			</a>
+	</div>
+
+	<div class="content">
+		<ul class="adress">
+			<li><span>收件人:</span><input type="text" class="name" value="" name="name" id="name"></li>
+			<li><span>手机号码:</span><input type="text" class="phone" value="" name="phone" id="phone"></li>
+			<li class="addnew"><span>所在地区</span>
+				<select name="" id="province" value="北京">
+					<option value="">北京</option>
+					<option value="">天津</option>
+					<option value="">上海</option>
+					<option value="">广东省</option>
+					<option value="">河北省</option>
+					<option value="">山西省</option>
+					<option value="">内蒙古自治区</option>
+					<option value="">辽宁省</option>
+					<option value="">吉林省</option>
+					<option value="">黑龙江省</option>
+					<option value="">江苏省</option>
+					<option value="">浙江省</option>
+					<option value="">安徽省</option>
+					<option value="">福建省</option>
+					<option value="">山东省</option>
+					<option value="">河南省</option>
+					<option value="">湖北省</option>
+					<option value="">湖南省</option>
+					<option value="">四川省</option>
+					<option value="">贵州省</option>
+					<option value="">云南省</option>
+					<option value="">海南省</option>
+					<option value="">广西壮族自治区</option>
+					<option value="">西藏自治区</option>
+					<option value="">陕西省</option>
+					<option value="">甘肃省</option>
+					<option value="">青海省</option>
+					<option value="">新疆维吾尔自治区</option>
+					<option value="">澳门特别行政区</option>
+					<option value="">香港特别行政区</option>
+					<option value="">台湾</option>
+					<option value="">海外</option>
+				</select>
+			</li>
+			<li><span>详细地址</span><input type="text" class="xiangxi"></li>
+			<li><span class="ft14">设为默认地址</span><span class="c999 ft12">注:每次下单会使用该地址</span><input type="checkbox" checked="checked" name="default" placeholder="选择" value="0" class="getchange"></li>
+		</ul>
+	</div>
+	
+</body>
+</html>
+
+
+
+		
+		

@@ -1,3 +1,11 @@
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  height: 0;
+}
 /*重置样式表*/
 /*==========样式重置===========*/
 body,h1,h2,h3,h4,h5,h6,p,a,input,img,ul,li,ol,dl,dt,dd{
@@ -22,7 +30,7 @@ a{
 	font-size: 12px;
 	text-decoration:none;
 	color:#0dc441}
-a:hover{
-	text-decoration:underline;}
+// a:hover{
+	// text-decoration:underline;}
 *{
 	box-sizing:border-box;}

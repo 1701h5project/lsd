@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/*公共部分*/
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/*重置样式表*/
+/*==========样式重置===========*/
+body, h1, h2, h3, h4, h5, h6, p, a, input, img, ul, li, ol, dl, dt, dd { padding: 0; margin: 0; }
+
+ul, ol { list-style: none; }
+
+img { display: block; border: 0; }
+
+input { outline: none; }
+
+header, footer, section, nav { display: block; }
+
+html, body { font-size: 12px; font-family: "微软雅黑"; color: #3e3e3e; }
+
+a { font-size: 16px; text-decoration: none; color: #0dc441; }
+
+header { height: 0.78125rem; width: 100%; display: flex; flex: 1; overflow-x: hidden; overflow-y: auto; line-height: 0.78125rem; box-sizing: border-box; text-align: center; border-bottom: 1px solid #f3f3f3; padding: 0 0.1875rem; position: relative; }
+
+header  { width: 100%; line-height: 0.78125rem; }
+
+header  > a { display: block; width: 0.3125rem; height: 0.3125rem; position: absolute; color: #333; }
+
+header  > b { width: 90%; text-overflow: ellipsis; overflow: hidden; display: inline-block; margin: 0 auto; font-size: 22px; }
+
+header  > i { position: absolute; top: -0.0625rem; right: 0.1875rem; width: 0.3125rem; height: 0.3125rem; cursor: pointer; }
+
+header  .redact { display: none; position: absolute; right: 0.703125rem; top: 0; font-size: 16px; }
+
+header  .redact > a { color: #333; font-size: 16px; }
+
+.herderHide { display: none; width: 100%; border-bottom: 1px solid #d7d7d7; overflow: hidden; padding: 0.1875rem 0; }
+
+.herderHide > a { display: inline-block; width: 25%; text-align: center; float: left; color: #333; }
+
+.herderHide > a > i { font-size: 30px; color: #333; display: block; height: 0.46875rem; line-height: 0.46875rem; }
+
+.herderHide > a > i > em { display: inline-block; height: 0.34375rem; width: 0.34375rem; color: #fff; text-align: center; line-height: 0.28125rem; font-size: 12px; background: #FF0000; border-radius: 0.1875rem; border: #fff solid 2px; position: relative; top: -0.234375rem; left: -0.703125rem; }
+
+.herderHide > a > p { color: #666; font-size: 14px; }
+
+header{width:100%;height: 0.78125rem;position: relative;}
+
+header span{height: 0.78125rem;line-height: 0.78125rem;font-size:16px;position: absolute;right:15%;}
+
+.content .adress li { height: 0.78125rem;line-height: 0.78125rem;font-size: 16px; }
+
+.content .adress li:last-child { height: 0.78125rem;font-size: 14px; }
+
+.content .adress li span { font-size: 16px; line-height: 0.78125rem;margin-left: 5% }
+
+.content .adress li input { border: none; height: 0.46875rem;}
+
+.content .adress li:last-child span{font-size: 12px; margin-left: 5%;height: 0.46875rem}
+
+.content .adress li:last-child input{font-size: 12px; line-height: 0.46875rem;height: 0.46875rem;margin-left: 0.3125rem;}
+
+.adressRecord{height: 1.875rem;width:100%;}
+
+.adressRecord .inner{height: 1.09375rem;}
+
+.adressRecord .inner .inner1 span{height: 0.46875rem;font-size: 16px;line-height: 0.46875rem;}
+
+.adressRecord .inner .inner1 .mobi{margin-left: 0.46875rem}
+
+.adressRecord .inner .inner2{height: 0.46875rem;margin-top: 0.078125rem;font-size: 16px;line-height: 0.46875rem}
+
+.btn{height: 0.625rem;position: relative;width: 100%;}
+
+.btn .remove{position: absolute;right: 30%;top:30%;font-size: 16px;}
+
+.btn .edit{position: absolute;right: 10%;top:30%;font-size: 16px;}

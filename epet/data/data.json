@@ -1,3 +1,7 @@
+mongoexport -d epetdata -c shop -o shop.json
+mongoimport -d epetdata -c shop shop.json
+
+
 商品
 
 为您推荐：

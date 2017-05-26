@@ -3,6 +3,10 @@
   color: #f60;
 }
 
+.box_shadow {
+  box-shadow: 0 10px 15px rgba(175, 175, 175, 0.75);
+}
+
 .top {
   text-align: center;
 }
@@ -14,33 +18,80 @@
   padding: 0px 10px;
 }
 
-.main {
+.main_l {
   display: flex;
 }
 
-.main ul::-webkit-scrollbar {
+.main_l ul::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 
-.main ul {
+.main_l > ul {
   flex: 0.25;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-.main ul li {
+.main_l > ul li {
   line-height: 50px;
   text-align: center;
 }
 
-.main ul li span {
+.main_l > ul li span {
   display: inline-block;
   line-height: 50px;
   height: 50px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-.main .showInfo {
+.main_l .showInfo {
   flex: 0.75;
-  background: purple;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 15px;
+}
+
+.main_l .showInfo img {
+  width: 66.66px;
+  height: 66.66px;
+  margin: 0 auto;
+}
+
+.main_l .showInfo ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main_l .showInfo ul li {
+  width: 80px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.main_l .showInfo ul li span p:nth-child(2) {
+  color: #ccc;
+}
+
+.main_l .showInfo::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.main_r ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.main_r ul li {
+  width: 106px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.main_r ul li img {
+  height: 40px;
+  margin: 0 auto;
 }

@@ -1,0 +1,36 @@
+@import 'cssformat';
+
+.footer{
+    height: 0.859375rem;
+    background-color: #fff;
+    border: 1px solid #f1f1f1;
+    ul{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        li{
+            display: flex;
+            flex: 1;
+            a{
+                flex: 1;
+            }
+        }
+        #fot-home{
+            background: url('img/main_tab_1_sel.png') no-repeat center;
+            background-size: auto 40px;
+        }
+        #fot-classify{
+            background: url('img/main_tab_2.png') no-repeat center;
+            background-size: auto 40px;
+        }
+        #fot-buycar{
+            background: url('img/main_tab_3.png') no-repeat center;
+            background-size: auto 40px;
+        }
+        #fot-center{
+            background: url('img/main_tab_4.png') no-repeat center;
+            background-size: auto 40px;
+        }
+        
+    }
+}
