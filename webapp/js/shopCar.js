@@ -1,7 +1,4 @@
 $(()=>{
-	$.post('/getregister',{},function(response){
-		$('.uses').text(response[0].name);
-	})
 	var str = window.localStorage.getItem('buyMsg');
 
 	// var length = str.split(",");

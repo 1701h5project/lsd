@@ -1,5 +1,5 @@
 @import 'reset.scss';
-@import 'base.scss';
+
 
 //----------头部------------
 header{
@@ -69,8 +69,11 @@ main{
             width:0.25rem;
             height:0.15rem;
             position: absolute;
-            margin:0.08rem 0 0 0.05rem ;
+            margin:0.2rem 0 0 0.1rem ;
             z-index: 2;
+        }
+        #imgH{
+            height:3.2rem;
         }
         .good_kg{
             // padding-top:3.5rem;
@@ -485,6 +488,7 @@ footer{
                 }
                 p{
                     font-size: 0.12rem;
+                    color:#000;
                 }
             }
             .my_buy{

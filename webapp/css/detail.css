@@ -112,8 +112,12 @@ main .good_detail .flag {
   width: 0.25rem;
   height: 0.15rem;
   position: absolute;
-  margin: 0.08rem 0 0 0.05rem;
+  margin: 0.2rem 0 0 0.1rem;
   z-index: 2;
+}
+
+main .good_detail #imgH {
+  height: 3.2rem;
 }
 
 main .good_detail .good_kg p {
@@ -280,6 +284,7 @@ main .buy_count .emendation input {
   width: 0.4rem;
   height: 0.2rem;
   text-align: center;
+  border: 1px solid #ccc;
 }
 
 main .region {
@@ -553,6 +558,7 @@ footer .footer_list .buy_list li i em {
 
 footer .footer_list .buy_list li p {
   font-size: 0.12rem;
+  color: #000;
 }
 
 footer .footer_list .buy_list .my_buy {
