@@ -103,6 +103,7 @@ $(()=>{
 		// 	str.push(arr)
 		// }
 		window.localStorage.removeItem('buyMsg');
+		window.localStorage.removeItem('qty');
 		window.location.reload();
 
 		var res = 0;
@@ -179,7 +180,7 @@ $(()=>{
 	})
 
 	$('#per-next').click(function(){
-		history.back();
+		history.back(-1);
 	})
 	
 	

@@ -38,86 +38,84 @@ a {
   height: 0;
 }
 
-header {
+.image_text {
   width: 100%;
   background: #fff;
 }
 
-header .header_top {
+.image_text .text_top {
   padding: 0.05rem 0.2rem;
   border-bottom: 1px solid #ccc;
 }
 
-header .header_top a {
+.image_text .text_top a {
   color: #999;
   font-size: 0.2rem;
 }
 
-header .header_top span {
+.image_text .text_top span {
   display: inline-block;
   padding: 0 0.95rem;
   font-size: 0.15rem;
 }
 
-header .header_bottom span {
+.image_text .text_bottom {
+  margin-bottom: 0.1rem;
+}
+
+.image_text .text_bottom span {
   font-size: 0.15rem;
   display: inline-block;
   padding: 0.08rem 0.22rem;
 }
 
-header .header_bottom span:hover {
+.image_text .text_bottom span:hover {
   border-bottom: 0.02rem solid red;
   color: red;
 }
 
-main {
-  width: 100%;
-  margin-top: 0.12rem;
-  background: #fff;
-}
-
-main .goodShow {
+.image_text .goodShow {
   padding: 0.05rem 0.05rem;
 }
 
-main .goodShow img {
+.image_text .goodShow img {
   width: 3.1rem;
 }
 
-main .parameter {
+.image_text .parameter {
   padding: 0.5rem 0.05rem;
   width: 100%;
   display: none;
 }
 
-main .parameter p {
+.image_text .parameter p {
   margin-bottom: 0.1rem;
   font-size: 0.15rem;
 }
 
-main .parameter table {
+.image_text .parameter table {
   text-align: center;
   width: 100%;
 }
 
-main .parameter table tbody .headline {
+.image_text .parameter table tbody .headline {
   background: #ccc;
 }
 
-main .parameter table tbody tr {
+.image_text .parameter table tbody tr {
   line-height: 0.3rem;
 }
 
-main .accredit {
+.image_text .accredit {
   width: 100%;
   display: none;
 }
 
-main .accredit p {
+.image_text .accredit p {
   font-size: 0.1rem;
 }
 
-main .accredit .file_logo {
+.image_text .accredit .file_logo {
   display: block;
   width: 3.1rem;
   padding: 0.5rem 0;
