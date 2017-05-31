@@ -114,7 +114,9 @@ $(function(){
 		// $('.searchInfo').children().remove();
 		var obj = {};
 		obj.id = $('.searchId').val();
-		obj.name = $('.searchName').val();
+		if($('.searchName').val() != ''){
+			obj.name = $('.searchName').val();
+		}
 		obj.collection = $('.searchInfo .collection').text();
 		$.post('/showData',obj,function(response){
 			var arr = response;

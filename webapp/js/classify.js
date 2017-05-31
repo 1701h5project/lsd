@@ -170,17 +170,13 @@ $(function(){
 		})
 	})
 
-
-		
-
-
-
-
 	//点击右标题
 	$('.clickTitle_r').on('click',function(){
 		$('.main_l').hide();
 		$('.main_r').show();
+		$('.main_r').append('<div class="wrap" style="display:none;"><section class="home"></section></div><div class="loading"><div class="process"><div class="cs"></div></div></div>')
 		$.post(erp.baseUrl+'showData',{collection:'logo'},function(response){
+
 			var arr = response;
 			$('.main_r').append('<h3>--推荐品牌--</h3><ul></ul>');
 			for(i=0;i<12;i++){
@@ -209,7 +205,15 @@ $(function(){
 			$('.main_r').append('<h3>--玩具品牌--</h3><ul></ul>');
 			for(o=67;o<79;o++){
 				$('.main_r ul:eq(6)').append('<li><img src="../'+arr[o].imgurl+'"></img><p>'+arr[o].name+'</p><p>'+arr[o].produce+'</p></li>')
-			}		
+			}
+
+	        if(document.readyState == "complete"){//当页面加载状态为完全结束时进入     
+	            $(".process .cs").animate({width:"100%"},function(){  
+	                 $(".loading").hide();//当页面加载完成后将loading页隐藏    
+	                 $('.wrap').show();  
+	            });  
+	        }     
+
 		})
 	})
 })
