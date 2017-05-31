@@ -1,6 +1,6 @@
 require(['config'],function(){
 	require(['zhjquery','global'],function(){
-		$.post('/getregister',{},function(response,request){
+		$.post(erp.baseUrl+'/getregister',{},function(response,request){
 			console.log(response);
 			console.log(request);
 			response.forEach(function(item,index){

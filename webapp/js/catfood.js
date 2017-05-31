@@ -1,5 +1,5 @@
 requirejs(["config"],function(){
-	requirejs(["zhjquery"],function(){
+	requirejs(["zhjquery","global","zhswiper"],function(){
 		$(function(){
 			$('.header').load('header.html');
 			$('.footer').load('footer.html');
@@ -7,7 +7,7 @@ requirejs(["config"],function(){
 		});
 		
 		$(function(){
-			$.get('/catfood-getdata',{catfoodDiscount:"yes"},function(data){
+			$.get(erp.baseUrl+'/catfood-getdata',{catfoodDiscount:"yes"},function(data){
 				console.log(data)
 				var res='';
 				for(var i=0;i<data[0].imgURL.length;i++){
@@ -27,6 +27,17 @@ requirejs(["config"],function(){
 				};
 				$('.section3').append(res);
 			});
+		});
+		
+		//轮播图
+		$(function(){
+			var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true,
+		        centeredSlides: true,
+		        autoplay: 3000,
+		        autoplayDisableOnInteraction: false
+		    });
 		});
 	});
 });

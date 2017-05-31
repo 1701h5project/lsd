@@ -8,11 +8,12 @@
 	<link rel="stylesheet" href="../../libs/font_spgs725owritqpvi/iconfont.css">
 	<link rel="stylesheet" href="../font/iconfont.css">
 	<script src="../../libs/jquery/jquery-3.1.1.js"></script>
+	<script src="../../libs/common/global.js"></script>
 	<script>
 		var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
 		document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
 		$(function(){
-			$.post('/getaddress',{},function(response){
+			$.post(erp.baseUrl+'/getaddress',{},function(response){
 				//console.log(response);
 				if( response != null){
 					$('.adress').hide();

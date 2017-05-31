@@ -71,7 +71,7 @@ html, body {
 
 .main .section1 ul {
   position: absolute;
-  width: 10rem;
+  width: 25rem;
 }
 
 .main .section1 ul li {
@@ -79,24 +79,28 @@ html, body {
 }
 
 .main .section1 ul li a img {
-  height: 2.078125rem;
+  height: 2.09375rem;
   width: 5rem;
 }
 
-.main .section1 ul #dot {
+.main .section1 #dot {
   position: absolute;
   height: 0.46875rem;
   bottom: -0.15625rem;
-  left: 2.1875rem;
+  left: 2.3125rem;
 }
 
-.main .section1 ul #dot span {
+.main .section1 #dot .swiper-pagination-bullet {
   display: inline-block;
   margin-right: 0.15625rem;
   width: 0.15625rem;
   height: 0.15625rem;
   border-radius: 50%;
   background-color: #eee;
+}
+
+.main .section1 #dot .swiper-pagination-bullet-active {
+  background-color: yellow;
 }
 
 .main .section2 {

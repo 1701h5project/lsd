@@ -1,11 +1,11 @@
 requirejs(["config"],function(){
-	requirejs(["zhjquery","zhswiper"],function(){
+	requirejs(["zhjquery","zhswiper","global"],function(){
 		$(function(){
 			$.getScript('js/footer.js');
 		});
 		//ajax请求
 		$(function(){
-			$.get('/index-getdata',{Activity:"yes"},function(data){
+			$.get(erp.baseUrl+'/index-getdata',{Activity:"yes"},function(data){
 				var res='';
 				for(var i=0;i<data.length;i++){
 					res+=`<li class="swiper-slide" data-idx="${data[i].id}">
@@ -24,7 +24,7 @@ requirejs(["config"],function(){
 			        freeMode: true
 		   		 });
 		   		 
-		   		 $.get('/catfood-getdata',{catfoodDiscount:"yes"},function(data){
+		   		 $.get(erp.baseUrl+'/catfood-getdata',{catfoodDiscount:"yes"},function(data){
 					var res='';
 					for(var i=0;i<data[0].imgURL.length;i++){
 						res+= `<div class="product-sec">
@@ -75,7 +75,7 @@ requirejs(["config"],function(){
 		$(function(){
 			var timer = setInterval(countDown,1000);
 			var times;
-			var end = Date.parse('2017/5/27');
+			var end = Date.parse('2017/6/2');
 			function countDown(){
 				var now = Date.now();
 				times=Math.floor((end - now)/1000);

@@ -12,6 +12,7 @@
         .btn_save{height: 0.625rem;width: 50%;border-radius:0.46875rem;font-size: 0.28125rem;}
 	</style>
 	<script src="../../libs/jquery/jquery-3.1.1.js"></script>
+	<script src="../../libs/common/global.js"></script>
 	<script>
 		var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
 		document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
@@ -25,7 +26,7 @@
 	                alert('真实姓名不能为空');
 	                return;
 	            }
-	            $.post('/getname',{name:realname},function(response){
+	            $.post(erp.baseUrl+'/getname',{name:realname},function(response){
 					console.log(response);
 					if(!response.status){
 						//alert('保存成功,1s后跳转...');

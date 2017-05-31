@@ -1,7 +1,7 @@
 $(()=>{
 	
 
-	$.post('/getaddress',{},function(response){
+	$.post('http://10.3.133.4:3000/getaddress',{},function(response){
 			// var res=response.map(function(item,index){
 					$('.adde').text(response[0].address);
 					$('.usess').text(response[0].name);

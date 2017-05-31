@@ -1,9 +1,9 @@
 requirejs(["config"],function(){
-	requirejs(["zhjquery"],function(){
+	requirejs(["zhjquery","global"],function(){
 		//ajax请求
 		$(function(){
 			$(function(){
-				$.get('/index-getdata',{Activity:"yes"},function(data){
+				$.get(erp.baseUrl+'/index-getdata',{Activity:"yes"},function(data){
 					var res='';
 					for(var i=0;i<data.length;i++){
 						res+=`<li class="pro-section" data-idx="${data[i].id}">

@@ -22,7 +22,7 @@ require(['config'],function(){
 	
 	
 	
-	          	$.post('/login',{
+	          	$.post(erp.baseUrl+'/login',{
 	          		phone: $.trim($('input[name=username]').val()),
 					password: $.trim($('input[name=password]').val())
 					}, function(response){

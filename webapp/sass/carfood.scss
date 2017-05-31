@@ -28,29 +28,32 @@
         overflow: hidden;
         ul{
             position: absolute;
-            width: 10rem;
+            width: 25rem;
             li{
                 float: left;
                 a{
                     img{
-                        height: 2.078125rem;
+                        height: 2.09375rem;
                         width: 5rem;
                     }
                 }
             }
-            #dot{
-                position: absolute;
-                height: 0.46875rem;
-                bottom: -0.15625rem;
-                left: 2.1875rem;
-                span{
-                    display: inline-block;
-                    margin-right:0.15625rem;
-                    width: 0.15625rem;
-                    height: 0.15625rem;
-                    border-radius: 50%;
-                    background-color: #eee;
-                }
+        }
+        #dot{
+            position: absolute;
+            height: 0.46875rem;
+            bottom: -0.15625rem;
+            left: 2.3125rem;
+            .swiper-pagination-bullet{
+                display: inline-block;
+                margin-right:0.15625rem;
+                width: 0.15625rem;
+                height: 0.15625rem;
+                border-radius: 50%;
+                background-color: #eee;
+            }
+            .swiper-pagination-bullet-active{
+                background-color: yellow;
             }
         }
     }

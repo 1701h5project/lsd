@@ -4,7 +4,7 @@ requirejs.config({
 		"zhswiper":"../../libs/swiper/swiper.min",
 		"zhheader":"../js/header",
 		"global":"../../libs/common/global",
-		"xcConfirm":"../../libs/xcConfirm-150317204828/js/xcConfirm",
+		"xcConfirm":"../../libs/xcConfirm-150317204828/js/xcConfirm"
 	},
 	shim:{
 		"zhswiper":["zhjquery"],

@@ -1,5 +1,5 @@
 require(['config'], function() {
-	require(['zhjquery','zhswiper'],function(){
+	require(['zhjquery','zhswiper','global'],function(){
 
 			
 	$(function(){
@@ -21,7 +21,7 @@ require(['config'], function() {
 		$('em').text(d)
 
 		//---------------请求后台数据生成DOM节点-----------------
-			$.get('/product-data',{"id":proid},function(response){
+			$.get(erp.baseUrl+'/product-data',{"id":proid},function(response){
 				var arr = response;
 				console.log(arr)
 				var $carousel =  $('.carousel');
