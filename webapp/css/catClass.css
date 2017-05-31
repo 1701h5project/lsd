@@ -58,6 +58,7 @@ html, body {
   overflow-y: auto;
   flex-direction: column;
   background-color: #f3f4f5;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
 }
 

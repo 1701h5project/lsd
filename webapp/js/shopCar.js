@@ -1,4 +1,4 @@
-$(()=>{
+$(function(){
 	var str = window.localStorage.getItem('buyMsg');
 
 	// var length = str.split(",");

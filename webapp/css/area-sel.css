@@ -125,6 +125,7 @@ html, body {
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #fafafa;
+  -webkit-overflow-scrolling: touch;
 }
 
 .main .box {

@@ -85,11 +85,12 @@
 .main{
     display: flex;
     flex:1;
+    flex-direction: column;
     overflow-x:hidden;
     overflow-y:auto;
-    flex-direction: column;
     background-color: #f3f4f5;
     width: 100%;
+    -webkit-overflow-scrolling:touch;
     .box{
         .main-lbt{
             width: 100%;

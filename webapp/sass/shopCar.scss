@@ -1,14 +1,13 @@
-
 *{
 	margin:0;
 	padding:0;
 }
-
+a{
+    text-decoration:none;
+}
 html,body{
 	width: 100%;
 	height: 100%;
-	// background-color: #fff;
-	
 	color:#333;
 	font-size:64px;
 
@@ -17,8 +16,6 @@ html,body{
 	display: flex;
 	min-width: 5.0rem;
 	flex-direction: column;
-    
-    
 	.header::-webkit-scrollbar{width:0;height:0}
 	.header{
 		height: 0.78125rem;
