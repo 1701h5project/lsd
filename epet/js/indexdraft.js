@@ -11,34 +11,54 @@ $(function(){
 		$('.status').text('状态');
 	})
 
-
-	//增删按钮改类名
-	$('.showShop').click(function(){
-		$('.btn_addlogo').addClass('btn_addshop').removeClass('btn_addlogo');
-		$('.btn_dellogo').addClass('btn_delshop').removeClass('btn_dellogo');
+	//点击增删
+	$('.control').click(function(){
+		$('.controlInfo').show();		
+		$('.searchInfo').hide();
+		$('.shopInfo').hide();
+		$('.logoInfo').hide();
 	})
 
-	$('.showLogo').click(function(){
-		$('.btn_addshop').addClass('btn_addlogo').removeClass('btn_addshop');
-		$('.btn_delshop').addClass('btn_delloge').removeClass('btn_delshop');
+	//选择collection
+	$('.controlInfo>ul').on('click','span',function(){
+		$('.controlInfo>ul li span').removeClass('collection');
+		$(this).addClass('collection');
 	})
+
+
+
+	//添加属性
+	$('.addAttr').click(function(){
+		$('.btn').append('<div>请输入属性名:<input type="text" />请输入属性值:<input type="text" /><button class="affirmAttr">确认</button><button class="resetAttr">重置</button><button class="leave">退出</button></div>')
 	
+		$('.affirmAttr').click(function(){
+			var attrName = $('.btn div input:eq(0)').val();
+			var attrVal = $('.btn div input:eq(1)').val();
+			$('.controlUl').append('<li><label for="">'+attrName+'</label><input type="text" class="" value="'+attrVal+'"></li>')
+		})
+
+		$('.resetAttr').click(function(){
+			$('.btn div input').val('');
+		})
+
+		$('.leave').click(function(){
+			$('.btn div').remove();
+		})
+	})
 
 
 
 
+	//添加信息
+	$('.btn_add').click(function(){
 
-
-
-	//添加商品信息
-	$('.btn_addshop').click(function(){
-		var _id = $('.content1').val();
-		var _imgurl = $('.content2').val();
-		var _name = $('.content3').val();
-		var _produce = $('.content4').val();
-		var _price = $('.content5').val();
-		var _specification = $('.content6').val();
-		$.post('/indexShop', {id:_id,imgurl:_imgurl,name:_name,produce:_produce,price:_price,specification:_specification}, function(response){
+		var attrObj = {};
+		for(i=0;i<$('.controlUl li').length;i++){
+			attrObj[$('.controlUl li label:eq('+i+')').text()] = $('.controlUl li input:eq('+i+')').val(); 
+		}
+		attrObj.collection = $('.controlInfo .collection').text();
+		
+		$.post('/indexData',attrObj,function(response){
 			// console.log(response);
 			var obj = window.eval('(' + response + ')');
 			if(!obj.state){
@@ -50,16 +70,16 @@ $(function(){
 		})
 	})
 
-	//删除商品信息
-	$('.btn_delshop').click(function(){
-		var _id = $('.content1').val();
-		var _imgurl = $('.content2').val();
-		var _name = $('.content3').val();
-		var _produce = $('.content4').val();
-		var _price = $('.content5').val();
-		var _specification = $('.content6').val();
+	//删除信息
+	$('.btn_del').click(function(){
 
-		$.get('/indexShop',{id:_id,imgurl:_imgurl,name:_name,produce:_produce,price:_price,specification:_specification}, function(response){
+		var attrObj = {};
+		for(i=0;i<$('.controlUl li').length;i++){
+			attrObj[$('.controlUl li label:eq('+i+')').text()] = $('.controlUl li input:eq('+i+')').val(); 
+		}
+		attrObj.collection = $('.controlInfo .collection').text();
+
+		$.get('/indexData',attrObj,function(response){
 			// console.log(response);
 			var obj = window.eval('(' + response + ')');
 			if(!obj.state){
@@ -72,73 +92,109 @@ $(function(){
 	})
 
 
-	//添加品牌信息
-	$('.btn_addlogo').click(function(){
-		var _id = $('.content1').val();
-		var _imgurl = $('.content2').val();
-		var _name = $('.content3').val();
-		var _produce = $('.content4').val();
-		var _price = $('.content5').val();
-		var _specification = $('.content6').val();
-
-		$.post('/indexLogo', {id:_id,imgurl:_imgurl,name:_name,produce:_produce,price:_price,specification:_specification}, function(response){
-			// console.log(response);
-			var obj = window.eval('(' + response + ')');
-			if(!obj.state){
-				$('h1').text(obj.message);
-			} else {
-				$('h1').text('添加成功');
-				$('input').val('');
-			}
-		})
+	//选择collection
+	$('.searchInfo>div').on('click','span',function(){
+		$('.searchInfo>div span').removeClass('collection');
+		$(this).addClass('collection');
 	})
 
-	//删除品牌信息
-	$('.btn_dellogo').click(function(){
-		var _id = $('.content1').val();
-		var _imgurl = $('.content2').val();
-		var _name = $('.content3').val();
-		var _produce = $('.content4').val();
-		var _price = $('.content5').val();
-		var _specification = $('.content6').val();
-		$.get('/indexLogo',{id:_id,imgurl:_imgurl,name:_name,produce:_produce,price:_price,specification:_specification}, function(response){
-			// console.log(response);
-			var obj = window.eval('(' + response + ')');
-			if(!obj.state){
-				$('h1').text(obj.message);
-			} else {
-				$('h1').text('删除成功');
-				$('input').val('');
-			}
-		})
+	//点击查询
+	$('.search').click(function(){
+
+		$('.controlInfo').hide();
+		$('.searchInfo').show();		
+		$('.shopInfo').hide();
+		$('.logoInfo').hide();
+
+		$('.searchInfo div').show();
 	})
-	
-	//点击商品信息库显示信息
-	$('.showShop').click(function(){
-		$('.datalist tr').remove();
-		$("input[name='focusIn']").focus();
-		$.post('/showShop',function(response){
+
+	//查询信息
+	$('.btn_search').click(function(){
+		// $('.searchInfo').children().remove();
+		var objId = {};
+		objId.id = $('.searchId').val();
+		objId.collection = $('.searchInfo .collection').text();
+		$.post('/showData',objId,function(response){
 			var arr = response;
 			var str = JSON.stringify(arr)
+			var list ='';
+			
 			for(i=0;i<arr.length;i++){
-				$('.datalist').append('<tr><td><input type="checkbox"></td><td><input type="text" class="content1" value="'+arr[i].id+'"></td><td><input type="text" class="content2" value="'+arr[i].imgurl+'"></td><td><input type="text" class="content3" value="'+arr[i].name+'"></td><td><input type="text" class="content4" value="'+arr[i].produce+'"></td><td><input type="text" class="content5" value="'+arr[i].price+'"></td><td><input type="text" class="content6" value="'+arr[i].specification+'"></td></tr>');
-			}
-		})
-	})
-
-
-	//点击品牌信息库显示信息
-	$('.showLogo').click(function(){
-		$('.datalist tr').remove();
-		$('.status').text('状态');
-		$("input[name='focusIn']").focus();
-		$.post('/showLogo',function(response){
-			var arr = response;
-			var str = JSON.stringify(arr)
-			for(i=0;i<arr.length;i++){
-				$('.datalist').append('<tr><td><input type="checkbox"></td><td><input type="text" class="content1" value="'+arr[i].id+'"></td><td><input type="text" class="content2" value="'+arr[i].imgurl+'"></td><td><input type="text" class="content3" value="'+arr[i].name+'"></td><td><input type="text" class="content4" value="'+arr[i].produce+'"></td><td><input type="text" class="content5" value="'+arr[i].price+'"></td><td><input type="text" class="content6" value="'+arr[i].specification+'"></td></tr>');
+				$('.searchInfo').append('<ul class="data'+i+'"></ul>')
+				$.each(arr[i], function(j, val) {  
+	    			list+='<li><label>'+j+'</label><input type="text" value="'+arr[i][j]+'" /></li>'
+				});
+				$('.searchInfo ul:eq('+i+')').append(list);
+				list = '';
 			}
 		})		
+	})
+
+	//更新信息
+	$('.btn_update').click(function(){
+		var attrObj = {};
+		for(i=0;i<$('.data0 li').length;i++){
+			attrObj[$('.data0 li label:eq('+i+')').text()] = $('.data0 li input:eq('+i+')').val();
+		}
+		attrObj.collection = $('.searchInfo .collection').text();
+		
+		$.post('/updateData',attrObj,function(response){
+			// console.log(response);
+			var obj = window.eval('(' + response + ')');
+			if(obj.state){
+				$('h1').text('更新成功');
+			} else {
+				$('h1').text(obj.message);
+			}
+		})
+	})
+
+	//点击商品信息库
+	$('.showShop').click(function(){
+		$('.shopInfo').children().remove();
+		$('.controlInfo').hide();
+		$('.searchInfo').hide();
+		$('.shopInfo').show();		
+		$('.logoInfo').hide();
+
+		$.post('/showData',{collection:'shop'},function(response){
+			var arr = response;
+			var str = JSON.stringify(arr)
+			var list ='';
+			
+			for(i=0;i<arr.length;i++){
+				$('.shopInfo').append('<ul class="data'+i+'"></ul><hr />')
+				$.each(arr[i], function(j, val) {  
+	    			list+='<li><label>'+j+'</label><input type="text" value="'+arr[i][j]+'" /></li>'
+				});
+				$('.shopInfo ul:eq('+i+')').append(list);
+				list = '';
+			}
+		})
+	})
+
+	//点击品牌信息库
+	$('.showLogo').click(function(){
+		$('.logoInfo').children().remove();
+		$('.controlInfo').hide();
+		$('.searchInfo').hide();
+		$('.shopInfo').hide();
+		$('.logoInfo').show();
+		$.post('/showData',{collection:'logo'},function(response){
+			var arr = response;
+			var str = JSON.stringify(arr)
+			var list ='';
+			
+			for(i=0;i<arr.length;i++){
+				$('.logoInfo').append('<ul class="data'+i+'"></ul><hr />')
+				$.each(arr[i], function(j, val) {  
+	    			list+='<li><label>'+j+'</label><input type="text" value="'+arr[i][j]+'" /></li>'
+				});
+				$('.logoInfo ul:eq('+i+')').append(list);
+				list = '';
+			}
+		})
 	})
 
 })
