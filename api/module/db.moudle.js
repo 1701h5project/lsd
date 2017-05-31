@@ -5,6 +5,7 @@ var server = new mongodb.Server('localhost', 27017);
 
 var db = new mongodb.Db('epetdata', server);
 
+//判断是否存在
 var exists = function(_collection, data, key, callback){
 	db.open(function(error, db){
 		if(error){
@@ -26,6 +27,7 @@ var exists = function(_collection, data, key, callback){
 	})	
 }
 
+//添加数据
 var saveData = function(_collection, data){
 	db.open(function(error, db){
 		if(error){
@@ -43,6 +45,7 @@ var saveData = function(_collection, data){
 	})
 }
 
+//删除数据
 var removeData = function(_collection, data){
 	db.open(function(error, db){
 		if(error){
@@ -60,7 +63,7 @@ var removeData = function(_collection, data){
 	})
 }
 
-
+//获取数据
 var showData = function(_collection,data,callback){
 	db.open(function(error,db){
 		if(error){
@@ -72,14 +75,23 @@ var showData = function(_collection,data,callback){
 				console.log(error)
 			} else {
 				if(data.id != null ){
+					if(data.name != null){
+						var str = data.name;
+						db.collection(data.collection,function(error,collection){
+							collection.find( { name: { $regex: str, $options: 'i' } } ).toArray(function(error,shops){
+								callback(shops);
+							});
+						})
+					}else{
+						var str = data.id;
+						var arr = str.split(',');
+						db.collection(data.collection,function(error,collection){
+							collection.find({id:{$in: arr}}).toArray(function(error,shops){
+								callback(shops);
+							});
+						})						
+					}
 
-					var str = data.id;
-					var arr = str.split(',');
-					db.collection(data.collection,function(error,collection){
-						collection.find({id:{$in: arr}}).toArray(function(error,shops){
-							callback(shops);
-						});
-					})
 
 				}else{
 					db.collection(data.collection,function(error,collection){
@@ -96,6 +108,7 @@ var showData = function(_collection,data,callback){
 	})
 }
 
+//更新数据
 var updateData = function(_collection, data){
 	db.open(function(error, db){
 		if(error){

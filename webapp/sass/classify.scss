@@ -48,7 +48,13 @@ ul,li{list-style:none;}
   .showInfo::-webkit-scrollbar{width: 0;height: 0;}
 }
 
-
-.main_r ul{display: flex;flex-wrap:wrap;padding: 10px 0;}
-.main_r ul li{width:106px;text-align: center;padding:10px 0;}
-.main_r ul li img{height: 40px;margin:0 auto;}
+.main_r{
+  overflow-x: hidden;overflow-y: auto;
+  ul{
+    display: flex;flex-wrap:wrap;padding: 10px 0;
+    li{
+      width:106px;text-align: center;padding:10px 0;
+      img{height: 40px;margin:0 auto;}
+    }
+  }
+}

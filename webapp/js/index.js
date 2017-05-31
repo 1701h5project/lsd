@@ -5,7 +5,7 @@ requirejs(["config"],function(){
 		});
 		//ajax请求
 		$(function(){
-			$.get('/index-getdata',{Activity:"yes"},function(data){
+			$.get(erp.baseUrl+'index-getdata',{Activity:"yes"},function(data){
 				var res='';
 				for(var i=0;i<data.length;i++){
 					res+=`<li class="swiper-slide" data-idx="${data[i].id}">
@@ -24,7 +24,7 @@ requirejs(["config"],function(){
 			        freeMode: true
 		   		 });
 		   		 
-		   		 $.get('/catfood-getdata',{catfoodDiscount:"yes"},function(data){
+		   		 $.get(erp.baseUrl+'catfood-getdata',{catfoodDiscount:"yes"},function(data){
 					var res='';
 					for(var i=0;i<data[0].imgURL.length;i++){
 						res+= `<div class="product-sec">
