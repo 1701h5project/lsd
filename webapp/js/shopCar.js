@@ -1,7 +1,4 @@
 $(()=>{
-	$.post('/getregister',{},function(response){
-		$('.uses').text(response[0].name);
-	})
 	var str = window.localStorage.getItem('buyMsg');
 
 	// var length = str.split(",");
@@ -106,6 +103,7 @@ $(()=>{
 		// 	str.push(arr)
 		// }
 		window.localStorage.removeItem('buyMsg');
+		window.localStorage.removeItem('qty');
 		window.location.reload();
 
 		var res = 0;
@@ -182,7 +180,7 @@ $(()=>{
 	})
 
 	$('#per-next').click(function(){
-		history.back();
+		history.back(-1);
 	})
 	
 	

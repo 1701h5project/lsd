@@ -88,18 +88,33 @@ header .herderHide a i {
   font-size: 0.25rem;
 }
 
-header .herderHide a i em {
-  font-size: 0.1rem;
-  color: red;
-}
-
 header .herderHide a p {
   font-size: 0.12rem;
 }
 
+header .herderHide .carCount {
+  display: block;
+  position: relative;
+}
+
+header .herderHide .carCount span {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.15rem;
+  height: 0.15rem;
+  border-radius: 50%;
+  line-height: 0.15rem;
+  background-color: red;
+  color: #fff;
+  font-size: 0.1rem;
+  opacity: 0.7;
+}
+
 main {
   width: 100%;
-  padding: 0.28rem 0 0.4rem 0;
+  padding: 0.4rem 0 0.4rem 0;
 }
 
 main .good_detail {
@@ -112,8 +127,12 @@ main .good_detail .flag {
   width: 0.25rem;
   height: 0.15rem;
   position: absolute;
-  margin: 0.08rem 0 0 0.05rem;
+  margin: 0.2rem 0 0 0.1rem;
   z-index: 2;
+}
+
+main .good_detail #imgH {
+  height: 3.2rem;
 }
 
 main .good_detail .good_kg p {
@@ -239,13 +258,13 @@ main .kg .elect_KG p a {
   color: #000;
 }
 
-main .kg .elect_KG p a:hover {
-  background: #F03E3E;
-  color: #fff;
-}
-
 main .kg .elect_KG p a:nth-child(1) {
   margin-left: 0.35rem;
+}
+
+main .kg .elect_KG p a.changeCss {
+  background: red;
+  color: #fff;
 }
 
 main .buy_count {
@@ -280,6 +299,7 @@ main .buy_count .emendation input {
   width: 0.4rem;
   height: 0.2rem;
   text-align: center;
+  border: 1px solid #ccc;
 }
 
 main .region {
@@ -501,23 +521,89 @@ main .msg_list .list_links li img {
   vertical-align: middle;
 }
 
-main .check_data {
-  background: #fff;
-  margin-top: 0.1rem;
+.image_text {
   width: 100%;
+  background: #fff;
+  margin-top: 0.2rem;
+}
+
+.image_text .text_top {
+  padding: 0.05rem 0.2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.image_text .text_top p {
   text-align: center;
-  padding: 0.05rem 0;
+  padding: 0 0.95rem;
+  font-size: 0.15rem;
 }
 
-main .check_data a {
-  font-size: 0.12rem;
-  color: #000;
+.image_text .text_bottom {
+  margin-bottom: 0.1rem;
 }
 
-main .check_data a i {
-  font-size: 0.25rem;
-  color: #999;
-  vertical-align: middle;
+.image_text .text_bottom span {
+  font-size: 0.15rem;
+  display: inline-block;
+  padding: 0.08rem 0.22rem;
+}
+
+.image_text .text_bottom span:hover {
+  border-bottom: 0.02rem solid red;
+  color: red;
+}
+
+.image_text .text_bottom span.active {
+  border-bottom: 0.02rem solid red;
+  color: red;
+}
+
+.image_text .content .goodShow {
+  padding: 0.05rem 0.05rem;
+  display: none;
+}
+
+.image_text .content .goodShow img {
+  width: 3.1rem;
+}
+
+.image_text .content .parameter {
+  padding: 0 0.05rem;
+  width: 100%;
+  display: none;
+}
+
+.image_text .content .parameter p {
+  margin-bottom: 0.1rem;
+  font-size: 0.15rem;
+}
+
+.image_text .content .parameter table {
+  text-align: center;
+  width: 100%;
+}
+
+.image_text .content .parameter table tbody .headline {
+  background: #ccc;
+}
+
+.image_text .content .parameter table tbody tr {
+  line-height: 0.3rem;
+}
+
+.image_text .content .accredit {
+  width: 100%;
+  display: none;
+}
+
+.image_text .content .accredit p {
+  font-size: 0.1rem;
+}
+
+.image_text .content .accredit .file_logo {
+  display: block;
+  width: 3.1rem;
+  padding: 0.5rem 0;
 }
 
 footer {
@@ -546,18 +632,36 @@ footer .footer_list .buy_list li i {
   font-size: 0.2rem;
 }
 
-footer .footer_list .buy_list li i em {
-  color: red;
-  font-size: 0.1rem;
-}
-
 footer .footer_list .buy_list li p {
   font-size: 0.12rem;
+  color: #000;
+}
+
+footer .footer_list .buy_list .cart {
+  position: relative;
+}
+
+footer .footer_list .buy_list .cart span {
+  display: block;
+  position: absolute;
+  right: 0.35rem;
+  top: -0.05rem;
+  width: 0.15rem;
+  height: 0.15rem;
+  border-radius: 50%;
+  line-height: 0.15rem;
+  background-color: red;
+  color: #fff;
+  font-size: 0.1rem;
+  opacity: 0.7;
 }
 
 footer .footer_list .buy_list .my_buy {
   background: #F03E3E;
-  line-height: 0.25rem;
-  color: #fff;
+  line-height: 0.38rem;
+}
+
+footer .footer_list .buy_list .my_buy .btn_buy {
   font-size: 0.15rem;
+  color: #fff;
 }

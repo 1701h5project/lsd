@@ -28,3 +28,12 @@ ul {
 a {
   text-decoration: none;
 }
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  height: 0;
+}
