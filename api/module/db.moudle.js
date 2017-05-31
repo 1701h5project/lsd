@@ -1,4 +1,5 @@
 var mongodb = require('mongodb');
+var querystring = require('querystring')
 
 var server = new mongodb.Server('localhost', 27017);
 
@@ -25,7 +26,7 @@ var exists = function(_collection, data, key, callback){
 	})	
 }
 
-var saveShop = function(_collection, data){
+var saveData = function(_collection, data){
 	db.open(function(error, db){
 		if(error){
 			console.log('connect db:', error);
@@ -42,7 +43,7 @@ var saveShop = function(_collection, data){
 	})
 }
 
-var removeShop = function(_collection, data){
+var removeData = function(_collection, data){
 	db.open(function(error, db){
 		if(error){
 			console.log('connect db:', error);
@@ -59,41 +60,8 @@ var removeShop = function(_collection, data){
 	})
 }
 
-var saveLogo = function(_collection, data){
-	db.open(function(error, db){
-		if(error){
-			console.log('connect db:', error);
-		}
-		//Account => 集合名（表名）
-		db.collection(_collection, function(error, collection){
-			if(error){
-				console.log(error)	
-			} else {
-				collection.insert(data);
-			}
-			db.close();
-		})
-	})
-}
 
-var removeLogo = function(_collection, data){
-	db.open(function(error, db){
-		if(error){
-			console.log('connect db:', error);
-		}
-		//Account => 集合名（表名）
-		db.collection(_collection, function(error, collection){
-			if(error){
-				console.log(error)
-			} else {
-				collection.remove({id:data.id},true);
-			}
-			db.close();
-		})
-	})
-}
-
-var getShop = function(_collection,data,callback){
+var showData = function(_collection,data,callback){
 	db.open(function(error,db){
 		if(error){
 			console.log('connect db:', error);
@@ -101,24 +69,26 @@ var getShop = function(_collection,data,callback){
 		//Account => 集合名（表名）
 		db.collection(_collection, function(error, collection){
 			if(error){
-				console.log(error)	
+				console.log(error)
 			} else {
-				if(data.id != null){
-					db.collection('shop',function(error,collection){
-						collection.find({id:data.id}).toArray(function(error,shops){
-							// console.log(shops);
+				if(data.id != null ){
+
+					var str = data.id;
+					var arr = str.split(',');
+					db.collection(data.collection,function(error,collection){
+						collection.find({id:{$in: arr}}).toArray(function(error,shops){
 							callback(shops);
-						})
-					})					
+						});
+					})
+
 				}else{
-					db.collection('shop',function(error,collection){
-						collection.find().toArray(function(error,shops){
+					db.collection(data.collection,function(error,collection){
+						collection.find().limit(100).toArray(function(error,shops){
 							// console.log(shops);
 							callback(shops);
 						})
-					})					
+					})			
 				}
-				console.log(data)
 					
 			}
 			db.close();
@@ -126,8 +96,8 @@ var getShop = function(_collection,data,callback){
 	})
 }
 
-var getLogo = function(_collection,data,callback){
-	db.open(function(error,db){
+var updateData = function(_collection, data){
+	db.open(function(error, db){
 		if(error){
 			console.log('connect db:', error);
 		}
@@ -136,17 +106,16 @@ var getLogo = function(_collection,data,callback){
 			if(error){
 				console.log(error)	
 			} else {
-				db.collection('logo',function(error,collection){
-					collection.find({},{limit:100}).toArray(function(error,shops){
-						// console.log(shops);
-						callback(shops);
-					})
-				})
+				collection.remove({id:data.id},true);
+				collection.insert(data);
 			}
 			db.close();
-		})		
+		})
 	})
 }
+
+
+/*-------------------------------------------------------------------*/
 
 var indexGetdata = function(_collection, data, key, callback){
 	db.open(function(error, db){
@@ -160,9 +129,7 @@ var indexGetdata = function(_collection, data, key, callback){
 			} else {
 				var obj = {};
 				obj[key] = data[key];
-				console.log(obj)
 				collection.find(obj).toArray(function(err, docs){
-					console.log(docs)
 					callback(docs)
 				});
 			}
@@ -173,12 +140,10 @@ var indexGetdata = function(_collection, data, key, callback){
 
 
 exports.exists = exists;
-exports.saveShop = saveShop;
-exports.removeShop = removeShop;
-exports.saveLog = saveLogo;
-exports.removeLogo = removeLogo;
-exports.getShop = getShop;
-exports.getLogo = getLogo;
+exports.saveData = saveData;
+exports.removeData = removeData;
+exports.showData = showData;
+exports.updateData = updateData;
 exports.indexGetdata = indexGetdata;
 
 var exist = function(_collection, data, arr, callback){

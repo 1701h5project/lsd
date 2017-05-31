@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 // 创建 application/x-www-form-urlencoded 编码解析
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-// var upload = multer({ dest:  "./upload" }); 
+// var upload = multer({ dest:  "./upload" });
 
 var storage = multer.diskStorage({  
   destination: function (req, file, cb) {  
@@ -30,23 +30,25 @@ exports.Register = function(app){
 	});
 
 
-  //增加商品
-  app.post('/indexShop', urlencodedParser, function(request, response){
-    db.exists('shop', request.body, 'id', function(result){
+  //增加数据
+  app.post('/indexData', urlencodedParser, function(request, response){
+    var obj = request.body;
+    db.exists(obj.collection, request.body, 'id', function(result){
       if(result){
         response.send('{state: false, message: "用户名已存在"}');
       } else {
-        db.saveShop('shop', request.body);
+        db.saveData(obj.collection, request.body);
         response.send('{state: true}');
       }
     })
   })
 
-  //删除商品
-  app.get('/indexShop',function(request, response){
-    db.exists('shop', request.query, 'id', function(result){
+  //删除数据
+  app.get('/indexData',function(request, response){
+    var obj = request.query;
+    db.exists(obj.collection, request.query, 'id', function(result){
       if(result){
-        db.removeShop('shop', request.query);
+        db.removeData(obj.collection, request.query);
         response.send('{state: true}');      
       }else{
         response.send('{state: false, message: "用户名不存在"}');
@@ -54,43 +56,21 @@ exports.Register = function(app){
     })
   })
 
-  //增加品牌
-  app.post('/indexLogo', urlencodedParser, function(request, response){
-    db.exists('logo', request.body, 'id', function(result){
-      if(result){
-        response.send('{state: false, message: "用户名已存在"}');
-      } else {
-        db.saveLogo('logo', request.body);
-        response.send('{state: true}');
-      }
-    })
+  //获取数据
+  app.post('/showData',urlencodedParser,function(request,response){
+    var obj = request.body;
+    db.showData(obj.collection,request.body,function(result){
+      response.send(result);
+    });    
   })
 
-  //删除商品
-  app.get('/indexLogo',function(request, response){
-    db.exists('logo', request.query, 'id', function(result){
-      if(result){
-        db.removeLogo('logo', request.query);
-        response.send('{state: true}');      
-      }else{
-        response.send('{state: false, message: "用户名不存在"}');
-      }
-    })
-  })
+  //更新数据
+  app.post('/updateData', urlencodedParser, function(request, response){
+    var obj = request.body;
+    db.updateData(obj.collection, request.body);
+    response.send('{state: true}');
+  }) 
 
-  //获取商品
-  app.post('/showShop',urlencodedParser,function(request,response){
-    db.getShop('shop',request.body,function(result){
-      response.send(result);  
-    });
-  })
-
-  //获取品牌
-  app.post('/showLogo',urlencodedParser,function(request,response){
-    db.getLogo('logo',request.body,function(result){
-      response.send(result); 
-    });
-  })
 /*------------------------------------------------------*/
   //获取主页数据
   app.get('/index-getdata',function(request,respond){
