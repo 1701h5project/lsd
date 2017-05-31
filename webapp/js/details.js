@@ -10,15 +10,15 @@ require(['config'], function() {
 		
 		//返回上次浏览网页
 		$('#pre-location').click(function(){
-			history.back(-1);
+			history.back();
 		});
 		
 		
 		var proid=window.localStorage.getItem('id');
 
 		var d = window.localStorage.getItem('qty');
-			d?$('.car-count').text(d):$('.car-count').text()
-		// $('.car-count').text()
+		// console.log(d)
+		$('em').text(d)
 
 		//---------------请求后台数据生成DOM节点-----------------
 			$.get('/product-data',{"id":proid},function(response){
@@ -70,10 +70,6 @@ require(['config'], function() {
 
                     // -----商品规格---------
                     $electKg.html( `<p>重量<a href="javascript:;">${size[0]}</a><a href="javascript:;">${size[1]}</p>`);
-
-                    // ------默认规格-------
-                    $selected.find('p').html(`已选:<span>'重量,${size[1]}'</span>`)
-                    
                    
                     //---------商家logo-----------
                     $shopLogo.html(`<img src="../img/product/${logo}" alt="">`);
@@ -106,22 +102,23 @@ require(['config'], function() {
                     //--------本地储存-------------
 					$('.btn_buy').click(function(){
 					//	点击添加按钮时，是添加还是修改数量
-					var count =Number($('.car-count').html());
+					var count =Number($('em').html());
 					
 					var input = Number($('.emendation').find('input').val());
 					console.log(input)
 
 					count +=input
 
-					$('.car-count').text(count)
+					$('em').text(count)
 					
 					var $currentID = id;
-				
+					var $currentSize=size;
 					
 					//cookie中是否存在当前商品
 					var hasGoods = false;
 					for(var i = 0; i < carlist.length; i++) {
-						if(carlist[i].goodid === $currentID) {
+						if(carlist[i].goodid === $currentID&&
+							carlist[i].gsize === $currentSize) {
 							hasGoods = true;
 							carlist[i].qty+=input;
 							
@@ -163,28 +160,6 @@ require(['config'], function() {
 					// console.log(c)
 					
 
-					//--------点击切换规格---------
-					$electKg.find('a').eq(1).addClass('changeCss');
-
-					$electKg.on('click','a',function(){
-						var idx = $(this).index();
-						var text = $(this).html();
-						if(idx === 0){
-							
-							$goodKG.find('p').html('ProBiotic LIVE 益生菌 羊肉成猫粮 2kg');
-							$goodPrice.find('span').html('¥259.00');
-							$goodPrice.find('del').html('¥310.80');
-							$selected.find('span').html(`'重量,${text}'`)
-						}else{
-							$goodKG.find('p').html(name);
-							$goodPrice.find('span').html(price[0]);
-							$goodPrice.find('del').html(price[1]);
-							$selected.find('span').html(`'重量,${text}'`)
-						}
-						$electKg.find('a').eq(idx).addClass('changeCss').siblings().removeClass('changeCss')
-					})
-
-
 				}
 
 				//------- 商品图片点击滚动--------
@@ -193,8 +168,10 @@ require(['config'], function() {
 				        // paginationType: 'fraction'
 				});
 
-		
-
+				//--------点击切换规格---------
+				$electKg.find('a').click(function(){
+					$selected.find('span').html("'重量,"+$(this).html()+"'")
+				})
 			})
 
 
@@ -232,7 +209,7 @@ require(['config'], function() {
 			})
 
 			// //--------点击购买增加数量-----
-			// var goodCount = $('.car-count')
+			// var goodCount = $('em')
 			// var num = 0
 		 //    $(".btn_buy").click(function(){ 
 		 //    	var input = Number($('.emendation').find('input').val());
@@ -286,43 +263,6 @@ require(['config'], function() {
 				}
 				
 			})
-
-
-			//点击显示图文详情
-			var $tab = $('.text_bottom>span')
-			var $content = $('.content>div')
-
-			$tab.eq(0).addClass('active')
-			$content.eq(0).show();
-
-			$('.text_bottom').on('click','>span',function(){
-				var idx = $(this).index();
-				$(this).addClass('active').siblings()
-				.removeClass('active');
-
-				$content.eq(idx).fadeIn(600).siblings()
-				.hide();
-			})
-
-			//点击跳转到指定位置
-			
-			$('.btn_file').click(function(){
-				//跳转
-		        $('html, body').animate(
-		       		{scrollTop: $(".text_top").offset().top },
-		            {duration: 300,easing: "swing"}
-		        );
-
-		        //显示授权文件
-		        //隐藏其他
-      			$tab.eq(2).addClass('active').siblings()
-				.removeClass('active');
-
-				$content.eq(2).show().siblings()
-				.hide();
-   				
-			})
-			
 		})
 	})
 })

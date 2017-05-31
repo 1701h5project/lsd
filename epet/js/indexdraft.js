@@ -112,10 +112,11 @@ $(function(){
 	//查询信息
 	$('.btn_search').click(function(){
 		// $('.searchInfo').children().remove();
-		var objId = {};
-		objId.id = $('.searchId').val();
-		objId.collection = $('.searchInfo .collection').text();
-		$.post('/showData',objId,function(response){
+		var obj = {};
+		obj.id = $('.searchId').val();
+		obj.name = $('.searchName').val();
+		obj.collection = $('.searchInfo .collection').text();
+		$.post('/showData',obj,function(response){
 			var arr = response;
 			var str = JSON.stringify(arr)
 			var list ='';
@@ -149,6 +150,25 @@ $(function(){
 			}
 		})
 	})
+
+	//更新信息添加属性
+	// $('.addAttr').click(function(){
+	// 	$('.searchInfo').append('<div>请输入属性名:<input type="text" /><hr/>请输入属性值:<input type="text" /><button class="affirmAttr">确认</button><button class="resetAttr">重置</button><button class="leave">退出</button></div>')
+	
+	// 	$('.affirmAttr').click(function(){
+	// 		var attrName = $('.searchInfo div:eq(2) input:eq(0)').val();
+	// 		var attrVal = $('.searchInfo div:eq(2) input:eq(1)').val();
+	// 		$('.searchInfo ul').append('<li><label for="">'+attrName+'</label><input type="text" class="" value="'+attrVal+'"></li>')
+	// 	})
+
+	// 	$('.resetAttr').click(function(){
+	// 		$('.btn div input').val('');
+	// 	})
+
+	// 	$('.leave').click(function(){
+	// 		$('.btn div').remove();
+	// 	})
+	// })
 
 	//点击商品信息库
 	$('.showShop').click(function(){

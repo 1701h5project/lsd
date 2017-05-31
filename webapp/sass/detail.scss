@@ -1,5 +1,5 @@
 @import 'reset.scss';
-
+@import 'base.scss';
 
 //----------头部------------
 header{
@@ -41,34 +41,16 @@ header{
             text-align: center;
             color:#999;
             i{
-
                 font-size: 0.25rem;
-                
+                 em{
+                    font-size: 0.1rem;
+                    color:red;
+                }
             }
             p{
                 font-size: 0.12rem
             }
 
-        }
-        .carCount{
-            display: block;
-            position: relative;
-             span{
-                     
-                    display: block;
-                    position: absolute;
-                    right:0;
-                    top:0;
-                    width:0.15rem;
-                    height:0.15rem;
-                    border-radius: 50%;
-                    line-height: 0.15rem;
-                    background-color: red;
-                    color:#fff;
-                    font-size: 0.1rem;
-                    opacity: 0.7;
-                    // padding-right:0.03rem;
-                }
         }
     }
 }
@@ -76,7 +58,7 @@ header{
 //-------------内容详情------
 main{
     width:100%;
-    padding:0.4rem 0 0.4rem 0;
+    padding:0.28rem 0 0.4rem 0;
 
     // -------------
     .good_detail{
@@ -87,11 +69,8 @@ main{
             width:0.25rem;
             height:0.15rem;
             position: absolute;
-            margin:0.2rem 0 0 0.1rem ;
+            margin:0.08rem 0 0 0.05rem ;
             z-index: 2;
-        }
-        #imgH{
-            height:3.2rem;
         }
         .good_kg{
             // padding-top:3.5rem;
@@ -212,14 +191,13 @@ main{
                     text-align: center;
                     line-height: 0.125rem;
                     color:#000;
-                   
+                    &:hover{
+                        background:#F03E3E;
+                        color:#fff;
+                    }
                 }
                 a:nth-child(1){
                     margin-left:0.35rem;
-                }
-                a.changeCss{
-                    background:red;
-                    color:#fff;
                 }
             }
         }
@@ -463,106 +441,23 @@ main{
         }
     }
 
-    // .check_data{
-    //     // width:0.2rem;
-    //     background: #fff;
-    //     margin-top: 0.1rem;
-    //     width:100%;
-    //     text-align: center;
-    //     padding:0.05rem 0;
-    //     a{
-    //         font-size: 0.12rem;
-    //         color:#000;
-    //         i{
-    //             font-size: 0.25rem;
-    //             color:#999;
-    //             vertical-align: middle;
-    //         }
-    //     }
-    // }
-}
-//-----------图文详情----------
-.image_text{
-    width:100%;
-    background:#fff;
-    margin-top: 0.2rem;
-    // display: none;
-    .text_top{
-
-        padding:0.05rem 0.2rem;
-        border-bottom: 1px solid #ccc;
-        p{
-           text-align: center;
-            padding:0 0.95rem;
-            font-size: 0.15rem;
+    .check_data{
+        // width:0.2rem;
+        background: #fff;
+        margin-top: 0.1rem;
+        width:100%;
+        text-align: center;
+        padding:0.05rem 0;
+        a{
+            font-size: 0.12rem;
+            color:#000;
+            i{
+                font-size: 0.25rem;
+                color:#999;
+                vertical-align: middle;
+            }
         }
     }
-    .text_bottom{
-        
-        margin-bottom: 0.1rem;
-        // position:absolute;
-        // top:0;
-        span{
-            font-size: 0.15rem;
-            display: inline-block;
-            padding:0.08rem 0.22rem;
-            &:hover{
-                border-bottom:0.02rem solid red;
-                color:red;
-            }
-        }
-        span.active{
-            border-bottom: 0.02rem solid red;
-            color:red;
-        }
-    }
-
-    // 商品介绍-----
-    .content{
-        .goodShow{
-            padding:0.05rem 0.05rem;
-            display: none;
-            img{
-                width:3.1rem;
-            }
-        }
-        .parameter{
-            padding:0 0.05rem;
-
-            width:100%;
-            display: none;
-            p{
-                margin-bottom: 0.1rem;
-                font-size: 0.15rem;
-            }
-            table{
-                text-align: center;
-                width:100%;
-                tbody{
-                    .headline{
-                        background:#ccc;
-
-                    }
-                    tr{
-                        line-height: 0.3rem;
-                    }
-                }
-            }
-        }
-        .accredit{
-            width:100%;
-            display: none;
-            p{
-                font-size: 0.1rem;
-            }
-            .file_logo{
-                display: block;
-                width:3.1rem;
-                padding:0.5rem 0;
-            }
-        }        
-    } 
-
 }
 
 // -------底部--------
@@ -583,38 +478,20 @@ footer{
                 i{
                     display: block;
                     font-size: 0.2rem;
+                    em{
+                        color:red;
+                        font-size: 0.1rem;
+                    }
                 }
                 p{
                     font-size: 0.12rem;
-                    color:#000;
-                }
-            }
-            .cart{
-                position: relative;
-                span{
-                    display: block;
-                    position: absolute;
-                    right:0.35rem;
-                    top:-0.05rem;
-                    width:0.15rem;
-                    height:0.15rem;
-                    border-radius: 50%;
-                    line-height: 0.15rem;
-                    background-color: red;
-                    color:#fff;
-                    font-size: 0.1rem;
-                    opacity: 0.7;
-                    // padding-right:0.03rem;
                 }
             }
             .my_buy{
                 background:#F03E3E;
-                line-height: 0.38rem;
-                .btn_buy{
-                     font-size: 0.15rem;
-                     color:#fff;
-
-                }
+                line-height: 0.25rem;
+                color:#fff;
+                font-size: 0.15rem;
             }
         }
     }

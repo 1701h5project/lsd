@@ -21,9 +21,9 @@ $(function(){
 	$('.info').children().remove();
 	$.post(erp.baseUrl+'showData',{collection:'shop',id:'2_1,3_1,4_1,5_1,6_1,7_1,8_1,9_1'},function(response){
 		var arr = response;
-		$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>为您推荐</span><ul></ul>');
+		$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">为您推荐</span><ul></ul>');
 		for(i=0;i<arr.length;i++){
-			$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+			$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 		}
 	})
 
@@ -31,9 +31,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'2_1,3_1,4_1,5_1,6_1,7_1,8_1,9_1'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>为您推荐</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">为您推荐</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -42,9 +42,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'2_1,2_2,2_3,2_4'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>猫咪主粮</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪主粮</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -53,9 +53,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'3_1,3_2,3_3,3_4'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>猫咪零食</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪零食</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -64,9 +64,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'4_1,4_2,4_3,4_4,4_5,4_6'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>猫咪日用</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪日用</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -75,9 +75,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'5_1,5_2,5_3,5_4'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>猫咪玩具</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪玩具</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -86,9 +86,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'6_1,6_2,6_4,6_4,6_5,6_6'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/6_7.jpg" style="width:240px;height:100px;"><span>猫咪保健</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/6_7.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪保健</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -97,9 +97,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'7_1,7_2,7_3,7_4,7_5'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/7_6.jpg" style="width:240px;height:100px;"><span>猫咪医疗</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/7_6.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪医疗</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -108,9 +108,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'8_1,8_2,8_3'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>猫咪出行</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪出行</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -119,9 +119,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'9_1,9_2'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>猫咪装扮</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪装扮</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -130,9 +130,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'10_1,10_2,10_3,10_4'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>猫咪美容</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪美容</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -141,9 +141,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'11_1,11_2,11_3,11_4,11_5'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>猫咪香波</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪香波</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -152,9 +152,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'12_1,12_2,12_3,12_4,12_5'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>猫咪周边</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪周边</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})
@@ -163,9 +163,9 @@ $(function(){
 		$('.info').children().remove();
 		$.post(erp.baseUrl+'showData',{collection:'shop',id:'13_1,13_2'},function(response){
 			var arr = response;
-			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span>猫咪定制</span><ul></ul>');
+			$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">猫咪定制</span><ul></ul>');
 			for(i=0;i<arr.length;i++){
-				$('.info ul').append('<li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li>')				
+				$('.info ul').append('<a href="catList.html"><li><img src="../'+arr[i].imgurl+'"></img><p>'+arr[i].name+'</p><p>'+arr[i].produce+'</p></li></a>')				
 			}
 		})
 	})

@@ -7,6 +7,10 @@
   box-shadow: 0 10px 15px rgba(175, 175, 175, 0.75);
 }
 
+ul, li {
+  list-style: none;
+}
+
 .top {
   text-align: center;
 }
@@ -77,6 +81,11 @@
 .main_l .showInfo::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+.main_r {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .main_r ul {
