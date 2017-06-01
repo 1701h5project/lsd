@@ -1,4 +1,4 @@
-$(()=>{
+$(function(){
 	
 
 	$.post('http://10.3.133.4:3000/getaddress',{},function(response){

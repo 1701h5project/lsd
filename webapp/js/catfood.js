@@ -8,7 +8,6 @@ requirejs(["config"],function(){
 		
 		$(function(){
 			$.get(erp.baseUrl+'/catfood-getdata',{catfoodDiscount:"yes"},function(data){
-				console.log(data)
 				var res='';
 				for(var i=0;i<data[0].imgURL.length;i++){
 					res+=`<div class="product-sec">

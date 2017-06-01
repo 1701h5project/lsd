@@ -16,6 +16,7 @@
 	<script src="assets/js/app.js"></script>
 
 	<script src="js/indexdraft.js"></script>
+
 </head>
 <body>
 	<header class="am-topbar admin-header">
@@ -56,6 +57,8 @@
 		<div class="sideMenu">
 			<h3 class="am-icon-flag"><em></em> <a href="#">商品管理</a></h3>
 			<ul>
+				<li><a href="javascript:" class="control">增删信息库</a></li>
+				<li><a href="javascript:" class="search">查改信息库</a></li>
 				<li><a href="javascript:" class="showShop">商品信息库</a></li>
 				<li><a href="javascript:" class="showLogo">品牌信息库</a></li>
 			</ul>
@@ -111,40 +114,80 @@
   	
 	  	<div class="daohang">
 	  		<ul>
-	  			<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs"> 首页 </li>
+	  			<li><a href="../webapp/index.html"><button type="button" class="am-btn am-btn-default am-radius am-btn-xs"> 首页 </a></li>
 	  			<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs">帮助中心<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close="">×</a></button></li>
-	  		</ul>    	
+	  		</ul>	
 	    </div>
 
 	</div>
 
 	<div class="admin">
 		<h1 class="status">状态</h1>
-		<table class="control">
-			<tr>
-				<td></td>
-				<td>id</td>
-				<td>imgurl</td>
-				<td>name</td>
-				<td>produce</td>
-				<td>price</td>
-				<td>specification</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="text" class="content1"></td>
-				<td><input type="text" class="content2"></td>
-				<td><input type="text" class="content3"></td>
-				<td><input type="text" class="content4"></td>
-				<td><input type="text" class="content5"></td>
-				<td><input type="text" class="content6"></td>
-				<td><button class="btn_addshop">添加</button></td>
-				<td><button class="btn_delshop">删除</button></td>
-			</tr>			
-		</table>
-		<table class="datalist" style="text-align: center;">
+		
+		<div class="controlInfo">
+			<ul class="showCollection">
+				<li><span class="collection">shop</span></li>
+				<li><span>logo</span></li>
+			</ul>
 
-		</table>
+			<ul class="controlUl">
+
+				<li>
+					<label for="">id</label>
+					<input type="text">
+				</li>
+				<li>
+					<label for="">imgurl</label>
+					<input type="text">
+				</li>
+				<li>
+					<label for="">name</label>
+					<input type="text">
+				</li>
+				<li>
+					<label for="">price</label>
+					<input type="text">
+				</li>
+				<li>
+					<label for="">specification</label>
+					<input type="text">
+				</li>
+				<li>
+					<label for="">produce</label>
+					<input type="text">
+				</li>
+
+			</ul>
+			<ul class="btn">
+	  			<li style="display: inline-block;"><button type="button" class="am-btn am-btn-default am-radius am-btn-xs btn_add"> 添加</li>
+	  			<li style="display: inline-block;"><button type="button" class="am-btn am-btn-default am-radius am-btn-xs btn_del">删除</button></li>
+	  			<li style="display: inline-block;"><button type="button" class="am-btn am-btn-default am-radius am-btn-xs addAttr">添加属性</button></li>
+	  		</ul>
+		</div>
+
+		<div class="searchInfo">
+			<div style="display: none;">
+				<span class="collection">shop</span>
+				<span>logo</span>			
+			</div>
+			<div style="display: none;">
+				<label for="searchId">请输入查询ID或者Name:</label>
+				<input type="text" class="searchId"/>
+				<input type="text" class="searchName"/>
+				<button class="btn_search">查询</button>
+				<button class="btn_update">更新</button>
+<!-- 				<button type="button" class="am-btn am-btn-default am-radius am-btn-xs addAttr">添加属性</button> -->			
+			</div>
+		</div>
+
+		<div class="shopInfo">
+			
+		</div>
+
+		<div class="logoInfo">
+
+		</div>
+
 	</div>
 
 	<script src="assets/js/amazeui.min.js"></script>
