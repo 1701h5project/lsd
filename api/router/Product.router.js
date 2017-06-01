@@ -61,7 +61,7 @@ exports.Register = function(app){
     var obj = request.body;
     db.showData(obj.collection,request.body,function(result){
       response.send(result);
-    });    
+    }); 
   })
 
   //更新数据

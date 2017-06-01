@@ -3,49 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script src="libs/jquery/jquery-3.1.1.js"></script>
-    <style>
-		*{padding: 0; margin:0;}    
-	    html{font-size: 40px;}    
-	    body, html{width: 100%; height: 100%;}    
-	    .wrap{ position: relative; width:100%; height:100%;}    
-	    .home{width: 100%; height:100%; background: url(bg.jpg) no-repeat; background-size: 100% 100%;}    
-	    .loading{position: absolute; width: 100%; height: 100%; background: #fff; z-index: 99;}    
-	    .loading p{position: fixed; left: 50%; top: 50%; -webkit-transform: translate(-50%,-50%); text-align: center; color: #222; font-size:0.8rem;}  
-	   .loading .process{ position: absolute;  
-	        top: 50%; left: 50%; -webkit-transform:translate(-50%,-50%);  
-	        width: 90%; height: 30px;  
-	        border-radius: 3px;  
-	        border: 1px solid #ccc;  
-	        background: #fff;  
-	        overflow: hidden;  
-	    }  
-     	.loading .process .cs{background: #899; width:0%; height: 100%;}
-    </style>
+	<script>
+
+	var change1 = function(arr1){
+		var arr2 = [];
+		var change = function(arr1){
+			for(i=0;i<arr1.length;i++){
+				if(Array.isArray(arr1[i])){
+
+					return change(arr1[i]);
+				}else{
+					console.log(arr1[i])
+					arr2.push(arr1[i]);
+				}
+			}
+		}
+		change(arr1);
+		return arr2;
+	}
+	
+    var res = change1([1,2,[33,21,[3,2]]])
+    console.log(res)
+
+	</script>
 </head>
 <body>
-    <div class="wrap" style="display: none;">    
-        <section class="home">  
-             
-        </section>    
-    </div>    
-    <div class="loading">    
-         <div class="process">  
-             <div class="cs"></div>  
-         </div>  
-    </div>
-	<script>
-			document.onreadystatechange = loadingChange;//当页面加载状态改变的时候执行这个方法.    
-	        function loadingChange()     
-	        {     
-	            if(document.readyState == "complete"){//当页面加载状态为完全结束时进入     
-	                $(".process .cs").animate({width:"100%"},function(){  
-	                     $(".loading").hide();//当页面加载完成后将loading页隐藏    
-	                     $('.wrap').show();  
-	                });  
-	            }     
-	        }  
-	</script>
+	
 </body>
 </html>
