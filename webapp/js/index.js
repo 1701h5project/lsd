@@ -1,8 +1,17 @@
 requirejs(["config"],function(){
 	requirejs(["zhjquery","zhswiper"],function(){
+		//搜索
 		$(function(){
-			$.getScript('js/footer.js');
+			$('#search-logo').click(function(){
+				if($('#search').val()){
+					localStorage.setItem('search',$('#search').val());
+					location.href='html/catList.html';
+				}else{
+					alert('搜索不能为空');
+				}
+			})
 		});
+		
 		//ajax请求
 		$(function(){
 			$.get(erp.baseUrl+'index-getdata',{Activity:"yes"},function(data){
@@ -75,7 +84,7 @@ requirejs(["config"],function(){
 		$(function(){
 			var timer = setInterval(countDown,1000);
 			var times;
-			var end = Date.parse('2017/5/27');
+			var end = Date.parse('2017/6/3');
 			function countDown(){
 				var now = Date.now();
 				times=Math.floor((end - now)/1000);

@@ -75,7 +75,7 @@ var showData = function(_collection,data,callback){
 				console.log(error)
 			} else {
 				if(data.id != null ){
-					if(data.name != null){
+					if(data.name != ''){
 						var str = data.name;
 						db.collection(data.collection,function(error,collection){
 							collection.find( { name: { $regex: str, $options: 'i' } } ).toArray(function(error,shops){
