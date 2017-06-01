@@ -43,8 +43,8 @@ requirejs(["config"],function(){
 									<a href="details.html">
 										<img src="../img/product/${(data[i].imgUrl)[0]}"/>
 										<p class="name">${data[i].name}</p>
-										<p class="price">${(data[i].price)[0]}</p>
-										<p>${(data[i].price)[1]}</p>
+										<p class="price">${((data[i].price)[1])[0]}</p>
+										<p>${((data[i].price)[1])[1]}</p>
 									</a>
 								</li>`
 				};

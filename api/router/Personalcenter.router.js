@@ -28,8 +28,8 @@ exports.Register = function(app){
 
 	app.post('/Personalcenter', urlencodedParser, function(request, response){
 
-		db.exist('Personalcenter', request.body,['name','nickname','wechat','gender','city','birthday'], function(data){
-
+		db.exists('Personalcenter', request.body,[], function(data){
+			console.log(data);
 			if(data.length > 0){
 				request.session.phone = request.body.phone;
 				response.send(apiResult(true))
@@ -49,7 +49,7 @@ exports.Register = function(app){
 	app.post('/adress', urlencodedParser, function(request, response){
 
 		db.exist('address', request.body,['name','phone','address'], function(data){
-
+			console.log(data);
 			if(data.length > 0){
 				request.session.phone = request.body.phone;
 				response.send(apiResult(true))
@@ -60,6 +60,28 @@ exports.Register = function(app){
 			}
 		})
 	});
+
+	app.post('/updataadress', urlencodedParser, function(request, response){
+		//console.log(request.body.data);
+	    //需要修改的数据
+	    var data = JSON.parse(request.body.data);
+	    // 根据id是否查询,转成ObjectId类 
+	    var isUpdate = false;
+	    db.exists('address',{},[],function(result){
+	      	result.forEach(function(item){	 	      		
+		        if(item._id == request.body._id){
+		        	console.log(item._id == request.body._id);
+		          	isUpdate = true; 
+		          	//console.log(item._id);  		         
+		          	db.updateData('address',item,data);
+		          	return false;
+		        }
+	      	});
+	    });
+	    //返回修改状态
+	    !isUpdate ? response.send(apiResult(true, '修改成功',request.body)):response.send(apiResult(false, '修改失败'));
+	});
+
 	// 获取我的资料的数据
 	app.post('/getPersonalcenter', urlencodedParser, function(request, response){
 		db.extract('Personalcenter',function(result){
@@ -82,6 +104,24 @@ exports.Register = function(app){
 	app.post('/getname', urlencodedParser, function(request, response){
 		db.extract('name',function(result){
 			response.send(result);
+		});
+	});
+
+	app.post('/sort', urlencodedParser, function(request, response){
+		db.exists('address',{},[],function(data){
+			
+			data.forEach(function(item,index){
+				if(item._id == request.body._id){
+					console.log(index);
+					data.splice(index,1);
+					data.unshift(item);
+				
+					//db.save('address', data);			
+					//response.send(apiResult(false, '资料修改成功'));
+					//console.log(data);
+					//db.updateData('address');
+				}
+			})
 		});
 	});
 	// app.post('/register',urlencodedParser, function(request, response){

@@ -29,15 +29,6 @@ a {
   text-decoration: none;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  height: 0;
-}
-
 header {
   width: 100%;
   background: #fff;

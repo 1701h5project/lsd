@@ -67,7 +67,7 @@ exports.Register = function(app){
   //更新数据
   app.post('/updateData', urlencodedParser, function(request, response){
     var obj = request.body;
-    db.updateData(obj.collection, request.body);
+    db.updatedata(obj.collection, request.body);
     response.send('{state: true}');
   }) 
 

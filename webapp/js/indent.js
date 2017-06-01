@@ -1,7 +1,7 @@
-$(()=>{
+$(function(){
 	
 
-	$.post('/getaddress',{},function(response){
+	$.post(erp.baseUrl + 'getaddress',{},function(response){
 			// var res=response.map(function(item,index){
 					$('.adde').text(response[0].address);
 					$('.usess').text(response[0].name);
@@ -21,11 +21,7 @@ $(()=>{
 	})
 
 	$(".headermenu").click(function(){
-		if($(".herderHide").css("display")=="none"){
-			$(".herderHide").show();
-		}else{
-			$(".herderHide").hide();
-		}
+		$(".herderHide").slideToggle();
 	});
 
 })

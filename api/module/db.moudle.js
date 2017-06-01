@@ -1,7 +1,7 @@
 var mongodb = require('mongodb');
 var querystring = require('querystring')
 
-var server = new mongodb.Server('localhost', 27017);
+var server = new mongodb.Server('10.3.133.60', 27017);
 
 var db = new mongodb.Db('epetdata', server);
 
@@ -75,7 +75,7 @@ var showData = function(_collection,data,callback){
 				console.log(error)
 			} else {
 				if(data.id != null ){
-					if(data.name != ''){
+					if(data.name != null){
 						var str = data.name;
 						db.collection(data.collection,function(error,collection){
 							collection.find( { name: { $regex: str, $options: 'i' } } ).toArray(function(error,shops){
@@ -109,7 +109,7 @@ var showData = function(_collection,data,callback){
 }
 
 //更新数据
-var updateData = function(_collection, data){
+var updatedata = function(_collection, data){
 	db.open(function(error, db){
 		if(error){
 			console.log('connect db:', error);
@@ -119,8 +119,9 @@ var updateData = function(_collection, data){
 			if(error){
 				console.log(error)	
 			} else {
-				collection.remove({id:data.id},true);
-				collection.insert(data);
+				// collection.remove({id:data.id},true);
+				// collection.insert(data);
+				collection.update({id:data.id},data);
 			}
 			db.close();
 		})
@@ -156,7 +157,7 @@ exports.exists = exists;
 exports.saveData = saveData;
 exports.removeData = removeData;
 exports.showData = showData;
-exports.updateData = updateData;
+exports.updatedata = updateData;
 exports.indexGetdata = indexGetdata;
 
 var exist = function(_collection, data, arr, callback){
@@ -241,8 +242,32 @@ var extract = function(_collection,callback){
 	})	
 }
 
+//更新
+var updateData = function(_collection,olddata,newdata){
+	console.log('olddata:',olddata);
+	console.log('newdata:',newdata);
+	db.open(function(error, db){
+		if(error){
+			console.log('connect db:', error);
+		}
+		db.collection(_collection,function(error, collection){
+            if(error){
+                console.log(error)
+            } else {
+
+                collection.update(olddata,{$set:newdata},function(error,result){
+                	//callback(result);
+                	if(error){ console.log(error)}              
+                });
+            }
+        });
+        db.close();
+     })
+}
+
 
 exports.exist = exist;
 exports.save = save;
 exports.del = del;
 exports.extract = extract;
+exports.updateData = updateData;

@@ -2,6 +2,7 @@
 /doc
 /node_modules/
 /project/
+/CordovaProject/
 
 #过滤文件
 *.zip

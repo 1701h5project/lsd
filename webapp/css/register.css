@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/*公共部分*/
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/*重置样式表*/
+/*==========样式重置===========*/
+body, h1, h2, h3, h4, h5, h6, p, a, input, img, ul, li, ol, dl, dt, dd { padding: 0; margin: 0;font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif; }
+
+ul, ol { list-style: none; }
+
+img { display: block; border: 0; }
+
+input { outline: none; }
+
+header, footer, section, nav { display: block; }
+
+html, body { font-size: 12px;
+ color: #3e3e3e; }
+
+a { font-size: 16px; text-decoration: none; color: #0dc441; }
+
+.head-top > .top { height: 0.78125rem; line-height: 0.78125rem; position: relative; border-bottom: 1px solid #f3f3f3; text-align: center; font-size: 20px; }
+
+.head-top > .top > .go-back { position: absolute; width: 10%; top: 0; left: 0; display: inline-block; }
+
+.head-top > .top > .top-right { position: absolute; top: 0; right: 0; display: inline-block; width: 10%; }
+
+.head-top > .top > .top-title { width: 90%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; display: inline-block; }
+
+#register_info #regform { margin-top: 0.3125rem; }
+
+#register_info #regform > .next-step { text-align: center; width: 100%; margin-top: 0.46875rem; }
+
+#register_info #regform > .next-step > .btn-login { width: 80%; display: inline-block; font-size: 20px; padding: 0.15625rem 0; text-align: center; }
+
+#register_info #regform > .next-step > .next-go { width: 80%; display: inline-block; font-size: 20px; padding: 0.15625rem 0; text-align: center; }
+
+#register_info #regform > .myform > li { height: 0.8125rem; border-bottom: #e2e2e2 solid 1px; line-height: 0.78125rem; position: relative; }
+
+#register_info #regform > .myform > li > input { height: 0.78125rem; font-size: 16px; border: none; width: 92%; display: inline-block; float: left; }
+
+#register_info #regform > .myform > li > span { display: inline; float: left; width: 8%; font-size: 20px; text-align: center; }
+
+#register_info #regform > .myform > li > .set-code { width: 1.25rem; text-align: center; vertical-align: middle; position: absolute; right: 0.15625rem; border: 1px solid red; }
+
+#register_info #regform > .myform > li > .auth-code { width: 60%; }

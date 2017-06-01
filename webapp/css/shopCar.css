@@ -5,7 +5,7 @@
 
 html, body {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   color: #333;
   font-size: 64px;
 }
@@ -175,12 +175,22 @@ html, body {
 .container .main .mycheck {
   border-bottom: 1px solid #ddd;
   padding: 10px;
+  line-height: 20px;
 }
 
-.container .main .mycheck > input {
+.container .main .mycheck .checkbox1 {
   border: 1px solid #26c269;
-  margin-top: 5px;
-  line-height: 20px;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 0;
+  line-height: 16px;
+  background: #fff;
+}
+
+.container .main .mycheck .active {
+  background: #26c269;
 }
 
 .container .main .mycheck > span {
@@ -188,6 +198,7 @@ html, body {
   border-radius: 3px;
   padding: 0 10px 0 10px;
   height: 25px;
+  line-height: 26px;
   display: inline-block;
   font-size: 13px;
   border: 1px solid #26c269;
@@ -220,14 +231,22 @@ html, body {
   width: 100%;
   position: relative;
   padding-left: 10px;
+  padding-top: 15px;
 }
 
-.container .main .shopo .shopt > input {
+.container .main .shopo .shopt .checkbox2 {
   margin-top: 40px;
   position: relative;
   display: inline-block;
   border-radius: 50%;
   float: left;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+}
+
+.container .main .shopo .shopt .active {
+  background: #26c269;
 }
 
 .container .main .shopo .shopt .shopth {
@@ -375,15 +394,21 @@ html, body {
   margin-left: 10px;
 }
 
-.container .car-footer .checkbox > input {
-  background: #26c269;
+.container .car-footer .checkbox .checkbox3 {
+  background: #fff;
   border: 1px solid #26c269;
   position: relative;
+  width: 20px;
+  height: 20px;
   display: inline-block;
   border-radius: 50%;
   float: left;
   margin-top: 0.125rem;
   margin-right: 0.078125rem;
+}
+
+.container .car-footer .checkbox .active {
+  background: #26c269;
 }
 
 .container .car-footer .checkbox > label {
