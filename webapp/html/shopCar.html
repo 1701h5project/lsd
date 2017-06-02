@@ -7,8 +7,13 @@
 	<link rel="stylesheet" href="../../libs/font_spgs725owritqpvi/iconfont.css">
 	<link rel="stylesheet" href="../css/base.css">
 	<link rel="stylesheet" href="../css/shopCar.css">
+	<link type="text/css" rel="stylesheet" href="../css/base.css" />
+	<link type="text/css" rel="stylesheet" href="../css/module.css"  />
+
+
 	<script src="../../libs/jquery/jquery-3.1.1.js"></script>
-	<script src="../js/shopCar.js"></script>
+	<script src="../js/shopCar.js"></script> 
+	
 	<script>
 		var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
 		document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
@@ -22,7 +27,7 @@
 				<a href="javascript:void(0)" class="iconfont icon-jiantouzuo" id="pre-index"></a>
 				<span>购物车</span>
 				<!-- <div class="redact">
-					<a href="#">编辑</a>
+					<a href="#">删除</a>
 				</div> -->
 				<i class="iconfont icon-group headermenu"></i>
 			</div>
@@ -56,22 +61,14 @@
 				<div class="coupon">购物车是空的</div>
 				<div class="emt-a">
 					<a href="../index.html">去逛逛</a>
-					<a href="javascript:void(0)">我的收藏</a>
+					<a href="#">我的收藏</a>
 				</div>
 			</div>
-			<div class="mycheck">
-
-			<!--  -->
-				<span  class="checkbox1 active" style="font-size:12px;">√</span>
-				<span style="/*position: relative;top:-5px;*/">西部大仓</span>
-				<a href="#" class="west">
-					<b style="color:#fff;text-align: center;/*position: relative;top:-5px;*/">?</b>
-				</a>
-			</div>
+			
 			
 		</div>
-		<div class="footer">
-			<div class="login resd" style="display: none">
+		<div class="footer" style="margin-bottom: 15px;">
+			<div class="login resd" style="display: none;margin: 10px 0">
 				<a href="login.html">登录</a>
 				<span>|</span>
 				<a href="register.html">注册</a>
@@ -81,58 +78,42 @@
 				<span>|</span>
 				<a href="#" class="tuichu">退出</a>
 			</div>
-			<div class="ft">
+			<!-- <div class="ft">
 				<span class="bt">触屏版</span>
 				<span>电脑版</span>
 				<span>手机客户端</span>
 				<span>联系我们</span>
-			</div>
+			</div> -->
 			
 
 		</div>
-		<div class="car-footer">
-			<div class="checkbox">
-				<span class="checkbox3 active" style="color: #fff;font-size:12px;text-align: center;">√</span>
-				<!-- <input type="checkbox" class="checkbox3" checked="checked"> -->
-				<label>
-					<div class="tariff">
-						<span>关税:</span>
-						<del>
-							<span>￥</span>
-							<span>0</span>
-						</del>
-						<a href="#" class="wenhao">
-							<b style="color:#fff;text-align: center;">?</b>
-						</a>
-						
-					</div>
-					<div class="tariff">
-						<span>总额</span>
-						<span style="color: #f03e3e;">￥</span>
-						<span style="color: #f03e3e;" class="heji">0</span>
-						<span>(不含运费)</span>
-					</div>
-				</label>
+		<div class="payment-bar">
+			<div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck">全选</div>
+			<div class="shop-total" style="margin-top: 15px;">
+				<strong>总价：<i class="total" id="AllTotal">0.00</i></strong>
+				<!-- span class="wenhao" style="border:1px solid #ccc;height: 20px;margin:0 auto;color: #000;text-align: center;line-height: 20px;background-color:" >删除</span> -->
 			</div>
-			<div class="buybtn">
-				<a href="javascript:void(0)" class="tiaozhuan">
-					<span>去结算(</span>
-					<span class="jiesuan">0</span>
-					<span>)</span>
-				</a>
-			</div>
+			<a href="javascript:;" class="settlement">结算</a>
 		</div>
+
+
+		
+
+
+
+
+
 		<div class="cartbg">
 			
 		</div>
-		<div class="cartcbox">
-			<p>任性的boss E已为小主减免减免0元关税</p>
-			<a href="#" class="dele">×</a>
-		</div>
+		
 		<div class="wests">
 			<p>以下商品由西部大仓发货，全国满99元包邮，部分地区满58元包邮，支持余额支付、货到付款、在线支付!</p>
 			<a href="#" class="dele">×</a>
 		</div>
+		
+
+		
 	</div>
 </body>
 </html>

@@ -104,14 +104,13 @@ require(['config'], function() {
 					 var carlist = window.localStorage.getItem('buyMsg');
 
 					carlist = carlist ? JSON.parse(carlist) : [];
-					console.log(carlist)
+
                     //--------本地储存-------------
 					$('.btn_buy').click(function(){
 					//	点击添加按钮时，是添加还是修改数量
 					var count =Number($('.car-count').html());
 					
 					var input = Number($('.emendation').find('input').val());
-					console.log(input)
 
 					count +=input
 
@@ -123,8 +122,8 @@ require(['config'], function() {
                     var goodPrice = [price1,price2];
 
 					var $currentID = id;
-				
-					
+					var RgoodName=$('.good_kg p').html();
+
 					//cookie中是否存在当前商品
 					var hasGoods = false;
 					for(var i = 0; i < carlist.length; i++) {
@@ -140,7 +139,7 @@ require(['config'], function() {
 							goodid: id,
 							gsize: size,
 							imgurl: imgUrl[0],
-							name: name,
+							name: RgoodName,
 							price: goodPrice,
 							qty: count
 						}
@@ -162,7 +161,6 @@ require(['config'], function() {
 
 						window.localStorage.setItem('buyMsg',x);
 						
-					console.log(window.localStorage.getItem('buyMsg'))
 						
 					})
 					// var b = window.localStorage.getItem('buyMsg');

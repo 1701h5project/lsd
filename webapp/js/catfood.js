@@ -4,6 +4,7 @@ requirejs(["config"],function(){
 			$('.header').load('header.html');
 			$('.footer').load('footer.html');
 			$.getScript('../js/header.js');
+			$.getScript('../js/footer.js');
 		});
 		
 		$(function(){

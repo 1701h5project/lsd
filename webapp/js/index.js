@@ -108,6 +108,17 @@ requirejs(["config"],function(){
 				$('#localtion').text(localtion.substring(0,2));
 			}
 		});
+		
+		//判断时候登录
+		$(function(){
+			$('#fot-center').click(function(){
+				if(sessionStorage.getItem('name')){
+					window.location.href = "html/Personalcenter.html";
+				}else{
+					window.location.href = "html/login.html";
+				}
+			})
 			
+		})
 	});
 });

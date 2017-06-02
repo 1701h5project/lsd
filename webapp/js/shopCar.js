@@ -1,16 +1,17 @@
 $(function(){
-	var nameuses = window.sessionStorage.getItem('name','value');
+	// 用户名
+	var nameuses = window.sessionStorage.getItem('name');
 	if (nameuses!=null) {
 		$('.uses').text(nameuses);
 		$('.qwera').show();
 		$('.resd').hide();
-		$('.buybtn').click(function(){
+		$('.settlement').click(function(){
 			location.href='indent.html'
 		})
 	}else{
 		$('.qwera').hide();
 		$('.resd').show();
-		$('.buybtn').click(function(){
+		$('.settlement').click(function(){
 			location.href = 'login.html'
 		})
 	}
@@ -20,10 +21,9 @@ $(function(){
 
 
 
-
+	// 购物车
 	var str = window.localStorage.getItem('buyMsg');
 
-	// var length = str.split(",");
 	var arr = JSON.parse(str)?JSON.parse(str):[];
 	function countProperties (arr1) {
 	    var count = 0;
@@ -51,304 +51,98 @@ $(function(){
 	for(i=0;i<length;i++){
 		str1 = (arr[i].price)[0];
 		str2 = str1.replace(str1[0]," ")
-		$('.main').append('<div class="shopo"><div class="shopt"><span class="checkbox2 active"  style="color: #fff;font-size:12px;text-align: center;border:1px solid #26c269;">√</span><div class="shopth"><div class="shopf"><a href="#"><div class="shopimg"><img src="../img/product/'+arr[i].imgurl+'" alt=""></div><div class="shopfont"><h1><span class="sheng">满省</span><span class="huangs">'+arr[i].name+'</span></h1><span style="float: right;color:#f00;" class="yichu" id="'+arr[i].goodid+'">×</span><p style="float: left">￥</p><p class="danjia">'+str2+'</p></div></a></div><div class="shopfi"><span class="jianhao1" style="margin-right:5px;">-</span><input type="text" value="'+parseInt(arr[i].qty)+'"><span class="jiahao1" style="margin-left:5px;">+</span></div><div class="shopsix">小主，在05-26 17:00内付款可以带我走啦抓紧时间呦~</div></div></div></div>')
+		$('.main').append('<div class="shop-group-item"><div class="shop-name"><input type="checkbox" class="check goods-check shopCheck"><h4><a href="#">西部大仓</a></h4></div><ul><li><div class="shop-info"><input type="checkbox" class="check goods-check goodsCheck"><div class="shop-info-img"><a href="#"><img src="../img/product/'+arr[i].imgurl+'" /></a></div><div class="shop-info-text"><h4>'+arr[i].name+'</h4><div class="shop-brief"></div><div class="shop-price"><div class="shop-pices">￥<b class="price">'+str2+'</b></div><div class="shop-arithmetic"><a href="javascript:;" class="minus">-</a><span class="num" >'+parseInt(arr[i].qty)+'</span><a href="javascript:;" class="plus">+</a></div></div></div></div></li></ul><div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div></div>')
 	}
 
 
-	
-	
-
-	// 单个移除
-	$(".yichu").click(function(){
-		str = window.localStorage.getItem('buyMsg');
-		var cur = $(this).attr('id');
-		// for(var i=0;i<length;i++){
-		
-			// if(arr[i].goodid == cur){
-
-				// arr.splice(i,0);
-				// break;
-			// }
-			// str.push(arr)
-		// }
-		window.localStorage.removeItem("buyMsg","cur");
-		window.location.reload();
-
-		// var res = 0;
-		$(this).parents(".shopo").remove();
-		$('.danjia').each(function(i){
-			var num = $(this).text();
-			var idx = $(this).parent().parent().parent().next().children().eq(1).val();
-			res += Number(num) * idx;
-			n+=Number(idx);
-
-		})
-		var nu = n-2;
-		$('.heji').text(res.toFixed(1));
-		$('.jiesuan').text(nu);
-
+	// 数量减
+	$(".minus").click(function() {
+		var t = $(this).parent().find('.num');
+		t.text(parseInt(t.text()) - 1);
+		if (t.text() <= 1) {
+			t.text(1);
+		}
+		TotalPrice();
 	});
-	
-
-
-
-	// 全选
-	$(".checkbox1").click(function(){
-		if ($(this).attr('class') == 'checkbox1 active') {
-			$(this).removeClass('active');
-			$(".checkbox2").removeClass('active');
-			$(".checkbox3").removeClass('active');
-			$('.heji').text(0);
-			$('.jiesuan').text(0);
-			$('.jiahao1').off();
-			$('.jianhao1').off();
-		}else{
-			$('.heji').text(res.toFixed(1));
-			$('.jiesuan').text(n);
-			$(this).addClass('active');
-			$(".checkbox2").addClass('active');
-			$(".checkbox3").addClass('active');
-			$('.jiahao1').addClass('qwe1');
-			$('.jianhao1').addClass('asd1');
-			$('.jiahao1').off();
-			$('.jianhao1').off();
-
-			// 减
-			$(".asd1").click(function(){
-				var res = 0;
-				var n = 0;
-				var v = Number($(this).next().val())-1;
-				$(this).next().val(v);
-				$('.danjia').each(function(i){
-					var num = $(this).text();
-					var idx = $(this).parent().parent().parent().next().children().eq(1).val();
-					res += Number(num) * idx;
-					n+=Number(idx);
-				})
-				$('.heji').text(res.toFixed(1));
-				$('.jiesuan').text(n)
-				if (v<0) {
-					$(this).next().val(0);
-					$('.heji').text(0);
-					$('.jiesuan').text(0);
-					return;
-				}
-			});
-			// 加
-			$(".qwe1").click(function(){
-				var res = 0;
-				var n = 0;
-				var v = Number($(this).prev().val())+1;
-				$(this).prev().val(v)
-				$('.danjia').each(function(i){
-					var num = $(this).text();
-					var idx = $(this).parent().parent().parent().next().children().eq(1).val();
-					res += Number(num) * idx;
-					n+=Number(idx);
-				})
-				$('.heji').text(res.toFixed(1));
-				$('.jiesuan').text(n)
-			})
+	// 数量加
+	$(".plus").click(function() {
+		var t = $(this).parent().find('.num');
+		t.text(parseInt(t.text()) + 1);
+		if (t.text() <= 1) {
+			t.text(1);
 		}
-	})
-	$(".checkbox3").click(function(){
-		if ($(this).attr('class') == 'checkbox3 active') {
-			$(this).removeClass('active');
-			$(".checkbox2").removeClass('active');
-			$(".checkbox1").removeClass('active');
-			$('.heji').text(0);
-			$('.jiesuan').text(0);
-			// console.log($(this).next().children().find('#jiahao'));
-			// console.log($(this).siblings().children().find('#jiahao'));
-			// $(this).next().children().find('#jiahao').;
-			// $(this).next().children().find('#jianhao').removeClass('jianhao').off();
-			$('.jiahao1').removeClass('jiahao').off();
-			$('.jianhao1').removeClass('jianhao').off();
-		}else{
-			
-			$(this).addClass('active');
-			$('.heji').text(res.toFixed(1));
-			$('.jiesuan').text(n);
-			$(".checkbox2").addClass('active');
-			$(".checkbox1").addClass('active');
-
-			// $(this).next().children().find('#jiahao').addClass('qwe1').off();
-			// $(this).next().children().find('#jianhao').addClass('asd1').off();
-
-
-			$('.jiahao1').addClass('qwe1');
-			$('.jianhao1').addClass('asd1');
-			$('.jiahao1').off();
-			$('.jianhao1').off();
-
-			// 减
-			$(".asd1").click(function(){
-				var res = 0;
-				var n = 0;
-				var v = Number($(this).next().val())-1;
-				$(this).next().val(v);
-				$('.danjia').each(function(i){
-					var num = $(this).text();
-					var idx = $(this).parent().parent().parent().next().children().eq(1).val();
-					res += Number(num) * idx;
-					n+=Number(idx);
-				})
-				$('.heji').text(res.toFixed(1));
-				$('.jiesuan').text(n)
-				if (v<0) {
-					$(this).next().val(0);
-					$('.heji').text(0);
-					$('.jiesuan').text(0);
-					return;
-				}
-			});
-			// 加
-			$(".qwe1").click(function(){
-				var res = 0;
-				var n = 0;
-				var v = Number($(this).prev().val())+1;
-				$(this).prev().val(v)
-				$('.danjia').each(function(i){
-					var num = $(this).text();
-					var idx = $(this).parent().parent().parent().next().children().eq(1).val();
-					res += Number(num) * idx;
-					n+=Number(idx);
-				})
-				$('.heji').text(res.toFixed(1));
-				$('.jiesuan').text(n)
-			})
+		TotalPrice();
+	});
+	/******------------分割线-----------------******/
+	  // 点击商品按钮
+	$(".goodsCheck").click(function() {
+	    var goods = $(this).closest(".shop-group-item").find(".goodsCheck"); //获取本店铺的所有商品
+	    var goodsC = $(this).closest(".shop-group-item").find(".goodsCheck:checked"); //获取本店铺所有被选中的商品
+	    var Shops = $(this).closest(".shop-group-item").find(".shopCheck"); //获取本店铺的全选按钮
+	    if (goods.length == goodsC.length) { //如果选中的商品等于所有商品
+	      Shops.prop('checked', true); //店铺全选按钮被选中
+	      if ($(".shopCheck").length == $(".shopCheck:checked").length) { //如果店铺被选中的数量等于所有店铺的数量
+	        $("#AllCheck").prop('checked', true); //全选按钮被选中
+	        TotalPrice();
+	      } else {
+	        $("#AllCheck").prop('checked', false); //else全选按钮不被选中 
+	        TotalPrice();
+	      }
+	    } else { //如果选中的商品不等于所有商品
+	      Shops.prop('checked', false); //店铺全选按钮不被选中
+	      $("#AllCheck").prop('checked', false); //全选按钮也不被选中
+	      // 计算
+	      TotalPrice();
+	      // 计算
+	    }
+	});
+  // 点击店铺按钮
+	$(".shopCheck").click(function() {
+	    if ($(this).prop("checked") == true) { //如果店铺按钮被选中
+	      $(this).parents(".shop-group-item").find(".goods-check").prop('checked', true); //店铺内的所有商品按钮也被选中
+	      if ($(".shopCheck").length == $(".shopCheck:checked").length) { //如果店铺被选中的数量等于所有店铺的数量
+	        $("#AllCheck").prop('checked', true); //全选按钮被选中
+	        TotalPrice();
+	      } else {
+	        $("#AllCheck").prop('checked', false); //else全选按钮不被选中
+	        TotalPrice();
+	      }
+	    } else { //如果店铺按钮不被选中
+	      $(this).parents(".shop-group-item").find(".goods-check").prop('checked', false); //店铺内的所有商品也不被全选
+	      $("#AllCheck").prop('checked', false); //全选按钮也不被选中
+	      TotalPrice();
+	    }
+	});
+  // 点击全选按钮
+	$("#AllCheck").click(function() {
+		if ($(this).prop("checked") == true) { //如果全选按钮被选中
+		  $(".goods-check").prop('checked', true); //所有按钮都被选中
+		  TotalPrice();
+		} else {
+		  $(".goods-check").prop('checked', false); //else所有按钮不全选
+		  TotalPrice();
 		}
-	})
-	shopCar();
-	
-	function shopCar(){
-		$('.jiahao1').addClass('jiahao');
-		$('.jianhao1').addClass('jianhao');
-		if ($(".checkbox2").attr('class') == 'checkbox2 active'){
-		
-			// 减
-			$(".jianhao").click(function(){
-				var res = 0;
-				var n = 0;
-				var v = Number($(this).next().val())-1;
-				$(this).next().val(v);
-				$('.danjia').each(function(i){
-					var num = $(this).text();
-					var idx = $(this).parent().parent().parent().next().children().eq(1).val();
-					res += Number(num) * idx;
-					n+=Number(idx);
-				})
-				$('.heji').text(res.toFixed(1));
-				$('.jiesuan').text(n)
-				if (v<0) {
-					$(this).next().val(0);
-					$('.heji').text(0);
-					$('.jiesuan').text(0);
-					return;
-				}
-			});
-			// 加
-			$(".jiahao").click(function(){
-				var res = 0;
-				var n = 0;
-				var v = Number($(this).prev().val())+1;
-				$(this).prev().val(v)
-				$('.danjia').each(function(i){
-					var num = $(this).text();
-					var idx = $(this).parent().parent().parent().next().children().eq(1).val();
-					res += Number(num) * idx;
-					n+=Number(idx);
-				})
-				$('.heji').text(res.toFixed(1));
-				$('.jiesuan').text(n)
-			})
-		}
+		$(".shopCheck").change(); //执行店铺全选的操作
+	});
+	//计算
+	function TotalPrice() {
+	    var allprice = 0; //总价
+	    $(".shop-group-item").each(function() { //循环每个店铺
+	      var oprice = 0; //店铺总价
+	      $(this).find(".goodsCheck").each(function() { //循环店铺里面的商品
+	        if ($(this).is(":checked")) { //如果该商品被选中
+	          var num = parseInt($(this).parents(".shop-info").find(".num").text()); //得到商品的数量
+	          var price = parseFloat($(this).parents(".shop-info").find(".price").text()); //得到商品的单价
+	          var total = price * num; //计算单个商品的总价
+	          oprice += total; //计算该店铺的总价
+	        }
+	        $(this).closest(".shop-group-item").find(".ShopTotal").text(oprice.toFixed(2)); //显示被选中商品的店铺总价
+	      });
+	      var oneprice = parseFloat($(this).find(".ShopTotal").text()); //得到每个店铺的总价
+	      allprice += oneprice; //计算所有店铺的总价
+	    });
+	    $("#AllTotal").text(allprice.toFixed(2)); //输出全部总价
 	}
-	
-
-
-	// 单选
-	$(".checkbox2").click(function(){
-		if ($(this).attr('class') == 'checkbox2 active') {
-
-
-			$(this).next().children().find('.jiahao1').removeClass('jiahao').off();
-			$(this).next().children().find('.jianhao1').removeClass('jianhao').off();
-			$('.heji').text(0);
-			$('.jiesuan').text(0);
-			$(this).removeClass('active');
-			$(".checkbox3").removeClass('active');
-			$(".checkbox1").removeClass('active');
-
-			
-		}else{
-			$(this).addClass('active');
-			// $('#jiahao').addClass('qwe1');
-			// $('#jianhao').addClass('asd1');
-			// $('#jiahao').off();
-			// $('#jianhao').off();
-			$(this).next().children().find('.jiahao').addClass('qwe1').off();
-			$(this).next().children().find('.jianhao').addClass('asd1').off();
-			
-			// 减
-			$(".asd1").click(function(){
-				var res = 0;
-				var n = 0;
-				var v = Number($(this).next().val())-1;
-				$(this).next().val(v);
-				$('.danjia').each(function(i){
-					var num = $(this).text();
-					var idx = $(this).parent().parent().parent().next().children().eq(1).val();
-					res += Number(num) * idx;
-					n+=Number(idx);
-				})
-				$('.heji').text(res.toFixed(1));
-				$('.jiesuan').text(n)
-				if (v<0) {
-					$(this).next().val(0);
-					$('.heji').text(0);
-					$('.jiesuan').text(0);
-					return;
-				}
-			});
-			// 加
-			$(".qwe1").click(function(){
-				var res = 0;
-				var n = 0;
-				var v = Number($(this).prev().val())+1;
-				$(this).prev().val(v)
-				$('.danjia').each(function(i){
-					var num = $(this).text();
-					var idx = $(this).parent().parent().parent().next().children().eq(1).val();
-					res += Number(num) * idx;
-					n+=Number(idx);
-				})
-				$('.heji').text(res.toFixed(1));
-				$('.jiesuan').text(n)
-			})
-		}
-	})
-
-
-	
-	
-
-
-		// 总价
-		var res = 0;
-		var n = 0;
-		$('.danjia').each(function(i){
-			var num = $(this).text();
-			var idx = $(this).parent().parent().parent().next().children().eq(1).val();
-			res += Number(num) * idx;
-			n+=Number(idx);
-		})
-		$('.heji').text(res.toFixed(1));
-		$('.jiesuan').text(n);
-
-
-
-	
 
 
 	$('#pre-index').on('click',function(){
@@ -364,12 +158,15 @@ $(function(){
 
 	// 退出
 	$('.tuichu').click(function(){
-		window.sessionStorage.removeItem('name');
+		window.sessionStorage.removeItem('name','value');
 		$('.resd').show();
 		$('.qwera').hide();
 		$('.shopo').hide();
 		$('.mycheck').hide();
 		$('.mainbox').show();
+		window.localStorage.removeItem("buyMsg");
+		window.localStorage.removeItem("qty");
+		window.location.reload();
 	})
 
 
@@ -385,7 +182,7 @@ $(function(){
 		$(".cartbg").hide();
 	})
 	$(".wests").hide();
-	$(".west").click(function(){
+	$(".coupons").click(function(){
 		$(".wests").show();
 		$(".cartbg").show();
 	})
@@ -394,13 +191,4 @@ $(function(){
 		$(".cartbg").hide();
 	})
 
-
-
-	
-
-	$('#per-next').click(function(){
-		history.back();
-	})
-	
-	
 })

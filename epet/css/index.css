@@ -1,8 +1,29 @@
-*{margin: 0px;padding: 0px;}
-a{text-decoration: none;}
 ul,li{list-style: none;}
-.top {background-color: }
-.top h1{display: inline-block;}
-.top ul{float: right;padding-right: 100px;}
-.top ul li{float: left;line-height: 42px;padding-right: 20px;}
-.top ul li a{font-size: 16px;}
+.status{padding:0 10px;margin:30px;display:inline-block;line-height:50px;text-align:center;background: #35404d;color:white;}
+
+
+
+.collection{background: #35404d;color:white;}
+.controlInfo .showCollection li{display: inline-block;}
+.controlInfo .showCollection li span{display: inline-block;width: 100px;height: 30px;text-align: center;}
+.controlUl{position: absolute;left: 20em}
+.controlUl li label{width: 100px;}
+.btn{position: absolute;top: 12em}
+.btn div{position: absolute;top:3em;}
+
+
+.searchInfo>div{padding-left: 2em;margin-bottom: 2em;}
+.searchInfo>div>span{display: inline-block;width: 100px;height: 30px;text-align: center;}
+.searchInfo select{margin-left: 2em;margin-top: 2em;}
+.searchInfo ul{margin-top: 2em;}
+.searchInfo ul li label{width: 200px;}
+
+
+
+.shopInfo ul{margin-top: 2em}
+.shopInfo ul li label{width: 200px;}
+
+
+
+.logoInfo ul{margin-top: 2em}
+.logoInfo ul li label{width: 200px;}

@@ -216,4 +216,13 @@ $(function(){
 
 		})
 	})
+	
+	
+	$('#fot-center').click(function(){
+		if(sessionStorage.getItem('name')){
+			window.location.href = "Personalcenter.html";
+		}else{
+			window.location.href = "login.html";
+		}
+	})
 })

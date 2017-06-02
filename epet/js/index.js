@@ -1,5 +1,18 @@
-$(function(){
 
+if(!window.sessionStorage.getItem('erpname')){
+		alert('请先登录!');
+		location.href='login.html';
+}
+$(function(){
+	//显示管理员名字
+	$('.managerName').text(window.sessionStorage.getItem('erpname'));
+
+	//退出登录
+	$('#out').click(function(){
+		window.sessionStorage.removeItem('erpname');
+		location.href='login.html';
+	})
+	
 	//左侧菜单点击a标签	
 	$('.sideMenu').on('click','a',function(){
 		$('.sideMenu ul li a').css('color','#aeb2b7');
@@ -142,7 +155,7 @@ $(function(){
 		}
 		attrObj.collection = $('.searchInfo .collection').text();
 		
-		$.post('/updateData',attrObj,function(response){
+		$.post('/updatedata',attrObj,function(response){
 			// console.log(response);
 			var obj = window.eval('(' + response + ')');
 			if(obj.state){

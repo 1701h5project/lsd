@@ -51,6 +51,7 @@ p{font-size: 12px;}
 
 .main_r{
   overflow-x: hidden;overflow-y: auto;
+   -webkit-overflow-scrolling:touch;
   ul{
     display: flex;flex-wrap:wrap;padding: 10px 0;
     li{

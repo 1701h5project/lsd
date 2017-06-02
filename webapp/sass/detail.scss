@@ -8,9 +8,9 @@ header{
     z-index: 3;
     .header_top{
         width:100%;
-        padding:0.05rem 0;
+        padding:0.1rem 0;
         text-align: center;
-        background:#EEEEEE;
+        background:#FFFFFF;
         border-bottom:0.005rem solid #ccc;
         .header_left{
             font-size: 0.3rem;
@@ -32,10 +32,11 @@ header{
     }
     // 头部隐藏列表-------
     .herderHide{
-        background:#EEEEEE;
+        background:#FFFFFF;
         padding:0.025rem 0;
         display: flex;
         justify-content: space-around;
+        border-bottom: 1px solid #EEEEEE;
         a{
             display: 1;
             text-align: center;
@@ -573,7 +574,7 @@ footer{
     bottom: 0;
     .footer_list{
         // height:0.25rem;
-        background:#eee;
+        background:#FFFFFF;
         .buy_list{
             display: flex;
             li{

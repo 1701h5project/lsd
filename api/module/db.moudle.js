@@ -89,8 +89,6 @@ var showData = function(_collection,data,callback){
 							});
 						})						
 					}
-
-
 				}else{
 					db.collection(data.collection,function(error,collection){
 						collection.find().limit(100).toArray(function(error,shops){
@@ -147,6 +145,27 @@ var indexGetdata = function(_collection, data, key, callback){
 	})
 }
 
+var indexFy = function(_collection, data, key, callback){
+	db.open(function(error, db){
+		if(error){
+			console.log('connect db:', error);
+		}
+
+		db.collection(_collection, function(error, collection){
+			if(error){
+				console.log(error)	
+			} else {
+				var obj = {};
+				obj[key] = data[key];
+				collection.find(obj).limit(5).skip(parseInt(data.Num)).toArray(function(err, docs){
+					callback(docs)
+				});
+			}
+			db.close();
+		})
+	})
+}
+
 
 exports.exists = exists;
 exports.saveData = saveData;
@@ -154,6 +173,7 @@ exports.removeData = removeData;
 exports.showData = showData;
 exports.updateData = updateData;
 exports.indexGetdata = indexGetdata;
+exports.indexFy = indexFy;
 
 var exist = function(_collection, data, arr, callback){
 	db.open(function(error, db){

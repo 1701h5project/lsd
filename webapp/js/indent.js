@@ -1,23 +1,24 @@
 $(function(){
-	
+	// 用户名
+	var nameuses = window.sessionStorage.getItem('name','value');
+	$('.usess').text(nameuses);
+	// 退出
+	$('.tuichu').click(function(){
+		window.sessionStorage.removeItem('name','value');
+		
+	})
 
 	$.post(erp.baseUrl + '/getaddress',{},function(response){
-			// var res=response.map(function(item,index){
-					$('.adde').text(response[0].address);
-					$('.usess').text(response[0].name);
-					$('.m1').text(response[0].phone);
-				// var cname = 'adressRecord'+index;
-				// return `<div class="adressRecord ${cname}">
-						    // <div class="inner">	           
-						        // <div><span>${item.name}</span><span>${item.phone}</span></div>
-						        // <div>${item.address}</div>
-						    // </div>
-						    // <div class="btn">
-						        // <div class="remove"><span></span>删除</div>
-						        // <div class="edit"><span></span>编辑</div>
-						    // </div>
-						// </div>`
-			// }).join('');
+		if (response.length == 0) {
+			$('.cartcbox').show();
+			$('.cartbg').show();
+		}else{
+			$('.cartcbox').hide();
+			$('.cartbg').hide();
+			$('.adde').text(response[0].address);
+			$('.usess').text(nameuses);
+			$('.m1').text(response[0].phone);
+		}	
 	})
 
 	$(".headermenu").click(function(){

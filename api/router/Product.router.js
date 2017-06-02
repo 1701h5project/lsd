@@ -77,6 +77,12 @@ exports.Register = function(app){
        respond.send(data);
     })
   });
+  
+  app.get('/index-Fy',function(request,respond){
+    db.indexFy('shop', request.query, 'Activity', function(data){
+       respond.send(data);
+    })
+  });
   //获取罐头页数据
   app.get('/catcan-getdata',function(request,respond){
     db.indexGetdata('shop', request.query, 'Activity', function(data){

@@ -46,9 +46,9 @@ header {
 
 header .header_top {
   width: 100%;
-  padding: 0.05rem 0;
+  padding: 0.1rem 0;
   text-align: center;
-  background: #EEEEEE;
+  background: #FFFFFF;
   border-bottom: 0.005rem solid #ccc;
 }
 
@@ -72,10 +72,11 @@ header .header_top .nav_btn {
 }
 
 header .herderHide {
-  background: #EEEEEE;
+  background: #FFFFFF;
   padding: 0.025rem 0;
   display: flex;
   justify-content: space-around;
+  border-bottom: 1px solid #EEEEEE;
 }
 
 header .herderHide a {
@@ -614,7 +615,7 @@ footer {
 }
 
 footer .footer_list {
-  background: #eee;
+  background: #FFFFFF;
 }
 
 footer .footer_list .buy_list {
