@@ -9,9 +9,9 @@
 	
 	<link rel="stylesheet" href="assets/css/amazeui.min.css"/>
 	<link rel="stylesheet" href="assets/css/admin.css">
-	<link rel="stylesheet" href="css/indexdraft.css">
+	<link rel="stylesheet" href="css/index.css">
 
-	<script type="text/javascript" src="libs/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="../libs/jquery-3.1.1.js"></script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/app.js"></script>
 
@@ -53,7 +53,7 @@
 	</header>
 
 	<div class="nav-navicon admin-main admin-sidebar">
-		<div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：清风抚雪</div>
+		<div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：<span class="managerName"></span></div>
 		<div class="sideMenu">
 			<h3 class="am-icon-flag"><em></em> <a href="#">商品管理</a></h3>
 			<ul>
@@ -115,6 +115,7 @@
 	  	<div class="daohang">
 	  		<ul>
 	  			<li><a href="../webapp/index.html"><button type="button" class="am-btn am-btn-default am-radius am-btn-xs"> 首页 </a></li>
+	  			<li><a href="login.html"><button type="button" class="am-btn am-btn-default am-radius am-btn-xs" class="out"> 退出登录 </a></li>
 	  			<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs">帮助中心<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close="">×</a></button></li>
 	  		</ul>	
 	    </div>
@@ -137,11 +138,11 @@
 					<input type="text">
 				</li>
 				<li>
-					<label for="">imgurl</label>
+					<label for="">name</label>
 					<input type="text">
 				</li>
 				<li>
-					<label for="">name</label>
+					<label for="">imgurl</label>
 					<input type="text">
 				</li>
 				<li>
@@ -172,8 +173,8 @@
 			</div>
 			<div style="display: none;">
 				<label for="searchId">请输入查询ID或者Name:</label>
-				<input type="text" class="searchId"/>
-				<input type="text" class="searchName"/>
+				<input type="text" class="searchId"/ placeholder="ID">
+				<input type="text" class="searchName"/ placeholder="Name">
 				<button class="btn_search">查询</button>
 				<button class="btn_update">更新</button>
 <!-- 				<button type="button" class="am-btn am-btn-default am-radius am-btn-xs addAttr">添加属性</button> -->			
