@@ -19,7 +19,7 @@ $(function(){
 	})
 
 	$('.info').children().remove();
-	$.post(erp.baseUrl+'/showData',{collection:'shop',id:'2_1,3_1,4_1,5_1,6_1,7_1,8_1,9_1',name:''},function(response){
+	$.post(erp.baseUrl+'/showData',{collection:'shop',id:'2_1,3_1,4_1,5_1,6_1,7_1,8_1,9_1'},function(response){
 		var arr = response;
 		$('.info').append('<img src="../images/shop/3_5.jpg" style="width:240px;height:100px;"><span style="color:#f60;font-size:16px;">为您推荐</span><ul></ul>');
 		for(i=0;i<arr.length;i++){

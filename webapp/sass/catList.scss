@@ -161,6 +161,10 @@
                             color:#000 ;
                             font-size: 16px;
                             font-weight: normal;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 3;
+                            overflow: hidden;
                        }
                        p{
                            margin-top:0.125rem ;

@@ -20,8 +20,8 @@ requirejs(["config"],function(){
 					res+=`<li class="swiper-slide" data-idx="${data[i].id}">
 								<a href="html/details.html">
 									<img src="img/product/${(data[i].imgUrl)[0]}"/>
-									<p class="price">${(data[i].price)[0]}</p>
-									<p>${(data[i].price)[1]}</p>
+									<p class="price">${((data[i].price)[1])[0]}</p>
+									<p>${((data[i].price)[1])[1]}</p>
 								</a>
 							</li>`
 				};

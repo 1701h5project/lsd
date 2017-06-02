@@ -237,8 +237,31 @@ var extract = function(_collection,callback){
 	})	
 }
 
+//更新
+var updateData = function(_collection,olddata,newdata){
+	console.log('olddata:',olddata);
+	console.log('newdata:',newdata);
+	db.open(function(error, db){
+		if(error){
+			console.log('connect db:', error);
+		}
+		db.collection(_collection,function(error, collection){
+            if(error){
+                console.log(error)
+            } else {
+
+                collection.update(olddata,{$set:newdata},function(error,result){
+                	//callback(result);
+                	if(error){ console.log(error)}              
+                });
+            }
+        });
+        db.close();
+     })
+}
 
 exports.exist = exist;
 exports.save = save;
 exports.del = del;
 exports.extract = extract;
+exports.updateData = updateData;

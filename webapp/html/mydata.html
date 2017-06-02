@@ -12,11 +12,14 @@
 		var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
 		document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
 		$(function(){
-			$.post(erp.baseUrl+'/getaccount',{},function(response){
+			$.post(erp.baseUrl+'/getregister',{},function(response){
 				console.log(response);
+				response.forEach(function(item,index){					
+					console.log($.trim(item.phone));
+				})
 				// 名字写入getPersonalcenter
 				//alert(response[0]._id)
-				$('.username').empty().text(response[0].name);
+				//$('.username').empty().text(response[0].name);
 			});
 		})
 	</script>
@@ -31,13 +34,12 @@
 				</a>			   
 			</li>
 			<li><a href="javascript:void(0)"><div>昵称</div><span class="username"></span></a></li>
-			<li><a href="gender.html"><div>姓名</div><span>></span></a></li>
-			<li><a href="gender.html"><div>性别</div><span>></span></a></li>
-			<li><a href="brithday.html"><div>生日</div><span>></span></a></li>
+			<li><a href="javascript:void(0)"><div>姓名</div><span>></span></a></li>
+			<li><a href="javascript:void(0)"><div>性别</div><span>></span></a></li>
+			<li><a href="javascript:void(0)"><div>生日</div><span>></span></a></li>
 			<li><a href="adress.html"><div>地址管理</div><span>></span></a></li>
-			<li><a href="account.html"><div>账户安全</div><span>></span></a></li>
+			<li><a href="javascript:void(0)"><div>账户安全</div><span>></span></a></li>
 		</ul>
 	</div>
 	
 </body>
-</html>

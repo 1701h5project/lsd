@@ -19,21 +19,19 @@ require(['config'],function(){
 	            	return false;
 	          	}
 	
-	
-	
-	
-	          	$.post(erp.baseUrl+'/login',{
+	          	$.post(erp.baseUrl +'/login', {
 	          		phone: $.trim($('input[name=username]').val()),
 					password: $.trim($('input[name=password]').val())
-					}, function(response){
-		            
+				}, function(response){
+		            var name = response.data[0].name;
 	                if(response.status){
-						window.wxc.xcConfirm('账号或密码错误', window.wxc.xcConfirm.typeEnum.error);
+	                	sessionStorage.setItem('name',name);
+						window.location.href = "Personalcenter.html";					
 					} else {
-						window.location.href = "Personalcenter.html";
+						window.wxc.xcConfirm('账号或密码错误', window.wxc.xcConfirm.typeEnum.error);
 					}          		
-	          	});  
-	      	}); 
+	          	})   
+	      	})   
       	});
 	});
 });

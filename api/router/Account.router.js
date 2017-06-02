@@ -41,11 +41,11 @@ exports.Register = function(app){
 	});
 
 	app.post('/login', urlencodedParser, function(request, response){
-		console.log(response);
 		db.exist('account', request.body, ['phone','password'],function(data){
+			console.log(data)
 			if(data.length > 0){
 				request.session.phone = request.body.phone;
-				response.send(apiResult(true))
+				response.send(apiResult(true,'',data))
 			} else {
 				response.send(apiResult(false, '账户或密码错误'));
 			}

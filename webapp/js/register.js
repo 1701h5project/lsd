@@ -101,5 +101,9 @@ require(['config'],function(){
 			}			
 		})
 		
+		$('.icon-jiantou').click(function(){
+			history.back();
+		})
+		
 	})
 })

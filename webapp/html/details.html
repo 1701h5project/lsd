@@ -14,7 +14,8 @@
     <script src="../../libs/require.js" data-main="../js/details.js"></script>
 </head>
 <body>
-<div class="container clearfix">
+
+
      <!-- ----------头部----------- -->
     <header>
         <div class="header_top clearfix">
@@ -33,201 +34,323 @@
                 <i class="fa fa-list"></i>
                 <p>商品分类</p>
             </a>
-            <a href="shopCar.html">
+            <a href="javascript:;" class="carCount">
                 <i class="fa fa-shopping-cart">
-                    <em>0</em>
+                    <span class="car-count">0</span>
                 </i>
                 <p>购物车</p>
             </a>
-            <a href="login.html">
+            <a href="#">
                 <i class="fa fa-android"></i>
                 <p>我的e宠</p>
             </a>
         </div>
     </header>
     <!--内容详情-->
-    <main>
-        <div class="good_detail">
-            <i class="flag"></i>
-            <!-- 轮播图 -->
-            <div class="swiper-container good_pic">
-                <div class="swiper-wrapper carousel">
+        <main>
+            <div class="good_detail">
+                <i class="flag"></i>
+                <!-- 轮播图 -->
+                <div class="swiper-container good_pic">
+                    <div class="swiper-wrapper carousel">
 
-                </div>
-                <div class="swiper-pagination">
-                    <span class="initial">1</span>/<span class="sum">4</span>
-                </div>
-             </div>
-            
-            <!-- //-----商品名字------ -->
-            <div class="good_kg">
+                    </div>
+                    <div class="swiper-pagination">
+                        <span class="initial">1</span>/<span class="sum">4</span>
+                    </div>
+                 </div>
                 
-            </div>
-            <!-- //-----商品介绍------ -->
-            <div class="good_referral">
-             
-            </div>
-            <!-- //-----商品价钱------ -->
-            <div class="good_price clearfix">
-                <div class="price_left clearfix">
+                <!-- //-----商品名字------ -->
+                <div class="good_kg">
                     
                 </div>
-                <div class="price_right">
-                    <span class="fa fa-file-text-o"></span>
-                    <a href="goodmsg.html">授权文件</a>
+                <!-- //-----商品介绍------ -->
+                <div class="good_referral">
+                 
                 </div>
-            </div>
-        </div>
-        <div class="combo clearfix">
-            <div class="combo_left">
-                <i class="fa fa-tag"></i>
-                <a href="javasrcipt:;">优惠套餐</a>
-            </div>
-            <div class="combo_right">
-                <a href="javascript:;">
-                    化毛营养必备组合
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-        </div>
-        <div class="kg">
-            <div class="selected">
-                <p>已选:
-                <span>'重量,8kg'</span></p>
-            </div>
-            <!-- 商品 -->
-            <div class="elect_KG">
-                
-            </div>
-        </div>
-        <div class="buy_count clearfix">
-            <p>购买数量</p>
-            <div class="emendation clearfix">
-                <span class="add">+</span>
-                <input type="text" value="1">
-                <span class="minus">-</span>
-            </div>
-        </div>
-        <div class="region">
-            <a href="javascript:;">送至<i class="fa fa-map-marker"></i>重庆渝中区</a>
-        </div>
-        <!-- 评论 -->
-        <div class="comment">
-            <div class="comment_top clearfix">
-                <div class="comment_left">
-                    <p><i class="fa fa-commenting-o"></i>商品评价<span>(0)</span></p>
-                </div>
-                <div class="comment_right">
-                    <p>好评率100%<i class="fa fa-angle-right"></i></p>
-                </div>
-            </div>
-            <!-- 评论内容 -->
-            <div class="cot_content"></div>
-            <!--  -->
-        </div>
-        <div class="buy_refer clearfix">
-            <div class="refer_left">
-                    <p><i class="fa fa-question-circle"></i>购买咨询<span>(0)</span></p>
-            </div>
-            <div class="refer_right">
-                <a href="javascript:;" class="fa fa-angle-right"></a>
-            </div>
-        </div>
-        <div class="shops">
-            <div class="shop_top">
-                <div class="clearfix">
-                    <div class="shop_logo">
+                <!-- //-----商品价钱------ -->
+                <div class="good_price clearfix">
+                    <div class="price_left clearfix">
                         
                     </div>
-                    <!-- 商品规格 -->
-                    <div class="birth">
-                        <p class="shop_name"></p>
-                        <p class="shop_country"></p>
-                    </div>
-                    <div class="check_goods">
-                        <a href="javascript:;">查看<span>8</span>件商品
-                        <i class="fa fa-angle-right"></i>
-                        </a>
-
+                    <div class="price_right">
+                        <span class="fa fa-file-text-o"></span>
+                        <a href="javascript:;" class="btn_file">授权文件</a>
                     </div>
                 </div>
-                <!-- 商家介绍 -->
-                <div class="shop_msg">
+            </div>
+            <div class="combo clearfix">
+                <div class="combo_left">
+                    <i class="fa fa-tag"></i>
+                    <a href="javasrcipt:;">优惠套餐</a>
+                </div>
+                <div class="combo_right">
+                    <a href="javascript:;">
+                        化毛营养必备组合
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="kg">
+                <div class="selected">
+                    <p>
+                    </p>
+                </div>
+                <!-- 商品 -->
+                <div class="elect_KG">
                     
                 </div>
-                <!-- 文字下拉 -->
-                 <a href="javascript:;" class="down fa fa-angle-double-down"></a>
             </div>
-            <div class="shop_bottom">
-                <div class="swiper-container rest_goods">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
-                        <p class="rest_name">
-ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
-                        <p class="rest_price">¥798.00</p></div>
-                        <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
-                        <p class="rest_name">
-ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
-                        <p class="rest_price">¥798.00</p></div>
-                        <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
-                        <p class="rest_name">
-ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
-                        <p class="rest_price">¥798.00</p></div>
-                        <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
-                        <p class="rest_name">
-ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
-                        <p class="rest_price">¥798.00</p></div>
-                        <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
-                        <p class="rest_name">
-ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
-                        <p class="rest_price">¥798.00</p></div>
-                        <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
-                        <p class="rest_name">
-ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
-                        <p class="rest_price">¥798.00</p></div>
+            <div class="buy_count clearfix">
+                <p>购买数量</p>
+                <div class="emendation clearfix">
+                    <span class="add">+</span>
+                    <input type="text" value="1">
+                    <span class="minus">-</span>
+                </div>
+            </div>
+            <div class="region">
+                <a href="javascript:;">送至<i class="fa fa-map-marker"></i>重庆渝中区</a>
+            </div>
+            <!-- 评论 -->
+            <div class="comment">
+                <div class="comment_top clearfix">
+                    <div class="comment_left">
+                        <p><i class="fa fa-commenting-o"></i>商品评价<span>(0)</span></p>
+                    </div>
+                    <div class="comment_right">
+                        <p>好评率100%<i class="fa fa-angle-right"></i></p>
+                    </div>
+                </div>
+                <!-- 评论内容 -->
+                <div class="cot_content"></div>
+                <!--  -->
+            </div>
+            <div class="buy_refer clearfix">
+                <div class="refer_left">
+                        <p><i class="fa fa-question-circle"></i>购买咨询<span>(0)</span></p>
+                </div>
+                <div class="refer_right">
+                    <a href="javascript:;" class="fa fa-angle-right"></a>
+                </div>
+            </div>
+            <div class="shops">
+                <div class="shop_top">
+                    <div class="clearfix">
+                        <div class="shop_logo">
+                            
+                        </div>
+                        <!-- 商品规格 -->
+                        <div class="birth">
+                            <p class="shop_name"></p>
+                            <p class="shop_country"></p>
+                        </div>
+                        <div class="check_goods">
+                            <a href="javascript:;">查看<span>8</span>件商品
+                            <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- 商家介绍 -->
+                    <div class="shop_msg">
+                        
+                    </div>
+                    <!-- 文字下拉 -->
+                     <a href="javascript:;" class="down fa fa-angle-double-down"></a>
+                </div>
+                <div class="shop_bottom">
+                    <div class="swiper-container rest_goods">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
+                            <p class="rest_name">
+    ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
+                            <p class="rest_price">¥798.00</p></div>
+                            <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
+                            <p class="rest_name">
+    ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
+                            <p class="rest_price">¥798.00</p></div>
+                            <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
+                            <p class="rest_name">
+    ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
+                            <p class="rest_price">¥798.00</p></div>
+                            <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
+                            <p class="rest_name">
+    ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
+                            <p class="rest_price">¥798.00</p></div>
+                            <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
+                            <p class="rest_name">
+    ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
+                            <p class="rest_price">¥798.00</p></div>
+                            <div class="swiper-slide"> <img src="../img/detail/ded336d36788ee7301243c7f4cd8a740.jpg" alt="">
+                            <p class="rest_name">
+    ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
+                            <p class="rest_price">¥798.00</p></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="recrod">
-            <div class="recrod_top">
-                <p>购买该商品的还购买了</p>
+            <div class="recrod">
+                <div class="recrod_top">
+                    <p>购买该商品的还购买了</p>
+                </div>
+                <!-- 购买记录 -->
+                <div class="recrod_msg"></div>
             </div>
-            <!-- 购买记录 -->
-            <div class="recrod_msg"></div>
-        </div>
-        <div class="msg_list">
-            <ul class="list_links clearfix">
-                <li><a href="javascript:;">
-                    <img src="../img/detail/q-ico-zp.png" alt="">
-                    <span>绝对的正品</span>
-                </a></li>
-                <li><a href="javascript:;">
-                    <img src="../img/detail/q-ico-zp.png" alt="">
-                    <span>全球的好货</span>
-                </a></li>
-                <li><a href="javascript:;">
-                    <img src="../img/detail/q-ico-zp.png" alt="">
-                    <span>自家的仓库</span>
-                </a></li>
-                <li><a href="javascript:;">
-                    <img src="../img/detail/q-ico-zp.png" alt="">
-                    <span>自家的配送</span>
-                </a></li>
-                <li><a href="javascript:;">
-                    <img src="../img/detail/q-ico-zp.png" alt="">
-                    <span>养宠的帮手</span>
-                </a></li>
-                <li><a href="javascript:;">
-                    <img src="../img/detail/q-ico-zp.png" alt="">
-                    <span>小小的成绩</span>
-                </a></li>
-            </ul>
-        </div>
-        <div class="check_data">
-            <a href="goodmsg.html"><i class="fa fa-angle-up"></i>查看图文详情</a>
-        </div>
-    </main>
+            <div class="msg_list">
+                <ul class="list_links clearfix">
+                    <li><a href="javascript:;">
+                        <img src="../img/detail/q-ico-zp.png" alt="">
+                        <span>绝对的正品</span>
+                    </a></li>
+                    <li><a href="javascript:;">
+                        <img src="../img/detail/q-ico-zp.png" alt="">
+                        <span>全球的好货</span>
+                    </a></li>
+                    <li><a href="javascript:;">
+                        <img src="../img/detail/q-ico-zp.png" alt="">
+                        <span>自家的仓库</span>
+                    </a></li>
+                    <li><a href="javascript:;">
+                        <img src="../img/detail/q-ico-zp.png" alt="">
+                        <span>自家的配送</span>
+                    </a></li>
+                    <li><a href="javascript:;">
+                        <img src="../img/detail/q-ico-zp.png" alt="">
+                        <span>养宠的帮手</span>
+                    </a></li>
+                    <li><a href="javascript:;">
+                        <img src="../img/detail/q-ico-zp.png" alt="">
+                        <span>小小的成绩</span>
+                    </a></li>
+                </ul>
+            </div>
+           <!--  <div class="check_data">
+                <a href="javascript:;"><i class="fa fa-angle-up"></i>查看图文详情</a>
+            </div> -->
+        
+
+        <!-- 图文详情 -->
+            <div class="image_text">
+            
+        
+            <div class="text_top ">
+                <p>图文详情</p> 
+            </div>
+            <div class="text_bottom">
+                <span class="introduce">商品介绍</span>
+                <span class="parameters">商品参数</span>
+                <span class="impower">授权文件</span>
+            </div>
+         <!-- 商品介绍 -->
+         <div class="content">
+              <div class="goodShow">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (15).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (16).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (17).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (18).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (19).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (20).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (21).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (22).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (23).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (24).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (25).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (26).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (27).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (28).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (29).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (30).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (31).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (32).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (1).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (2).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (3).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (4).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (5).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (6).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (7).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (8).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (9).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (10).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (11).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (12).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (13).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_19 (14).jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_33.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_34.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_35.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_36.jpg" alt="">
+                <img src="../img/detail/c7a6d0bc32aa5e78756115dd3b2973f7.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_38.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_39.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_40.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_41.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_42.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_43.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_44.jpg" alt="">
+                <img src="../img/detail/8dba7ba074c7320448822a16d61d488b_45.jpg" alt="">
+                <img src="../img/detail/0419d6511b7e774ccc24232873ce8ee7.jpg" alt="">
+                <img src="../img/detail/wap.jpg" alt="">
+            </div>
+            <!-- 商品参数 -->
+            <div class="parameter">
+                <p>商品参数</p>
+                <table border="1" cellspacing="0">
+                    <tbody>
+                        <tr class="headline">
+                            <td>参数名称</td>
+                            <td>产品参数</td>
+                        </tr>
+                        <tr>
+                            <td>主要成份</td>
+                            <td>羊肉、大米、动物脂肪</td>
+                        </tr>
+                        <tr>
+                            <td>成份含量</td>
+                            <td>粗蛋白32%、粗脂肪15%、钙1.2%、磷1%</td>
+                        </tr>
+                        <tr>
+                            <td>原料类型</td>
+                            <td>含谷物</td>
+                        </tr>
+                        <tr>
+                            <td>工艺类型</td>
+                            <td>膨化粮</td>
+                        </tr>
+                        <tr>
+                            <td>日期格式</td>
+                            <td>日/月/年</td>
+                        </tr>
+                        <tr>
+                            <td>年龄</td>
+                            <td>成猫</td>
+                        </tr>
+                        <tr>
+                            <td>配方</td>
+                            <td>羊肉</td>
+                        </tr>
+                        <tr>
+                            <td>颗粒大小</td>
+                            <td>小颗粒</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 授权文件 -->
+            <div class="accredit">
+                <p>亲爱的宠爸宠妈们：</br>
+    E宠从创立之初，就一直对货源进行非常严苛的管控，坚持只从品牌商或其授权方直接采购，哪怕有更“实惠”的进货渠道，我们也从未因此而调整供应商！坚持所有产品入库出库的品质最高要求，拒绝任何瑕疵品正常销售！</br>
+    正因为这样的坚守，我们得到了行业大牌的认可，这个授权文件仅仅是一个小小的信誉背书。更重要的是，越来越多的品牌与E宠达成更为直接、更为深入的战略合作关系，通过E宠商城平台，以多种形式与广大的宠爸宠妈们直接互动。</br>
+    各位宠爸宠妈，中国宠物行业依然处于婴儿期，缺乏行业标准，每个品牌的产品质量稳定性也是参差不齐，也请您理解。对于产品质量的精细化管理，将是我们今后工作的重中之重。</br>
+    当然，E宠商城在越来越多宠爸宠妈们的支持下，逐步发展壮大，也影响了个别公司的利益，他们通过非市场行为“恶意诋毁”我们，希望宠爸宠妈们能明辨是非！我们也将理性对待并寻求法律解决路径。</p>
+                <img class="file_logo" src="../img/detail/logo7.jpg" alt="">
+            </div>
+         </div>
+           
+       
+        </main>
+    </div>    
     <!-- 底部 -->
     <footer>
         <div class="footer_list">
@@ -237,7 +360,7 @@ ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
                     <p>收藏</p>
                 </li>
                 <li class="cart">
-                    <i class="fa fa-shopping-cart"><em>0</em></i>
+                    <i class="fa fa-shopping-cart"><span class="car-count">0</span></i>
                     <a href="shopCar.html"><p>购物车</p></a>
                 </li>
                 <li class="my_buy">
@@ -246,7 +369,7 @@ ProBiotic LIVE 益生菌 羊肉成猫粮 8kg</p>
             </ul>
         </div>
     </footer>
-</div>
+
 
 </body>
 </html>

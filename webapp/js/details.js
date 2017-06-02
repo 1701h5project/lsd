@@ -1,5 +1,5 @@
 require(['config'], function() {
-	require(['zhjquery','zhswiper','global'],function(){
+	require(['zhjquery','zhswiper',"global"],function(){
 
 			
 	$(function(){
@@ -10,20 +10,22 @@ require(['config'], function() {
 		
 		//返回上次浏览网页
 		$('#pre-location').click(function(){
-			history.back();
+			history.back(-1);
 		});
 		
 		
 		var proid=window.localStorage.getItem('id');
 
 		var d = window.localStorage.getItem('qty');
-		// console.log(d)
-		$('em').text(d)
+			d?$('.car-count').text(d):$('.car-count').text()
+		// $('.car-count').text()
 
 		//---------------请求后台数据生成DOM节点-----------------
 			$.get(erp.baseUrl+'/product-data',{"id":proid},function(response){
+
 				var arr = response;
 				console.log(arr)
+		
 				var $carousel =  $('.carousel');
 				var $goodKG = $('.good_kg');
 				var $goodReferral = $('.good_referral');
@@ -59,17 +61,21 @@ require(['config'], function() {
 					$carousel.append(res);
 
 					//-----商品名字------
-					$goodKG.append($('<p>').html(name));
+					$goodKG.append($('<p>').html(name[1]));
 
 					//------商品介绍--------
 					$goodReferral.html(`<p>${referral}</p>`);
 
 					//-------商品价钱---------
-					$goodPrice.html(`<span class="discount">${price[0]}</span>
-                    <del>${price[1]}</del>`);
+					$goodPrice.html(`<span class="discount">${price[1][0]}</span>
+                    <del>${price[1][1]}</del>`);
 
                     // -----商品规格---------
                     $electKg.html( `<p>重量<a href="javascript:;">${size[0]}</a><a href="javascript:;">${size[1]}</p>`);
+
+                    // ------默认规格-------
+                    $selected.find('p').html(`已选:<span>'重量,${size[1]}'</span>`)
+                    
                    
                     //---------商家logo-----------
                     $shopLogo.html(`<img src="../img/product/${logo}" alt="">`);
@@ -102,15 +108,20 @@ require(['config'], function() {
                     //--------本地储存-------------
 					$('.btn_buy').click(function(){
 					//	点击添加按钮时，是添加还是修改数量
-					var count =Number($('em').html());
+					var count =Number($('.car-count').html());
 					
 					var input = Number($('.emendation').find('input').val());
 					console.log(input)
 
 					count +=input
 
-					$('em').text(count)
+					$('.car-count').text(count)
 					
+					var price1 = $('.discount').html()
+                    var price2 = $('.price_left del').html();
+        
+                    var goodPrice = [price1,price2];
+
 					var $currentID = id;
 				
 					
@@ -130,7 +141,7 @@ require(['config'], function() {
 							gsize: size,
 							imgurl: imgUrl[0],
 							name: name,
-							price: price,
+							price: goodPrice,
 							qty: count
 						}
 
@@ -159,6 +170,29 @@ require(['config'], function() {
 					// console.log(c)
 					
 
+					//--------点击切换规格---------
+					$electKg.find('a').eq(1).addClass('changeCss');
+				
+					$electKg.on('click','a',function(){
+						var idx = $(this).index();
+						
+						var text = $(this).html();
+						if(idx === 0){
+							
+							$goodKG.find('p').html(name[0]);
+							$goodPrice.find('span').html(price[0][0]);
+							$goodPrice.find('del').html(price[0][1]);
+							$selected.find('span').html(`'重量,${text}'`)
+						}else{
+							$goodKG.find('p').html(name[1]);
+							$goodPrice.find('span').html(price[1][0]);
+							$goodPrice.find('del').html(price[1][1]);
+							$selected.find('span').html(`'重量,${text}'`)
+						}
+						$electKg.find('a').eq(idx).addClass('changeCss').siblings().removeClass('changeCss')
+					})
+
+
 				}
 
 				//------- 商品图片点击滚动--------
@@ -167,10 +201,8 @@ require(['config'], function() {
 				        // paginationType: 'fraction'
 				});
 
-				//--------点击切换规格---------
-				$electKg.find('a').click(function(){
-					$selected.find('span').html("'重量,"+$(this).html()+"'")
-				})
+		
+
 			})
 
 
@@ -208,7 +240,7 @@ require(['config'], function() {
 			})
 
 			// //--------点击购买增加数量-----
-			// var goodCount = $('em')
+			// var goodCount = $('.car-count')
 			// var num = 0
 		 //    $(".btn_buy").click(function(){ 
 		 //    	var input = Number($('.emendation').find('input').val());
@@ -262,6 +294,43 @@ require(['config'], function() {
 				}
 				
 			})
+
+
+			//点击显示图文详情
+			var $tab = $('.text_bottom>span')
+			var $content = $('.content>div')
+
+			$tab.eq(0).addClass('active')
+			$content.eq(0).show();
+
+			$('.text_bottom').on('click','>span',function(){
+				var idx = $(this).index();
+				$(this).addClass('active').siblings()
+				.removeClass('active');
+
+				$content.eq(idx).fadeIn(600).siblings()
+				.hide();
+			})
+
+			//点击跳转到指定位置
+			
+			$('.btn_file').click(function(){
+				//跳转
+		        $('html, body').animate(
+		       		{scrollTop: $(".text_top").offset().top },
+		            {duration: 300,easing: "swing"}
+		        );
+
+		        //显示授权文件
+		        //隐藏其他
+      			$tab.eq(2).addClass('active').siblings()
+				.removeClass('active');
+
+				$content.eq(2).show().siblings()
+				.hide();
+   				
+			})
+			
 		})
 	})
 })

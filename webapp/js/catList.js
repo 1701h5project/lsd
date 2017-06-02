@@ -12,8 +12,8 @@ requirejs(["config"],function(){
 									<a href="details.html">
 										<img src="../img/product/${(data[i].imgUrl)[0]}" alt="" />
 										<div class="pro-detial">
-											<h1 class="name">${data[i].name}</h1>
-											<p class="price">${(data[i].price)[0]}</p>
+											<h1 class="name">${(data[i].name)[1]}</h1>
+											<p class="price">${((data[i].price)[1])[0]}</p>
 											<span class="sale">销量:${data[i].salesNum}</span>
 										</div>
 									</a>
@@ -30,8 +30,8 @@ requirejs(["config"],function(){
 									<a href="details.html">
 										<img src="../img/product/${(data[i].imgUrl)[0]}" alt="" />
 										<div class="pro-detial">
-											<h1 class="name">${data[i].name}</h1>
-											<p class="price">${(data[i].price)[0]}</p>
+											<h1 class="name">${(data[i].name)[1]}</h1>
+											<p class="price">${((data[i].price)[1])[0]}</p>
 											<span class="sale">销量:${data[i].salesNum}</span>
 										</div>
 									</a>
@@ -55,8 +55,8 @@ requirejs(["config"],function(){
 										<a href="details.html">
 											<img src="../img/product/${(data[i].imgUrl)[0]}" alt="" />
 											<div class="pro-detial">
-												<h1 class="name">${data[i].name}</h1>
-												<p class="price">${(data[i].price)[0]}</p>
+												<h1 class="name">${(data[i].name)[1]}</h1>
+												<p class="price">${((data[i].price)[1])[0]}</p>
 												<span class="sale">销量:${data[i].salesNum}</span>
 											</div>
 										</a>
