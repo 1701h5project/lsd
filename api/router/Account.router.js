@@ -34,19 +34,18 @@ exports.Register = function(app){
 				response.send(apiResult(true,'该手机号已被注册过'))
 			} else {
 				db.save('account', request.body); 	
-				response.send(apiResult(false));
+				response.send(apiResult(false,'',request.body));
 			}
 			
 		})
 	});
 
-	app.post('/login', urlencodedParser, function(request, response){
-		console.log(response);
+	app.post('/login', urlencodedParser, function(request, response){		
 		db.exist('account', request.body, ['phone','password'],function(data){
+			console.log(data);
 			if(data.length > 0){
 				request.session.phone = request.body.phone;
 				response.send(apiResult(true,'',data))
-
 			} else {
 				response.send(apiResult(false, '账户或密码错误'));
 			}
@@ -54,9 +53,17 @@ exports.Register = function(app){
 	})
 	
 	app.post('/getregister', urlencodedParser, function(request, response){
-		db.extract('account',function(result){
-			response.send(result);
-		});
+		db.exist('account', request.body, ['phone'], function(data){
+			if(data.length > 0){
+				request.session.phone = request.body.phone;
+				response.send(apiResult(false,'',data))
+			} else {
+				//db.save('account', request.body); 	
+				//response.send(apiResult(true,'',request.body));
+			}
+			
+			
+		})
 	});
 
 	app.get('/register', function(request, response){
@@ -72,4 +79,3 @@ exports.Register = function(app){
 		response.send(apiResult(request.session.name != null, null, request.session.name));
 	})
 }
-

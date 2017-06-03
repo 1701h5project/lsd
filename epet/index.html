@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>简易后台管理系统</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="icon" type="image/png" href="assets/i/favicon.png">
 	<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
@@ -11,10 +11,9 @@
 	<link rel="stylesheet" href="assets/css/admin.css">
 	<link rel="stylesheet" href="css/index.css">
 
-	<script type="text/javascript" src="../libs/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="../libs/jquery/jquery-3.1.1.js"></script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/app.js"></script>
-
 	<script src="js/index.js"></script>
 
 </head>
@@ -115,7 +114,7 @@
 	  	<div class="daohang">
 	  		<ul>
 	  			<li><a href="../webapp/index.html"><button type="button" class="am-btn am-btn-default am-radius am-btn-xs"> 首页 </a></li>
-	  			<li><a href="login.html"><button type="button" class="am-btn am-btn-default am-radius am-btn-xs" class="out"> 退出登录 </a></li>
+	  			<li><a href="login.html"><button type="button" class="am-btn am-btn-default am-radius am-btn-xs" class="out"> 退出 </a></li>
 	  			<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs">帮助中心<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close="">×</a></button></li>
 	  		</ul>	
 	    </div>
@@ -173,7 +172,7 @@
 			</div>
 			<div style="display: none;">
 				<label for="searchId">请输入查询ID或者Name:</label>
-				<input type="text" class="searchId"/ placeholder="ID">
+				<input type="text" class="searchId"/ placeholder="ID | ID1,ID2,ID3...">
 				<input type="text" class="searchName"/ placeholder="Name">
 				<button class="btn_search">查询</button>
 				<button class="btn_update">更新</button>

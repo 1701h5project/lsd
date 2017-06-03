@@ -37,8 +37,8 @@ require(['config'], function() {
 				var $shopMsg = $('.shop_msg');
 				var $flag = $('.flag');
 				var $selected = $('.selected');
-
-
+				var $goodShow = $('.goodShow');
+				console.log($goodShow)
 
 				for(i=0;i<arr.length;i++){
 					var imgUrl  =arr[i].imgUrl; //轮播路径
@@ -52,6 +52,15 @@ require(['config'], function() {
 					var nationalFlag = arr[i].nationalFlag; //产地国旗
 					var brandRef = arr[i].brandRef; //商家介绍
 					var id = arr[i].id;
+					var detailsUrl = arr[i].detailsUrl;
+
+					var imgShow = '';
+					for(var k = 0 ; k<detailsUrl.length;k++){
+						
+						imgShow+=`<img  src="../img/product/${detailsUrl[k]}">`;
+					}
+					
+					$goodShow.append(imgShow);
 
 					var res='';
 					for(var j = 0 ; j<imgUrl.length;j++){

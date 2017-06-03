@@ -68,12 +68,18 @@ require(['config'],function(){
 										window.wxc.xcConfirm('验证码输入错误', window.wxc.xcConfirm.typeEnum.error); 
 										return false;
 									}else{
-										console.log(username);
+										//console.log(username);
 										$.post(epet.baseUrl +'register', {name: username, phone: phone, password: password
 											},function(response){
+
 												if(response.status){
 													window.wxc.xcConfirm("电话号码已存在请重新输入", window.wxc.xcConfirm.typeEnum.error); 
 												}else{
+													//console.log(response.data);
+													var name =  response.data.name;
+													var phone = response.data.phone;
+													sessionStorage.setItem('name',name);
+													sessionStorage.setItem('phone',phone);
 													window.wxc.xcConfirm('注册成功,2s后跳转...', window.wxc.xcConfirm.typeEnum.sucess);
 													setTimeout(function(){
 														window.location.href = 'Personalcenter.html';

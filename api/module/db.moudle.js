@@ -1,7 +1,7 @@
 var mongodb = require('mongodb');
 var querystring = require('querystring')
 
-var server = new mongodb.Server('10.3.133.60', 27017);
+var server = new mongodb.Server('localhost', 27017);
 
 var db = new mongodb.Db('epetdata', server);
 
@@ -75,25 +75,33 @@ var showData = function(_collection,data,callback){
 				console.log(error)
 			} else {
 				if(data.id != null ){
-					if(data.name != null){
-						var str = data.name;
-						db.collection(data.collection,function(error,collection){
-							collection.find( { name: { $regex: str, $options: 'i' } } ).toArray(function(error,shops){
-								callback(shops);
-							});
+					var str = data.id;
+					var arr = str.split(',');
+					db.collection(data.collection,function(error,collection){
+						collection.find({id:{$in: arr}}).toArray(function(error,shops){
+							callback(shops);
+						});
+					})						
+				}
+				else if(data.name != null){
+					var str = data.name;
+					db.collection(data.collection,function(error,collection){
+						collection.find( { name: { $regex: str, $options: 'i' } } ).toArray(function(error,shops){
+							callback(shops);
+						});
+					})
+				}
+				else if(data.page != null){
+					var num = data.page - 1;
+					db.collection(data.collection,function(error,collection){
+						collection.find().limit(20).skip(num*20).toArray(function(error,shops){
+							// console.log(shops);
+							callback(shops);
 						})
-					}else{
-						var str = data.id;
-						var arr = str.split(',');
-						db.collection(data.collection,function(error,collection){
-							collection.find({id:{$in: arr}}).toArray(function(error,shops){
-								callback(shops);
-							});
-						})						
-					}
+					})
 
-
-				}else{
+				}
+				else if(data.id == null && data.name == null){
 					db.collection(data.collection,function(error,collection){
 						collection.find().limit(100).toArray(function(error,shops){
 							// console.log(shops);
@@ -101,7 +109,8 @@ var showData = function(_collection,data,callback){
 						})
 					})			
 				}
-					
+
+
 			}
 			db.close();
 		})		
@@ -157,7 +166,7 @@ exports.exists = exists;
 exports.saveData = saveData;
 exports.removeData = removeData;
 exports.showData = showData;
-exports.updatedata = updateData;
+exports.updatedata = updatedata;
 exports.indexGetdata = indexGetdata;
 
 var exist = function(_collection, data, arr, callback){

@@ -84,13 +84,13 @@ requirejs(["config"],function(){
 		$(function(){
 			var timer = setInterval(countDown,1000);
 			var times;
-			var end = Date.parse('2017/6/3');
+			var end = Date.parse('2017/6/4');
 			function countDown(){
 				var now = Date.now();
 				times=Math.floor((end - now)/1000);
 				var sec = times%60;//获取秒
 				var min = Math.floor(times/60)%60;//获取分钟
-				var hour = Math.floor(times/60/60)%24;//获取小时
+				var hour = Math.floor(times/60/60);//获取小时
 				hour = hour<10 ? "0"+hour : hour;
 				min = min<10 ? "0"+min : min;
 				sec = sec<10 ? "0"+sec : sec;

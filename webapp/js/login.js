@@ -18,14 +18,24 @@ require(['config'],function(){
           		phone: $.trim($('input[name=username]').val()),
 				password: $.trim($('input[name=password]').val())
 			}, function(response){
-	            console.log(response.data[0].name);
-	            var name = response.data[0].name;
-                if(response.status){
-                	sessionStorage.setItem('name',name);
-					window.location.href = "Personalcenter.html";					
-				} else {
-					window.wxc.xcConfirm('账号或密码错误', window.wxc.xcConfirm.typeEnum.error);
-				}          		
+	            console.log(response);
+	            if(response.data!=null){
+		            var phone = response.data[0].phone;
+		            var _id =  response.data[0]._id;
+		            var name = response.data[0].name;
+	                if(response.status){
+	                	sessionStorage.setItem('phone',phone);
+	                	sessionStorage.setItem('_id',_id);
+	                	sessionStorage.setItem('name',name);
+						window.location.href = "Personalcenter.html";					
+					} else {
+						//window.wxc.xcConfirm("电话号码已存在请重新输入", window.wxc.xcConfirm.typeEnum.error); 
+						window.wxc.xcConfirm('账号或密码错误', window.wxc.xcConfirm.typeEnum.error);
+					} 
+				}else{
+					window.wxc.xcConfirm('账号或密码错误', window.wxc.xcConfirm.typeEnum.error)
+				}
+
           	})   
       	})  
 

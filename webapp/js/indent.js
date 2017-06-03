@@ -1,22 +1,26 @@
 $(function(){
 	// 用户名
 	var nameuses = window.sessionStorage.getItem('name','value');
-	$('.usess').text(nameuses);
-	// 退出
-	$('.tuichu').click(function(){
-		window.sessionStorage.removeItem('name','value');
+	// $('.usess').text(nameuses);
+	// // 退出
+	// $('.tuichu').click(function(){
+	// 	window.sessionStorage.removeItem('name','value');
 		
-	})
-	$.post(erp.baseUrl + 'getaddress',{},function(response){
-		if (response[0].address == null) {
+	// })
+	$.post(erp.baseUrl + 'getaddress',{phone:sessionStorage.getItem('phone','value')},function(response){
+		if (response.data.length == 0) {
 			$('.cartcbox').show();
 			$('.cartbg').show();
 		}else{
+			console.log(response.data)
 			$('.cartcbox').hide();
 			$('.cartbg').hide();
-			$('.adde').text(response[0].address);
-			$('.usess').text(nameuses);
-			$('.m1').text(response[0].phone);
+			if (response.data!=null) {
+				$('.adde').text(response.data[0].address);
+				$('.usess').text(nameuses);
+				$('.m1').text(response.data[0].phone);
+			}
+			
 		}
 		
 				

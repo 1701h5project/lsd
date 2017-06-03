@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  height: 0;
+}
+
 body {
   font-size: 0.07rem;
   width: 100%;
@@ -27,15 +36,6 @@ ul {
 
 a {
   text-decoration: none;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  height: 0;
 }
 
 header {

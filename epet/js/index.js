@@ -1,4 +1,14 @@
 $(function(){
+	//同步请求
+	$.ajaxSetup({  
+		async : false  
+	});
+
+	//如果没有登录则跳转到登录页面
+	if(window.sessionStorage.getItem('name') == null){
+		$(window).attr('location','login.html');
+	}
+
 	//显示管理员名字
 	$('.managerName').text(window.sessionStorage.getItem('name'));
 
@@ -32,8 +42,6 @@ $(function(){
 		$(this).addClass('collection');
 	})
 
-
-
 	//添加属性
 	$('.addAttr').click(function(){
 		$('.btn').append('<div>请输入属性名:<input type="text" />请输入属性值:<input type="text" /><button class="affirmAttr">确认</button><button class="resetAttr">重置</button><button class="leave">退出</button></div>')
@@ -52,9 +60,6 @@ $(function(){
 			$('.btn div').remove();
 		})
 	})
-
-
-
 
 	//添加信息
 	$('.btn_add').click(function(){
@@ -98,7 +103,6 @@ $(function(){
 		})
 	})
 
-
 	//选择collection
 	$('.searchInfo>div').on('click','span',function(){
 		$('.searchInfo>div span').removeClass('collection');
@@ -116,16 +120,29 @@ $(function(){
 		$('.searchInfo div').show();
 	})
 
+	//只允许输入ID和Name中一项进行查询
+	$('.searchId').focus(function(){
+		$('.searchName').val('');
+	})
+	$('.searchName').focus(function(){
+		$('.searchId').val('');
+	})
+
 	//查询信息
 	$('.btn_search').click(function(){
-		// $('.searchInfo').children().remove();
+		$('.searchInfo ul').children().remove();
 		var obj = {};
-		obj.id = $('.searchId').val();
+		if($('.searchId').val() != ''){
+			obj.id = $('.searchId').val();
+		}
 		if($('.searchName').val() != ''){
 			obj.name = $('.searchName').val();
 		}
 		obj.collection = $('.searchInfo .collection').text();
 		$.post('/showData',obj,function(response){
+			if(response[0] == null){
+				$('h1').text('无此类数据！')
+			}
 			var arr = response;
 			var str = JSON.stringify(arr)
 			var list ='';
@@ -144,7 +161,7 @@ $(function(){
 	//更新信息
 	$('.btn_update').click(function(){
 		var attrObj = {};
-		for(i=0;i<$('.data0 li').length;i++){
+		for(i=1;i<$('.data0 li').length;i++){
 			attrObj[$('.data0 li label:eq('+i+')').text()] = $('.data0 li input:eq('+i+')').val();
 		}
 		attrObj.collection = $('.searchInfo .collection').text();
@@ -186,21 +203,30 @@ $(function(){
 		$('.searchInfo').hide();
 		$('.shopInfo').show();		
 		$('.logoInfo').hide();
+ 		
+ 		$('.shopInfo').append('<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>')   	
 
-		$.post('/showData',{collection:'shop'},function(response){
-			var arr = response;
-			var str = JSON.stringify(arr)
-			var list ='';
-			
-			for(i=0;i<arr.length;i++){
-				$('.shopInfo').append('<ul class="data'+i+'"></ul><hr />')
-				$.each(arr[i], function(j, val) {  
-	    			list+='<li><label>'+j+'</label><input type="text" value="'+arr[i][j]+'" /></li>'
-				});
-				$('.shopInfo ul:eq('+i+')').append(list);
-				list = '';
-			}
-		})
+    	$('.shopInfo').on('click','span',function(){
+    		$('.shopInfo ul').remove();
+    		$('.shopInfo hr').remove();
+    		$('.shopInfo span').css({'color':'black','background':'#f1f2f7'})
+  			$(this).css({'color':'white','background':'#35404d'});		
+	 		$.post('/showData',{collection:'shop',page:$(this).text()},function(response){
+				var arr = response;
+				var str = JSON.stringify(arr)
+				var list ='';
+				
+				for(i=0;i<arr.length;i++){
+					$('.shopInfo').append('<ul class="data'+i+'"></ul><hr />')
+					$.each(arr[i], function(j, val) {  
+		    			list+='<li><label>'+j+'</label><input type="text" value="'+arr[i][j]+'" /></li>'
+					});
+					$('.shopInfo ul:eq('+i+')').append(list);
+					list = '';
+				}
+			})   		
+    	})
+
 	})
 
 	//点击品牌信息库
@@ -210,20 +236,54 @@ $(function(){
 		$('.searchInfo').hide();
 		$('.shopInfo').hide();
 		$('.logoInfo').show();
-		$.post('/showData',{collection:'logo'},function(response){
+  	
+		var k = 1;
+
+
+ 		$.post('/showData',{collection:'logo',page:1},function(response){
 			var arr = response;
 			var str = JSON.stringify(arr)
 			var list ='';
 			
 			for(i=0;i<arr.length;i++){
-				$('.logoInfo').append('<ul class="data'+i+'"></ul><hr />')
+				$('.logoInfo').append('<ul></ul>')
 				$.each(arr[i], function(j, val) {  
 	    			list+='<li><label>'+j+'</label><input type="text" value="'+arr[i][j]+'" /></li>'
 				});
-				$('.logoInfo ul:eq('+i+')').append(list);
+				$('.logoInfo ul:last-child').append(list);
 				list = '';
 			}
 		})
+
+
+		$('.admin').scroll(function () {
+			//$('.admin').scrollTop()这个方法是当前滚动条滚动的距离
+			//$('.admin').height()获取当前窗体的高度
+			//$(document).height()获取当前文档的高度
+	        var bot = 0;
+			//bot是底部距离的高度
+	        if ((bot + $('.admin').scrollTop()) >= 
+			($('.logoInfo').height() - $('.admin').height()+100)) {
+			//当底部基本距离+滚动的高度〉=文档的高度-窗体的高度时；
+			//我们需要去异步加载数据了
+				k++;
+		 		$.post('/showData',{collection:'logo',page:k},function(response){
+					var arr = response;
+					var str = JSON.stringify(arr)
+					var list ='';
+					
+					for(i=0;i<arr.length;i++){
+						$('.logoInfo').append('<ul></ul>')
+						$.each(arr[i], function(j, val) {  
+			    			list+='<li><label>'+j+'</label><input type="text" value="'+arr[i][j]+'" /></li>'
+						});
+						$('.logoInfo ul:last-child').append(list);
+						list = '';
+					}
+				})
+			}				            
+		});
+
 	})
 
 })

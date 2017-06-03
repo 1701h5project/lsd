@@ -69,6 +69,10 @@ ul, li {
   flex-wrap: wrap;
 }
 
+.main_l .showInfo ul a {
+  color: green;
+}
+
 .main_l .showInfo ul li {
   width: 80px;
   text-align: center;
